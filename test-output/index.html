@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+              <span class="suite-name border-passed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\bilali\AppData\Local\Temp\testng-eclipse-1042239517\testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">1 method,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testCases.All_Client_Portal_TestCases" class="method navigator-link" hash-for-method="PaginationECComplied">PaginationECComplied</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testCases.All_Client_Portal_TestCases</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="PaginationECComplied">
+                  </a> <!-- PaginationECComplied -->
+                  <span class="method-name">PaginationECComplied</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\bilali\AppData\Local\Temp\testng-eclipse-1042239517\testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;testCases.All_Client_Portal_TestCases&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;PaginationECComplied&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testCases.All_Client_Portal_TestCases --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'PaginationECComplied')
+data.setCell(0, 2, 'testCases.All_Client_Portal_TestCases')
+data.setCell(0, 3, 160707);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">190 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testCases.All_Client_Portal_TestCases</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">NoticeEditAllTabs</span>
+                <br/>
+                <span class="ignored-method-name">ERSearch</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSHistoryExportBar</span>
+                <br/>
+                <span class="ignored-method-name">RegionalDocView</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusEditDownloadbtn</span>
+                <br/>
+                <span class="ignored-method-name">exportERE</span>
+                <br/>
+                <span class="ignored-method-name">NoticeEditDownloadView</span>
+                <br/>
+                <span class="ignored-method-name">ExportBtn</span>
+                <br/>
+                <span class="ignored-method-name">ExistingLicenseViewIcon</span>
+                <br/>
+                <span class="ignored-method-name">DownloadActiveBar</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusExport</span>
+                <br/>
+                <span class="ignored-method-name">IUHistoryDSA</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadTem</span>
+                <br/>
+                <span class="ignored-method-name">SearchBoxMasterAbstract</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSViewL</span>
+                <br/>
+                <span class="ignored-method-name">ChallanComplianceDoc</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationActiveEditView</span>
+                <br/>
+                <span class="ignored-method-name">assignedCompReturnExport</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusEx</span>
+                <br/>
+                <span class="ignored-method-name">OverviewNotice</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusEdit</span>
+                <br/>
+                <span class="ignored-method-name">IUHistory</span>
+                <br/>
+                <span class="ignored-method-name">StatutoryDocApplyClaerBtn</span>
+                <br/>
+                <span class="ignored-method-name">ChallanViewBranchese</span>
+                <br/>
+                <span class="ignored-method-name">InitiateActionBack</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusExportBar</span>
+                <br/>
+                <span class="ignored-method-name">ERview</span>
+                <br/>
+                <span class="ignored-method-name">assignedCompChallanExport</span>
+                <br/>
+                <span class="ignored-method-name">exportcount12</span>
+                <br/>
+                <span class="ignored-method-name">NoticeViewEditDocumentDownload</span>
+                <br/>
+                <span class="ignored-method-name">exportOpen</span>
+                <br/>
+                <span class="ignored-method-name">OpenNoticesback</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ActiveEditView</span>
+                <br/>
+                <span class="ignored-method-name">OpenNoticesPagination</span>
+                <br/>
+                <span class="ignored-method-name">OpenNoticesEditback</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ExpiredViewDownload</span>
+                <br/>
+                <span class="ignored-method-name">ExpiredRegistrationsEdit</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusGraphSearchBar</span>
+                <br/>
+                <span class="ignored-method-name">NoticeSearchBox</span>
+                <br/>
+                <span class="ignored-method-name">assignedSelectActFilter</span>
+                <br/>
+                <span class="ignored-method-name">clearbtnEcComplied</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadReturnOtherUp</span>
+                <br/>
+                <span class="ignored-method-name">ExpiredSearch</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSView</span>
+                <br/>
+                <span class="ignored-method-name">EntitiesSearch</span>
+                <br/>
+                <span class="ignored-method-name">searchRCComplied</span>
+                <br/>
+                <span class="ignored-method-name">IUFianlUploadDownload</span>
+                <br/>
+                <span class="ignored-method-name">exportClosed</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSHistoryBar</span>
+                <br/>
+                <span class="ignored-method-name">StatutoryDocViewandOverview</span>
+                <br/>
+                <span class="ignored-method-name">ClosedStatus</span>
+                <br/>
+                <span class="ignored-method-name">StatutoryDocFilter</span>
+                <br/>
+                <span class="ignored-method-name">CalendarCount</span>
+                <br/>
+                <span class="ignored-method-name">EnglishDocDownload</span>
+                <br/>
+                <span class="ignored-method-name">exportNotice</span>
+                <br/>
+                <span class="ignored-method-name">LocationsPagination</span>
+                <br/>
+                <span class="ignored-method-name">OpenStatus</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadNofile</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSViewEx</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusEditView</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadFilters</span>
+                <br/>
+                <span class="ignored-method-name">compliancePerformanceECViewOverviewDownload</span>
+                <br/>
+                <span class="ignored-method-name">ClearExportRCComplied</span>
+                <br/>
+                <span class="ignored-method-name">IUHistoryRe</span>
+                <br/>
+                <span class="ignored-method-name">ChallanDoc</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSExport</span>
+                <br/>
+                <span class="ignored-method-name">RCOverdueSearch</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusEditInitiateAction</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadNofilere</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ExpiredEditInitiateAction</span>
+                <br/>
+                <span class="ignored-method-name">RCCompliedPagination</span>
+                <br/>
+                <span class="ignored-method-name">CriticalDocumentNewFile</span>
+                <br/>
+                <span class="ignored-method-name">IUHistoryDRe</span>
+                <br/>
+                <span class="ignored-method-name">DailyUpdates</span>
+                <br/>
+                <span class="ignored-method-name">compliancePerformanceG</span>
+                <br/>
+                <span class="ignored-method-name">ExistingLicenseInitiateAction</span>
+                <br/>
+                <span class="ignored-method-name">InitiateAction</span>
+                <br/>
+                <span class="ignored-method-name">Entities</span>
+                <br/>
+                <span class="ignored-method-name">exportNoticeStatus</span>
+                <br/>
+                <span class="ignored-method-name">DownloadActive</span>
+                <br/>
+                <span class="ignored-method-name">downloadECComplied</span>
+                <br/>
+                <span class="ignored-method-name">RegisrationRespository</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ActiveEditClear</span>
+                <br/>
+                <span class="ignored-method-name">StatutoryDocBulkDownload</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSHistoryExportEx</span>
+                <br/>
+                <span class="ignored-method-name">compliancePerformanceBarGraphPRCViewOvewviewDown</span>
+                <br/>
+                <span class="ignored-method-name">NoticeExportBtn</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationActiveEditbtn</span>
+                <br/>
+                <span class="ignored-method-name">ExpiredRegistrationPagination</span>
+                <br/>
+                <span class="ignored-method-name">OpenView</span>
+                <br/>
+                <span class="ignored-method-name">RCOverdueOverview</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadTemSa</span>
+                <br/>
+                <span class="ignored-method-name">InputUpload</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSHistory</span>
+                <br/>
+                <span class="ignored-method-name">SearchBox</span>
+                <br/>
+                <span class="ignored-method-name">IUHistoryD</span>
+                <br/>
+                <span class="ignored-method-name">overviewECComplied</span>
+                <br/>
+                <span class="ignored-method-name">NoticeSearchClear</span>
+                <br/>
+                <span class="ignored-method-name">assignedCompSearch</span>
+                <br/>
+                <span class="ignored-method-name">OverviewAC</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSHistorySearch</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadSA</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadNofileCh</span>
+                <br/>
+                <span class="ignored-method-name">ExistingNoticesNo</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ExpiredHistoryViewDownload</span>
+                <br/>
+                <span class="ignored-method-name">AddNewLicense</span>
+                <br/>
+                <span class="ignored-method-name">CalendarExport</span>
+                <br/>
+                <span class="ignored-method-name">SearchBoxExistiongLicense</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusExportE</span>
+                <br/>
+                <span class="ignored-method-name">OpenNoticesEditDelete</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ActiveEditSearch</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationActiveEditSearch</span>
+                <br/>
+                <span class="ignored-method-name">EntitiesTabPagination</span>
+                <br/>
+                <span class="ignored-method-name">clearBtnECOverdue</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadTemChha</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationActiveEditClear</span>
+                <br/>
+                <span class="ignored-method-name">exportER</span>
+                <br/>
+                <span class="ignored-method-name">AssignedCompliancesPagination</span>
+                <br/>
+                <span class="ignored-method-name">OpenNoticeViewPagination</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatus</span>
+                <br/>
+                <span class="ignored-method-name">AssignedCompliances</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSHistoryViewDownload</span>
+                <br/>
+                <span class="ignored-method-name">EditIconChecktabs</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ActiveEditExport</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationActiveEditInitiateAction</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadCh</span>
+                <br/>
+                <span class="ignored-method-name">RegionalDocDownload</span>
+                <br/>
+                <span class="ignored-method-name">NoticeEditDocumentRepositoryDownload</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationRepositoryFilter</span>
+                <br/>
+                <span class="ignored-method-name">RCOverdueClearExport</span>
+                <br/>
+                <span class="ignored-method-name">compliancePerformanceBarGraph</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ExpireSearch</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ExpiredHistorySearch</span>
+                <br/>
+                <span class="ignored-method-name">CalendarOverview</span>
+                <br/>
+                <span class="ignored-method-name">ChallanViewWorkingFile</span>
+                <br/>
+                <span class="ignored-method-name">AddNewNotices</span>
+                <br/>
+                <span class="ignored-method-name">AssignedCompliancesRgisterReturnChallanCount</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusEditSearch</span>
+                <br/>
+                <span class="ignored-method-name">StateDocZipFile</span>
+                <br/>
+                <span class="ignored-method-name">EnglishDocView</span>
+                <br/>
+                <span class="ignored-method-name">exportEcComplied</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSearch</span>
+                <br/>
+                <span class="ignored-method-name">RCOverduePagination</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationRepositoryExportBtn</span>
+                <br/>
+                <span class="ignored-method-name">Locations</span>
+                <br/>
+                <span class="ignored-method-name">NoticeViewEditTabs</span>
+                <br/>
+                <span class="ignored-method-name">IUHistoryCh</span>
+                <br/>
+                <span class="ignored-method-name">ChallanViewComplianceFile</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ActiveEditInitiateAction</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusEditExport</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ExpiredExport</span>
+                <br/>
+                <span class="ignored-method-name">ECComplied</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationActiveEditInitiateActionSubmit</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ActiveEditInitiateDownload</span>
+                <br/>
+                <span class="ignored-method-name">ExsitingLicenseExport</span>
+                <br/>
+                <span class="ignored-method-name">ExpiredRegistrations</span>
+                <br/>
+                <span class="ignored-method-name">CriticalDocumentSubFolder</span>
+                <br/>
+                <span class="ignored-method-name">OpenNotices</span>
+                <br/>
+                <span class="ignored-method-name">ERviewBack</span>
+                <br/>
+                <span class="ignored-method-name">IUFianlUploadDownloadSalary</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationStatusEditClearbtn</span>
+                <br/>
+                <span class="ignored-method-name">ECOverdue</span>
+                <br/>
+                <span class="ignored-method-name">LocationsSearch</span>
+                <br/>
+                <span class="ignored-method-name">ERSearchClear</span>
+                <br/>
+                <span class="ignored-method-name">searchEcComplied</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationActiveEditDownloadbtn</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSHistoryExport</span>
+                <br/>
+                <span class="ignored-method-name">ActiveSearch</span>
+                <br/>
+                <span class="ignored-method-name">NoticeDocMandatory</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ExpiredEditViewDownload</span>
+                <br/>
+                <span class="ignored-method-name">searchECOverdue</span>
+                <br/>
+                <span class="ignored-method-name">InputUploadReturn</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationActiveEditExport</span>
+                <br/>
+                <span class="ignored-method-name">ChallanDocBulkDownload</span>
+                <br/>
+                <span class="ignored-method-name">EditIconsMiniTabs</span>
+                <br/>
+                <span class="ignored-method-name">OpenNoticesView</span>
+                <br/>
+                <span class="ignored-method-name">CriticalDocumentshare</span>
+                <br/>
+                <span class="ignored-method-name">RegistrationSHistoryEx</span>
+                <br/>
+                <span class="ignored-method-name">CriticalDocument</span>
+                <br/>
+                <span class="ignored-method-name">exportEC</span>
+                <br/>
+                <span class="ignored-method-name">ExistingLicenseDownload</span>
+                <br/>
+                <span class="ignored-method-name">DownloadActiveEx</span>
+                <br/>
+                <span class="ignored-method-name">NoticeSearch</span>
+                <br/>
+                <span class="ignored-method-name">EditIcon</span>
+                <br/>
+                <span class="ignored-method-name">IUHistoryDCh</span>
+                <br/>
+                <span class="ignored-method-name">assignedCompRegisterExport</span>
+                <br/>
+                <span class="ignored-method-name">ViewOverDownloadRCComplied</span>
+                <br/>
+                <span class="ignored-method-name">RSG_ExpiredEditSearchClearExport</span>
+                <br/>
+                <span class="ignored-method-name">ViewAddNewNotices</span>
+                <br/>
+                <span class="ignored-method-name">ClosedView</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">testCases.All_Client_Portal_TestCases</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setBrowser</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="configuration-method before">
+                <span class="method-name">Login</span>
+                <span class="method-start">934 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">PaginationECComplied</span>
+                <span class="method-start">20028 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">browserClosing</span>
+                <span class="method-start">180745 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-test after">
+                <span class="method-name">Closing</span>
+                <span class="method-start">181183 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
