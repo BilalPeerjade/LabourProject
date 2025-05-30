@@ -2443,6 +2443,7 @@ package performer;
 				}
 			else if(risk.equalsIgnoreCase("Medium"))
 			{
+				Thread.sleep(7000);
 				LocatorsP.MediumRisk1().click();					//Clicking on High value of Pie Chart of 'Not Completed'.
 				Thread.sleep(2000);
 			}

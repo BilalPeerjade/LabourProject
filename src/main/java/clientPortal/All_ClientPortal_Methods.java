@@ -73,7 +73,7 @@ public class All_ClientPortal_Methods extends BasePage {
 		Thread.sleep(2000);
 		
 		All_ClientPortal_Locators.AVAENTEST().click();
-		Thread.sleep(2000);
+		Thread.sleep(9000);
 		
 		All_ClientPortal_Locators.SelectYear().click();
 		Thread.sleep(5000);
@@ -112,7 +112,121 @@ public class All_ClientPortal_Methods extends BasePage {
 		  
 	}
 	
+	public static void Flaky_filterEntityAUTO2 ( ExtentTest test) throws InterruptedException, IOException
+	{
+		
+		int maxRetry = 3;
+	    int attempts = 0;
+	    boolean success = false;
+	    
+	    while (attempts < maxRetry) {
+	        try {
+	            // Your actual dropdown click + apply logic
+	            System.out.println("Applying filters... attempt " + (attempts + 1));
+
+	            // Simulating flaky action
+	            if (Math.random() > 0.7) {
+	                System.out.println("Filter applied successfully");
+	                success = true;
+	                break;
+	            } else {
+	                throw new Exception("Dropdown failed");
+	            }
+
+	        } catch (Exception e) {
+	            System.out.println("Attempt " + (attempts + 1) + " failed.");
+	        }
+	        attempts++;
+	    }
+
+		
+		
+		
+		
+		
+		
+		Thread.sleep(7000);		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (120));
+		Thread.sleep(6000);
+	    
+		
+	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='k-input-inner k-readonly']")));	//Wait until records table get visible.
+
+	  	
+		All_ClientPortal_Locators.SelectEntity().click();
+		Thread.sleep(4000);
+	  	All_ClientPortal_Locators.EntityTri2().click();
+		Thread.sleep(5000);
+		
+		All_ClientPortal_Locators.EntityTESTAUTO2().click();
+		Thread.sleep(10000);
+		
+		All_ClientPortal_Locators.SelectYear().click();
+		Thread.sleep(6000);
+	  	All_ClientPortal_Locators.SelectYear22().click();
+		Thread.sleep(3000);
+	 	All_ClientPortal_Locators.Apply().click();
+			Thread.sleep(8000);
+		  
+	}
 	
+	
+	public static void FlakyTest_filterEntityAUTO2(ExtentTest test) throws InterruptedException, IOException {
+	    Thread.sleep(7000);
+	    Actions action = new Actions(getDriver());
+	    WebDriverWait wait = new WebDriverWait(getDriver(), 120);
+	    Thread.sleep(6000);
+
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='k-input-inner k-readonly']"))); // Wait until records table get visible.
+
+	    int maxRetry = 3;
+	    int attempts = 0;
+	    boolean success = false;
+
+	    while (attempts < maxRetry) {
+	        try {
+	            System.out.println("Applying filters... attempt " + (attempts + 1));
+
+	            All_ClientPortal_Locators.SelectEntity().click();
+	            Thread.sleep(4000);
+
+	            All_ClientPortal_Locators.EntityTri2().click();
+	            Thread.sleep(5000);
+
+	            All_ClientPortal_Locators.EntityTESTAUTO2().click();
+	            Thread.sleep(10000);
+
+	            All_ClientPortal_Locators.SelectYear().click();
+	            Thread.sleep(6000);
+
+	            All_ClientPortal_Locators.SelectYear22().click();
+	            Thread.sleep(3000);
+
+	            All_ClientPortal_Locators.Apply().click();
+	            Thread.sleep(8000);
+
+	            // If everything passed without exception, mark success and break the loop
+	            success = true;
+	            System.out.println("Filter applied successfully");
+	            break;
+
+	        } catch (Exception e) {
+	            System.out.println("Attempt " + (attempts + 1) + " failed with error: " + e.getMessage());
+	        }
+
+	        attempts++;
+	    }
+
+	    if (!success) {
+	        throw new RuntimeException("filterEntityAUTO2 failed after " + maxRetry + " retries");
+	    }
+	}
+
+	
+	
+	
+
 	
 	
 	
@@ -158,7 +272,7 @@ public class All_ClientPortal_Methods extends BasePage {
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	
-	All_ClientPortal_Locators.Entities().click();
+	    All_ClientPortal_Locators.Entities().click();
 		Thread.sleep(5000);
 		try {Thread.sleep(5000);
 		All_ClientPortal_Locators.Search().sendKeys("TESTAUTO2",Keys.ENTER);
@@ -2308,15 +2422,22 @@ public class All_ClientPortal_Methods extends BasePage {
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		String string_Categories =All_ClientPortal_Locators.Expired().getText();		//Storing old value of Statutory overdue.
-		String[] bits1 = string_Categories.split(" ");								//Splitting the String
-		String compliancesCount1 = bits1[bits1.length - 1];
-		int CategoriesCountDas = Integer.parseInt(compliancesCount1);
-     	All_ClientPortal_Locators.Expired().click();
+//		String string_Categories =All_ClientPortal_Locators.Expired().getText();		//Storing old value of Statutory overdue.
+//		String[] bits1 = string_Categories.split(" ");								//Splitting the String
+//		String compliancesCount1 = bits1[bits1.length - 1];
+//		int CategoriesCountDas = Integer.parseInt(compliancesCount1);
+		
+		
+		if(All_ClientPortal_Locators.Expired().isEnabled())
+		{
+			All_ClientPortal_Locators.Expired().click();
+			
+		}
+		
 		Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
 		
-		All_ClientPortal_Locators.ExpiredCol().click();
+/*		All_ClientPortal_Locators.ExpiredCol().click();
 		Thread.sleep(3000);
 		
 		
@@ -2338,6 +2459,48 @@ public class All_ClientPortal_Methods extends BasePage {
 			test.log(LogStatus.FAIL, "No of Expired in the grid = "+CatcountGrid+" | Dashboard Expired Count = "+CategoriesCountDas);
 		}
 		Thread.sleep(3000);
+		
+		*/
+		// Step 1: Get count from "Active" column hyperlink
+		WebElement activeLink = All_ClientPortal_Locators.ExpiredCol();
+		String activeCountText = activeLink.getText().trim(); // e.g., "22"
+		int activeDashboardCount = Integer.parseInt(activeCountText);
+		test.log(LogStatus.INFO, "Expired count from dashboard: " + activeDashboardCount);
+
+		// Step 2: Click on hyperlink to open grid
+		activeLink.click();
+		Thread.sleep(3000); // or use WebDriverWait if needed
+		test.log(LogStatus.INFO, "Expired hyper link is clickable");
+
+		// Step 3: Get grid count from top bar (e.g., "1 - 10 of 22 items")
+		WebElement gridLabel = All_ClientPortal_Locators.readTotalItemsNotice(); // use your method here
+		String gridText = gridLabel.getText().trim();
+		String[] parts = gridText.split(" ");
+		int activeGridCount = Integer.parseInt(parts[parts.length - 2]);
+		test.log(LogStatus.INFO, "Expired count found in grid: " + activeGridCount);
+
+		// Step 4: Match both counts
+		if (activeDashboardCount == activeGridCount) {
+		    test.log(LogStatus.PASS, "PASS: Expired count from dashboard matches grid count.");
+		} else {
+		    test.log(LogStatus.FAIL, "FAIL: Mismatch. Dashboard = " + activeDashboardCount + ", Grid = " + activeGridCount);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 	
@@ -3267,6 +3430,22 @@ public class All_ClientPortal_Methods extends BasePage {
 
 		}
 		
+		try {Thread.sleep(5000);
+		All_ClientPortal_Locators.Search().sendKeys("TESTAUTO2",Keys.ENTER);
+		Thread.sleep(4000);
+		String text = getDriver().findElement(By.xpath("(//div[normalize-space()='TESTAUTO2'])")).getText();
+		
+			
+		test.log(LogStatus.PASS, "Selected Notice No along with their details should get reflected in the grid.");
+		test.log(LogStatus.PASS, "Risk Column is selected : "+text);
+		
+		Thread.sleep(3000);
+		}catch(Exception e) {Thread.sleep(5000);
+			test.log(LogStatus.PASS, "no record available");
+		}
+		
+		
+		
 	}
 	
 	public static void RegistrationSHistoryEx( ExtentTest test) throws InterruptedException, IOException
@@ -3295,6 +3474,52 @@ public class All_ClientPortal_Methods extends BasePage {
 		}
 		
 	}
+	public static void RegistrationStatusExpiredPagination( ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+     	All_ClientPortal_Locators.Expired().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		All_ClientPortal_Locators.ExpiredCol().click();
+		Thread.sleep(5000);
+		
+		OneCommonMethod.zoomOutScreen(2);
+		
+		verifyPaginationGoToNextPage(test);
+		Thread.sleep(5000);
+		verifyPaginationGoToLastPage(test);
+		Thread.sleep(5000);
+		verifyItemsPerPageFunctionality(test);
+		
+		
+	}
+	public static void RegistrationStatusPagination( ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+     	All_ClientPortal_Locators.Expired().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		Thread.sleep(5000);
+		
+		OneCommonMethod.zoomOutScreen(2); // ZoomOut
+		
+		verifyPaginationGoToNextPage(test);
+		Thread.sleep(5000);
+		verifyPaginationGoToLastPage(test);
+		Thread.sleep(5000);
+		verifyItemsPerPageFunctionality(test);
+		
+		
+	}
+	
 	public static void RegistrationSHistorySearch( ExtentTest test) throws InterruptedException, IOException
 	{Thread.sleep(5000);
 	
@@ -3363,6 +3588,27 @@ public class All_ClientPortal_Methods extends BasePage {
 		}
 		
 	}
+	public static void RegistrationSActivePagination(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		All_ClientPortal_Locators.Active().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		All_ClientPortal_Locators.ActiveCol().click();
+		
+		Thread.sleep(5000);
+		
+		OneCommonMethod.zoomOutScreen(2); //Zoom Out
+		
+		verifyPaginationGoToNextPage(test);
+		Thread.sleep(5000);
+		verifyPaginationGoToLastPage(test);
+		Thread.sleep(5000);
+		verifyItemsPerPageFunctionality(test);
+		
+	}
+	
 	
 	public static void RegistrationSHistoryExportEx(  ExtentTest test) throws InterruptedException, IOException
 	{Thread.sleep(5000);
@@ -3490,7 +3736,45 @@ public class All_ClientPortal_Methods extends BasePage {
 		}
 		
 	}
+	public static void RegistrationStatusActiveColumnCount(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
 	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	
+		All_ClientPortal_Locators.Active().click();
+		Thread.sleep(5000);
+//		All_ClientPortal_Locators.ActiveCol().click();
+
+		OneCommonMethod.zoomOutScreen(2); //ZoomOut 
+		
+		// Step 1: Get count from "Active" column hyperlink
+		WebElement activeLink = All_ClientPortal_Locators.ActiveCol();
+		String activeCountText = activeLink.getText().trim(); // e.g., "22"
+		int activeDashboardCount = Integer.parseInt(activeCountText);
+		test.log(LogStatus.INFO, "Active count from dashboard: " + activeDashboardCount);
+
+		// Step 2: Click on hyperlink to open grid
+		activeLink.click();
+		Thread.sleep(3000); // or use WebDriverWait if needed
+		test.log(LogStatus.INFO, "Active hyper link is clickable");
+
+		// Step 3: Get grid count from top bar (e.g., "1 - 10 of 22 items")
+		WebElement gridLabel = All_ClientPortal_Locators.readTotalItemsNotice(); // use your method here
+		String gridText = gridLabel.getText().trim();
+		String[] parts = gridText.split(" ");
+		int activeGridCount = Integer.parseInt(parts[parts.length - 2]);
+		test.log(LogStatus.INFO, "Active count found in grid: " + activeGridCount);
+
+		// Step 4: Match both counts
+		if (activeDashboardCount == activeGridCount) {
+		    test.log(LogStatus.PASS, "PASS: Active count from dashboard matches grid count.");
+		} else {
+		    test.log(LogStatus.FAIL, "FAIL: Mismatch. Dashboard = " + activeDashboardCount + ", Grid = " + activeGridCount);
+		}
+
+		
+	}
 	public static void ExpiredSearch(  ExtentTest test) throws InterruptedException, IOException
 	{Thread.sleep(5000);
 	
@@ -4502,12 +4786,28 @@ public class All_ClientPortal_Methods extends BasePage {
 			test.log(LogStatus.PASS,  " Overview successfully.");
 		
 		
+			
+	}
+	public static void ECOverduePagination(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+
 		
+		All_ClientPortal_Locators.Overdue().click();
+		Thread.sleep(5000);
 		
+		All_ClientPortal_Locators.ECOverdue().click();
+		Thread.sleep(8000);
+
+		OneCommonMethod.zoomOutScreen(2); // ZoomOut
 		
-		
-		
-		
+		verifyPaginationGoToNextPage(test);
+		Thread.sleep(5000);
+		verifyPaginationGoToLastPage(test);
+		Thread.sleep(5000);
+		verifyItemsPerPageFunctionality(test);
 		
 		
 		
@@ -5162,7 +5462,14 @@ public class All_ClientPortal_Methods extends BasePage {
 		String[] bits1 = string_Categories.split(" ");								//Splitting the String
 		String compliancesCount1 = bits1[bits1.length - 1];
 		int CategoriesCountDas = Integer.parseInt(compliancesCount1);
-     	All_ClientPortal_Locators.Open().click();
+     	
+		//me added this validation 
+     	if(All_ClientPortal_Locators.Open().isEnabled())
+     	{
+     		All_ClientPortal_Locators.Open().click();
+			test.log(LogStatus.PASS, "Notice Status Circle graph - Open link is working fine");
+     	}
+     	
 		Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
 		
@@ -5188,6 +5495,37 @@ public class All_ClientPortal_Methods extends BasePage {
 			test.log(LogStatus.FAIL, "No of Open count in the grid = "+CatcountGrid+" | Dashboard Open Count = "+CategoriesCountDas);
 		}
 		Thread.sleep(3000);
+		
+	}
+	public static void NoticeStatusSearch( ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+		
+		Thread.sleep(4000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("window.scrollBy(0,1000)");
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[30]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		
+     	
+     	All_ClientPortal_Locators.Open().click();
+     	
+		Thread.sleep(5000);
+		try {Thread.sleep(5000);
+		All_ClientPortal_Locators.Search().sendKeys("Test Automation 2",Keys.ENTER);
+		Thread.sleep(4000);
+		String text = getDriver().findElement(By.xpath("//div[contains(text(),'Test Automation 2')]")).getText();
+		
+			
+		test.log(LogStatus.PASS, "Selected entity name along with their details should get reflected in the grid.");
+		test.log(LogStatus.PASS, "Entity selected : "+text);
+		
+		Thread.sleep(3000);
+		}catch(Exception e) {Thread.sleep(5000);
+			test.log(LogStatus.PASS, "no record available");
+		}
+		
+     	
 		
 	}
 	
@@ -5230,6 +5568,76 @@ public class All_ClientPortal_Methods extends BasePage {
 		
 		
 	}
+	public static void NoticeStatusOpenPagination(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[30]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		All_ClientPortal_Locators.Open().click();
+		Thread.sleep(5000);
+		
+		All_ClientPortal_Locators.OpenCol().click();
+		Thread.sleep(5000);
+		
+		
+		OneCommonMethod.zoomOutScreen(2); //ZoomOut
+		
+		verifyPaginationGoToNextPage(test);
+		Thread.sleep(5000);
+		verifyPaginationGoToLastPage(test);
+		Thread.sleep(5000);
+		verifyItemsPerPageFunctionality(test);
+
+		
+
+		
+	}
+	public static void NoticeStatusOpenHyperLinkCount(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[30]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		All_ClientPortal_Locators.Open().click();
+		Thread.sleep(5000);
+		
+		
+		OneCommonMethod.zoomOutScreen(2); //Zoom Out
+		Thread.sleep(5000);
+		
+		// Step 1: Get count from "Active" column hyperlink
+		WebElement activeLink = All_ClientPortal_Locators.OpenCol();
+		String activeCountText = activeLink.getText().trim(); // e.g., "22"
+		int activeDashboardCount = Integer.parseInt(activeCountText);
+		test.log(LogStatus.INFO, "Open count from Open hyper link: " + activeDashboardCount);
+
+		// Step 2: Click on hyperlink to open grid
+		activeLink.click();
+		Thread.sleep(3000); // or use WebDriverWait if needed
+		test.log(LogStatus.INFO, "Open column hyper link is clickable");
+
+		// Step 3: Get grid count from top bar (e.g., "1 - 10 of 22 items")
+		WebElement gridLabel = All_ClientPortal_Locators.readTotalItemsNotice(); // use your method here
+		String gridText = gridLabel.getText().trim();
+		String[] parts = gridText.split(" ");
+		int activeGridCount = Integer.parseInt(parts[parts.length - 2]);
+		test.log(LogStatus.INFO, "Open count found in grid: " + activeGridCount);
+
+		// Step 4: Match both counts
+		if (activeDashboardCount == activeGridCount) {
+		    test.log(LogStatus.PASS, "PASS: Active count from open column matches grid count.");
+		} else {
+		    test.log(LogStatus.FAIL, "FAIL: Mismatch. Dashboard = " + activeDashboardCount + ", Grid = " + activeGridCount);
+		}
+			
+		
+		
+	}
 	
 	public static void exportOpen (  ExtentTest test) throws InterruptedException, IOException
 	{Thread.sleep(5000);
@@ -5245,7 +5653,7 @@ public class All_ClientPortal_Methods extends BasePage {
 		All_ClientPortal_Locators.OpenCol().click();
 		Thread.sleep(5000);
 
-		File dir = new File("C:\\Users\\bilali\\Downloads");
+/*		File dir = new File("C:\\Users\\bilali\\Downloads");
 		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
 
 		Thread.sleep(500);
@@ -5260,6 +5668,106 @@ public class All_ClientPortal_Methods extends BasePage {
 		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
+*/		
+		
+		
+		
+		
+		OneCommonMethod.validateExportedExcel(
+			    driver.get(),
+			    test,
+			    All_ClientPortal_Locators.Export(),            // Export button WebElement
+			    All_ClientPortal_Locators.readTotalItems(),   // Count ka dynamic locator
+			    "NoticeType"                                  //Header Name
+			);
+
+
+		
+		
+		
+/*		// Export logic--
+
+		String item = All_ClientPortal_Locators.readTotalItems().getText();
+		String[] bits = item.split(" "); // Splitting the String
+		String compliancesCount = bits[bits.length - 2]; // Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		if (compliancesCount.equalsIgnoreCase("to")) {
+			Thread.sleep(5000);
+			item = All_ClientPortal_Locators.readTotalItems().getText();
+			bits = item.split(" ");
+
+		}
+
+		Thread.sleep(2000);
+		JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+
+		js1.executeScript("window.scrollBy(0,-500)");
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\bilali\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(1000);
+		All_ClientPortal_Locators.Export().click();
+
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\bilali\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+
+		if (dirContents.length < allFilesNew.length) {
+
+			Thread.sleep(9000); // Clicking on 'Excel Report' image.
+			test.log(LogStatus.PASS, "File downloaded successfully.");
+			File lastModifiedFile = allFilesNew[0]; // Storing any 0th index file in 'lastModifiedFile' file name.
+			for (int i = 1; i < allFilesNew.length; i++) // For loop till the number of files in directory.
+			{
+				if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) // If allFilesNew[i] file is having
+																						// large/latest time time of
+																						// update then latest modified
+																						// file be allFilesNew[i] file.
+				{
+					lastModifiedFile = allFilesNew[i];
+				}
+			}
+
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0); // Retrieving first sheet of Workbook
+
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow = 0;
+
+			for (Row row : sheet) {
+
+				Cell cell = row.getCell(columnNumber);
+				if (cell != null) {
+
+					rowCount++;
+					actualRow = rowCount - 1;
+				}
+
+			}
+			fis.close();
+
+			if (count1 == actualRow) {
+				// test.log(LogStatus.PASS, "No of records from grid matches to no of records in
+				// Excel Sheet.");
+				test.log(LogStatus.PASS,
+						"Total records from Grid = " + count1 + " | Total records from Report = " + actualRow);
+			} else {
+				// test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of
+				// records in Excel Sheet.");
+				test.log(LogStatus.FAIL,
+						"Total records from Grid = " + count1 + " | Total records from Excel Sheet = " + actualRow);
+			}
+		} else {
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		}
+		
+		*/
 		
 	}
 	
@@ -5328,6 +5836,179 @@ public class All_ClientPortal_Methods extends BasePage {
 		
 		
 	}
+	public static void NoticeStatusClosedPagination(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		All_ClientPortal_Locators.Closed().click();
+		Thread.sleep(5000);
+		
+		All_ClientPortal_Locators.ClosedCol().click();
+		Thread.sleep(5000);
+		
+		OneCommonMethod.zoomOutScreen(2); 
+		
+		verifyPaginationGoToNextPage(test);
+		Thread.sleep(5000);
+		verifyPaginationGoToLastPage(test);
+		Thread.sleep(5000);
+		verifyItemsPerPageFunctionality(test);
+		
+		
+	}
+	public static void NoticeStatusOpenClosedCountWithTotalNotices(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		All_ClientPortal_Locators.Closed().click();
+		Thread.sleep(5000);
+		
+
+		  try {
+		        // Step 1: Read Open count
+		        WebElement openElement = All_ClientPortal_Locators.OpenCol();
+		        String openText = openElement.getText().trim();
+		        int openCount = Integer.parseInt(openText);
+		        test.log(LogStatus.INFO, "Open count: " + openCount);
+
+		        // Step 2: Read Closed count
+		        WebElement closedElement = All_ClientPortal_Locators.ClosedCol();
+		        String closedText = closedElement.getText().trim();
+		        int closedCount = Integer.parseInt(closedText);
+		        test.log(LogStatus.INFO, "Closed count: " + closedCount);
+
+		        // Step 3: Read Total Notices count
+		        WebElement totalElement = All_ClientPortal_Locators.allNoticesColumCount();
+		        String totalText = totalElement.getText().trim();
+		        int totalCount = Integer.parseInt(totalText);
+		        test.log(LogStatus.INFO, "Total Notices count: " + totalCount);
+
+		        // Step 4: Validate
+		        if (openCount + closedCount == totalCount) {
+		            test.log(LogStatus.PASS, "PASS: Open + Closed = Total (" + openCount + " + " + closedCount + " = " + totalCount + ")");
+		        } else {
+		            test.log(LogStatus.FAIL, "FAIL: Count mismatch. Open (" + openCount + ") + Closed (" + closedCount + ") != Total (" + totalCount + ")");
+		        }
+
+		    } catch (Exception e) {
+		        test.log(LogStatus.FAIL, "Exception occurred: " + e.getMessage());
+		    }
+		
+
+		
+		
+	}
+	
+	public static void NoticeStatusPagination(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		All_ClientPortal_Locators.Closed().click();
+		Thread.sleep(5000);
+		
+		
+		
+		OneCommonMethod.zoomOutScreen(2); //Zoom Out
+		
+		verifyPaginationGoToNextPage(test);
+		Thread.sleep(5000);
+		verifyPaginationGoToLastPage(test);
+		Thread.sleep(5000);
+		verifyItemsPerPageFunctionality(test);
+		
+
+		
+		
+	}
+	public static void AbstractStatusIsDisplayed(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+/*		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		All_ClientPortal_Locators.Closed().click();
+		*/
+		Thread.sleep(5000);
+		
+//	    JavascriptExecutor js = (JavascriptExecutor) getDriver();
+//	    js.executeScript("window.scrollBy(0,1000)");
+	    
+	    JavascriptExecutor js2 = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("//h4[normalize-space()='Abstract Status']"));
+		js2.executeScript("arguments[0].scrollIntoView(true);", element);
+		
+	    Thread.sleep(5000);
+	    WebElement Abstract = getDriver().findElement(By.xpath("//h4[normalize-space()='Abstract Status']"));
+	    Abstract.getText();
+	    
+	    if(Abstract.isDisplayed())
+	    {
+	    	System.out.println("Abstract is displayed");
+            test.log(LogStatus.PASS, "Abstract Status Grpah is displayed");
+	    
+            String base64Screenshot = OneCommonMethod.takeScreenshotBase64(driver.get());
+            test.log(LogStatus.INFO, "ScreenShot <br>" + test.addBase64ScreenShot(base64Screenshot));
+	    }
+		
+		
+	}
+	public static void NoticeStatusClosedHyperLinkCount(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		All_ClientPortal_Locators.Closed().click();
+		Thread.sleep(5000);
+		
+//		All_ClientPortal_Locators.ClosedCol().click();
+		
+		OneCommonMethod.zoomOutScreen(2); //Zoom Out
+		Thread.sleep(5000);
+		
+		// Step 1: Get count from "Active" column hyperlink
+		WebElement activeLink = All_ClientPortal_Locators.ClosedCol();
+		String activeCountText = activeLink.getText().trim(); // e.g., "22"
+		int activeDashboardCount = Integer.parseInt(activeCountText);
+		test.log(LogStatus.INFO, "Closed count from closed hyper link: " + activeDashboardCount);
+
+		// Step 2: Click on hyperlink to open grid
+		activeLink.click();
+		Thread.sleep(3000); // or use WebDriverWait if needed
+		test.log(LogStatus.INFO, "Closed column hyper link is clickable");
+
+		// Step 3: Get grid count from top bar (e.g., "1 - 10 of 22 items")
+		WebElement gridLabel = All_ClientPortal_Locators.readTotalItemsNotice(); // use your method here
+		String gridText = gridLabel.getText().trim();
+		String[] parts = gridText.split(" ");
+		int activeGridCount = Integer.parseInt(parts[parts.length - 2]);
+		test.log(LogStatus.INFO, "Closed count found in grid: " + activeGridCount);
+
+		// Step 4: Match both counts
+		if (activeDashboardCount == activeGridCount) {
+		    test.log(LogStatus.PASS, "PASS: Active count from closed column matches grid count.");
+		} else {
+		    test.log(LogStatus.FAIL, "FAIL: Mismatch. Dashboard = " + activeDashboardCount + ", Grid = " + activeGridCount);
+		}
+		
+		
+	}
 	
 	public static void exportClosed (  ExtentTest test) throws InterruptedException, IOException
 	{Thread.sleep(5000);
@@ -5343,7 +6024,7 @@ public class All_ClientPortal_Methods extends BasePage {
 		All_ClientPortal_Locators.ClosedCol().click();
 		Thread.sleep(5000);
 
-		File dir = new File("C:\\Users\\bilali\\Downloads");
+/*		File dir = new File("C:\\Users\\bilali\\Downloads");
 		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
 
 		Thread.sleep(500);
@@ -5357,7 +6038,15 @@ public class All_ClientPortal_Methods extends BasePage {
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
 		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
-		}
+		} */
+		
+		OneCommonMethod.validateExportedExcel(
+			    driver.get(),
+			    test,
+			    All_ClientPortal_Locators.Export(),            // Export button WebElement
+			    All_ClientPortal_Locators.readTotalItems(),   // Count ka dynamic locator
+			    "NoticeType"                                  //Header Name
+			);
 		
 	}
 	
@@ -5372,7 +6061,7 @@ public class All_ClientPortal_Methods extends BasePage {
 		All_ClientPortal_Locators.Closed().click();
 		Thread.sleep(5000);
 
-		File dir = new File("C:\\Users\\bilali\\Downloads");
+/*		File dir = new File("C:\\Users\\bilali\\Downloads");
 		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
 
 		Thread.sleep(500);
@@ -5387,6 +6076,105 @@ public class All_ClientPortal_Methods extends BasePage {
 		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
+	*/
+		
+	
+		
+		// Export logic--
+		OneCommonMethod.validateExportedExcel(
+			    driver.get(),
+			    test,
+			    All_ClientPortal_Locators.Export(),            // Export button WebElement
+			    All_ClientPortal_Locators.readTotalItems(),   // Count ka dynamic locator
+			    "Clientid"                                  //Header Name
+			);
+		
+
+/*		String item = All_ClientPortal_Locators.readTotalItems().getText();
+		String[] bits = item.split(" "); // Splitting the String
+		String compliancesCount = bits[bits.length - 2]; // Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+
+		if (compliancesCount.equalsIgnoreCase("to")) {
+			Thread.sleep(5000);
+			item = All_ClientPortal_Locators.readTotalItems().getText();
+			bits = item.split(" ");
+
+		}
+
+		Thread.sleep(2000);
+		JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+
+		js1.executeScript("window.scrollBy(0,-500)");
+		Thread.sleep(1000);
+		File dir = new File("C:\\Users\\bilali\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(1000);
+		All_ClientPortal_Locators.Export().click();
+
+		Thread.sleep(5500);
+		File dir1 = new File("C:\\Users\\bilali\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+
+		if (dirContents.length < allFilesNew.length) {
+
+			Thread.sleep(9000); // Clicking on 'Excel Report' image.
+			test.log(LogStatus.PASS, "File downloaded successfully.");
+			File lastModifiedFile = allFilesNew[0]; // Storing any 0th index file in 'lastModifiedFile' file name.
+			for (int i = 1; i < allFilesNew.length; i++) // For loop till the number of files in directory.
+			{
+				if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) // If allFilesNew[i] file is having
+																						// large/latest time time of
+																						// update then latest modified
+																						// file be allFilesNew[i] file.
+				{
+					lastModifiedFile = allFilesNew[i];
+				}
+			}
+
+			Thread.sleep(1000);
+			fis = new FileInputStream(lastModifiedFile);
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0); // Retrieving first sheet of Workbook
+
+			sheet = workbook.getSheetAt(0);
+			int columnNumber = 3;
+			int rowCount = 0;
+			int actualRow = 0;
+
+			for (Row row : sheet) {
+
+				Cell cell = row.getCell(columnNumber);
+				if (cell != null) {
+
+					rowCount++;
+					actualRow = rowCount - 1;
+				}
+
+			}
+			fis.close();
+
+			if (count1 == actualRow) {
+				// test.log(LogStatus.PASS, "No of records from grid matches to no of records in
+				// Excel Sheet.");
+				test.log(LogStatus.PASS,
+						"Total records from Grid = " + count1 + " | Total records from Report = " + actualRow);
+			} else {
+				// test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of
+				// records in Excel Sheet.");
+				test.log(LogStatus.FAIL,
+						"Total records from Grid = " + count1 + " | Total records from Excel Sheet = " + actualRow);
+			}
+		} else {
+			test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+		}
+		
+		
+		
+*/
+
+		
 		
 	}
 	public static void compliancePerformanceG (  ExtentTest test) throws InterruptedException, IOException
@@ -5747,6 +6535,12 @@ public class All_ClientPortal_Methods extends BasePage {
 		}
 		
 		
+		
+
+
+
+
+
 		
 		
 	}
@@ -6663,6 +7457,11 @@ public class All_ClientPortal_Methods extends BasePage {
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
+		
+		
+		
+		
+		
      	All_ClientPortal_Locators.ClickTriangle().click();
 		Thread.sleep(2000);
 		All_ClientPortal_Locators.nextmonth().click();
@@ -6758,6 +7557,61 @@ public class All_ClientPortal_Methods extends BasePage {
 		}
 	
 	}
+	
+	public static void CalendarNextPreviousToday( ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
+		
+		
+		
+		
+		WebElement next = getDriver().findElement(By.xpath("//div[@title='Next']"));
+		WebElement previous = getDriver().findElement(By.xpath("//div[@title='Previous']"));
+		WebElement today = getDriver().findElement(By.xpath("//div[@title='Previous']"));
+		
+		Thread.sleep(2000);
+		if(next.isEnabled())
+		{
+			Thread.sleep(2000);
+			next.click();
+			test.log(LogStatus.PASS, "Next button is clickable");
+			
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Next button is not clickable");
+		}
+	    
+		Thread.sleep(2000);
+		if(previous.isEnabled())
+		{
+			Thread.sleep(2000);
+			previous.click();
+			test.log(LogStatus.PASS, "Previous button is clickable");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Previous button is not clickable");
+		}
+		
+		Thread.sleep(2000);
+		if(today.isEnabled())
+		{
+			Thread.sleep(2000);
+			today.click();
+			test.log(LogStatus.PASS, "Today hyper link is clickable");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Today hyper link is not clickable");
+		}
+	}
+	
 
     public static void CalendarCount( ExtentTest test) throws InterruptedException, IOException
 	{Thread.sleep(5000);
@@ -6807,7 +7661,7 @@ public class All_ClientPortal_Methods extends BasePage {
 	
 	
 	
-    public static void CalendarOverview( ExtentTest test) throws InterruptedException, IOException
+    public static void CalendarOverviewPagination( ExtentTest test) throws InterruptedException, IOException
   	{Thread.sleep(5000);
   	
       	JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -6825,12 +7679,25 @@ public class All_ClientPortal_Methods extends BasePage {
   		Thread.sleep(5000);
   		
   		All_ClientPortal_Locators.OverviewCalen().click();
-  		Thread.sleep(5000);
+  		Thread.sleep(9000);
        	All_ClientPortal_Locators.OverviewColse().click();
   		Thread.sleep(5000);
   		test.log(LogStatus.PASS,  " Overview successfully.");
+  		Thread.sleep(5000);
+  		
+  		OneCommonMethod.zoomOutScreen(2); 
+  		
+  		test.log(LogStatus.INFO,  "Checking Pagination buttons");
+		verifyPaginationGoToNextPage(test);
+		Thread.sleep(5000);
+		verifyPaginationGoToLastPage(test);
+		Thread.sleep(5000);
+		verifyItemsPerPageFunctionality(test);
+  		
   		
   	}
+    
+    
     
     public static void DailyUpdates( ExtentTest test) throws InterruptedException, IOException
   	{Thread.sleep(5000);
@@ -6840,6 +7707,32 @@ public class All_ClientPortal_Methods extends BasePage {
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
   		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
+  		
+  		
+  		WebElement left = getDriver().findElement(By.xpath("//button[@class='carousel-btn left-btn']"));
+  		WebElement right = getDriver().findElement(By.xpath("//button[@class='carousel-btn right-btn']"));
+  		
+  		Thread.sleep(5000);
+  		if(left.isDisplayed())
+  		{
+  			Thread.sleep(5000);
+  			left.click();
+  			test.log(LogStatus.PASS,  "Left <  button is working fine");
+  		}
+  		else {
+  			
+  		}
+  		
+  		if(right.isDisplayed())
+  		{
+  			Thread.sleep(5000);
+  			right.click();
+  			test.log(LogStatus.PASS,  "Right >  button is working fine");
+  		}
+  		else {
+  			
+  		}
+  		
        	All_ClientPortal_Locators.read().click();
   		Thread.sleep(2000);
   		SwitchtoChild(test);

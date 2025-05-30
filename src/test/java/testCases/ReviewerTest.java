@@ -21,6 +21,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import distributor.Methods;
 import distributor.MethodsD;
 import login.BasePage;
 import login.LoginLocators;
@@ -65,13 +66,13 @@ public class ReviewerTest extends BasePage {
 	
 	}
 	
-	/*
+	
 	   @Test(priority = 1)
 		void ComplianceBox() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Count by Clicking on 'Compliance'");
 			
-			Methods.complianceBox(test,"Reviewer");
+			MethodsD.complianceBox(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -82,7 +83,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on 'Upcoming'");
 			
-			Methods.UpcomingBox(test,"Reviewer");
+			MethodsD.UpcomingBox(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -93,7 +94,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on 'Overdue'");
 			
-			Methods.OverdueBox(test,"Reviewer");
+			MethodsD.OverdueBox(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -104,7 +105,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on 'Pending Action'");
 			
-			Methods.PendingActionBox(test,"Reviewer");
+			MethodsD.PendingActionBox(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -115,13 +116,13 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on 'Pending Review'");
 			
-			Methods.PendingReviewBox(test,"Reviewer");
+			MethodsD.PendingReviewBox(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-		*/
-		@Test(priority = 6)
+		
+//		@Test(priority = 6)
 		void PendingReviewAction() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Action Review from pending Review'");

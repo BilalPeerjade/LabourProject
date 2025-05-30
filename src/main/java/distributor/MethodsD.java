@@ -9,13 +9,17 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -38,6 +42,8 @@ import clientPortal.All_ClientPortal_Locators;
 import login.BasePage;
 import login.LoginLocators;
 import performer.LocatorsP;
+import performer.PerformerLocator;
+import rcp.OneCommonMethod;
 
 
 public class MethodsD extends BasePage {
@@ -52,7 +58,7 @@ public class MethodsD extends BasePage {
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -156,6 +162,249 @@ else {
 	
 }
 	
+	public static void NotCompliedCheck( ExtentTest test, String user) throws InterruptedException, IOException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO2");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+	//	LoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
+		Thread.sleep(2000);
+	//	LoginLocators.Search().sendKeys("WWKRG");		
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.DashboardArrow()));
+		LoginLocators.DashboardArrow().click();
+		Thread.sleep(9000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.ComplianceBox()));
+		Thread.sleep(5000);
+		LoginLocators.SelectPeriodDashboard().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectPeriodValue1().click();
+		Thread.sleep(9000);
+		
+		getDriver().findElement(By.xpath("//span[normalize-space()='Not Complied']")).click();
+		Thread.sleep(5000);
+		WebElement notCompliedred = getDriver().findElement(By.xpath("//div[@class='card']//app-cd-performance-summary//div//div//div//div[@role='graphics-document document']//*[name()='svg']//*[name()='g']//*[name()='g']//*[name()='g']//*[name()='g' and contains(@class,'k-chart-po')]//*[name()='path']"));
+		
+		notCompliedred.click();
+		notCompliedred.click();
+		Thread.sleep(10000);
+	
+	
+}
+
+	public static void EntitiesSearch( ExtentTest test, String user) throws InterruptedException, IOException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");
+			test.log(LogStatus.PASS, "Entity Search is working fine");
+			
+		}
+		
+		
+		
+		
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+}
+	
+	public static void CompanyLogo( ExtentTest test, String user) throws InterruptedException, IOException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+/*		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");
+			test.log(LogStatus.PASS, "Entity Search is working fine");
+			
+		}
+		
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		*/
+        WebElement ExpandIcon = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/SidebarToggleoff.svg']"));
+        ExpandIcon.click();
+        
+        Thread.sleep(5000);
+        String LogoTeamLease = getDriver().findElement(By.xpath("//img[@alt='TeamLease Logo']")).getText();
+        WebElement LogoTeamL = getDriver().findElement(By.xpath("//img[@alt='TeamLease Logo']"));
+        
+        System.out.println(LogoTeamLease);
+        
+        if(LogoTeamL.isDisplayed())
+        {
+        	test.log(LogStatus.PASS,"'Team Lease RegTech Helping India Comply' Logo is displayed successfully");
+        }
+        else
+        {
+        	test.log(LogStatus.FAIL,"Logo is not displayed");
+        }
+        
+        String base64Screenshot = OneCommonMethod.takeScreenshotBase64(driver.get());
+        test.log(LogStatus.INFO, "ScreenShot <br>" + test.addBase64ScreenShot(base64Screenshot));
+		
+	
+}
+	public static void Logout( ExtentTest test, String user) throws InterruptedException, IOException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+
+		LoginLocators.profileButtonLogout().click();
+		Thread.sleep(3000);
+		
+		getDriver().findElement(By.xpath("//li[@title='Logout']")).click();
+		Thread.sleep(3000);
+		WebElement Singin = getDriver().findElement(By.xpath("//input[@id='Submit']"));
+		Thread.sleep(3000);
+		if (Singin.isDisplayed() )
+		{
+			test.log(LogStatus.PASS,"Logout link is working fine");
+			
+			String base64Screenshot = OneCommonMethod.takeScreenshotBase64(driver.get());
+	        test.log(LogStatus.INFO, "ScreenShot <br>" + test.addBase64ScreenShot(base64Screenshot));
+		}
+		else
+		{
+			test.log(LogStatus.FAIL,"Logout link is not working");
+		}
+		
+	
+}
+	public static void ChangePass( ExtentTest test, String user) throws InterruptedException, IOException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+
+		LoginLocators.profileButtonLogout().click();
+		Thread.sleep(3000);
+		
+		getDriver().findElement(By.xpath("//li[@title='Change Password']")).click();
+		Thread.sleep(3000);
+		
+		getDriver().findElement(By.xpath("//a[normalize-space()='Click here to go back']")).click();
+		
+		WebElement corporatebtn = getDriver().findElement(By.xpath("//button[normalize-space()='Corporate']"));
+		
+		if(corporatebtn.isDisplayed())
+		{
+			test.log(LogStatus.PASS,"'Click here to go back' link is working fine");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL,"'Click here to go back' link is not working");
+		}
+	
+}
+	public static void EntityExcelDownload( ExtentTest test, String user) throws InterruptedException, IOException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+
+		
+		OneCommonMethod.zoomOutScreen(2); //Zoom Out
+		
+		test.log(LogStatus.INFO,"Checking Entity Location download");
+		
+		OneCommonMethod.validateFileDownload(
+			    driver.get(),
+			    test,
+			    LoginLocators.EntityLocation_ExcelFile()  // ✅ WebElement passed
+			);
+		
+		Thread.sleep(5000);
+		test.log(LogStatus.INFO,"Now Checking Entity Excel download");
+		
+		OneCommonMethod.validateExportedExcel(
+			    driver.get(),
+			    test,
+			    LoginLocators.Entity_ExcelFile(),            // Export button WebElement
+			    LoginLocators.TotalNumberOfItem(),   // Count ka dynamic locator
+			    "CORPID"                                  //Header Name
+			);
+	
+		
+
+
+		
+}
+	public static void PortalLogin( ExtentTest test, String user) throws InterruptedException, IOException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO2");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+
+		
+		getDriver().findElement(By.xpath("//img[@title='Portal Login']")).click();
+		Thread.sleep(4000);
+		getDriver().findElement(By.xpath("//img[@title='Sign In']")).click();
+		
+		Thread.sleep(4000);
+		WebElement clientPortalElement = getDriver().findElement(By.xpath("//h4[normalize-space()='Compliance Performance']"));
+		Thread.sleep(8000);
+		if(clientPortalElement.isDisplayed())
+		{
+			test.log(LogStatus.PASS,"Portal Login & Sign In buttons are working fine");
+			Thread.sleep(1300);
+			test.log(LogStatus.PASS,"User is redirected to client portal successfully");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL,"User is not redirected to client portal");
+		}
+}
+
 	public static void GridAndExcelCountMatch(ExtentTest test,XSSFWorkbook workbook  ) throws InterruptedException, IOException
 	{
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -823,7 +1072,7 @@ else
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -902,7 +1151,7 @@ else
 JavascriptExecutor jse=(JavascriptExecutor) getDriver();
 jse.executeScript("arguments[0].click();", ViewButton);
 	Thread.sleep(4000);
-	test.log(LogStatus.PASS, "overView Successfully");
+	test.log(LogStatus.PASS, "Overview button successfully");
 	Thread.sleep(9000);
 	LoginLocators.CloseDocument().click();
 	Thread.sleep(3000);	
@@ -945,7 +1194,7 @@ else {
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -1073,7 +1322,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -1092,7 +1341,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.SelectPeriodDashboard()));
 		LoginLocators.SelectPeriodDashboard().click();
 		Thread.sleep(2000);
-		LoginLocators.SelectPeriodValue1().click();
+		LoginLocators.SelectPeriodValue2024().click();
 		Thread.sleep(9000);
 	int open = Integer.parseInt(LoginLocators.PendingActionBox().getText());	//Reading Dashboard count.
 	LoginLocators.PendingActionBox().click();					                //Clicking on Dashboard count
@@ -1194,7 +1443,7 @@ else {
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -1202,7 +1451,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 	//	LoginLocators.Search().sendKeys("WWKRG");
 		//LoginLocatorsLoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
@@ -1213,7 +1462,7 @@ else {
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.SelectPeriodDashboard()));
 		LoginLocators.SelectPeriodDashboard().click();
 		Thread.sleep(2000);
-		LoginLocators.SelectPeriodValue1().click();
+		LoginLocators.SelectPeriodValue2024().click();
 		Thread.sleep(9000);
 	int open = Integer.parseInt(LoginLocators.PendingReviewBox().getText());	//Reading Dashboard count.
 	LoginLocators.PendingReviewBox().click();					                //Clicking on Dashboard count
@@ -1315,7 +1564,7 @@ else {
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -2680,7 +2929,7 @@ else {
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -2699,7 +2948,8 @@ else {
 		Thread.sleep(9000);
 		LoginLocators.SelectPeriodDashboard().click();
 		Thread.sleep(2000);
-		LoginLocators.SelectPeriodValue1().click();
+//		LoginLocators.SelectPeriodValue1().click();
+		LoginLocators.SelectPeriodValue2024().click();
 		Thread.sleep(9000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	    
@@ -2802,7 +3052,7 @@ JavascriptExecutor jse=(JavascriptExecutor) getDriver();
 jse.executeScript("arguments[0].click();", ViewButton);
 	Thread.sleep(4000);
 	test.log(LogStatus.PASS, "overView Successfully");
-	Thread.sleep(2000);
+	Thread.sleep(7000);
 	LoginLocators.CloseDocument().click();
 	 By locate = By.xpath("//div//img[@class='svg-icon ng-star-inserted']");
 
@@ -2903,7 +3153,7 @@ else {
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.DashboardArrow()));
 		LoginLocators.DashboardArrow().click();
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		LoginLocators.SelectPeriodDashboard().click();
 		Thread.sleep(2000);
 		LoginLocators.SelectPeriodValue().click();
@@ -3246,7 +3496,7 @@ else {
 		Thread.sleep(3000);	
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -3344,7 +3594,7 @@ else {
 					
 					if(i==0)
 					{
-						if(text.get(l).equalsIgnoreCase("Itanagar_www")||text.get(l).equalsIgnoreCase("www"))
+						if(text.get(l).equalsIgnoreCase("Mohali_Branch Punjab")||text.get(l).equalsIgnoreCase("Branch Punjab"))
 						{
 						  pass.add(text.get(l));
 						}
@@ -3404,7 +3654,7 @@ else {
 		Thread.sleep(5000);	
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -3432,9 +3682,9 @@ else {
        Thread.sleep(3000);
        LoginLocators.ExpandBranchn().click();
        Thread.sleep(3000);
-       String branch =LoginLocators.Branchvaluen().getText();
+       String branch =LoginLocators.BranchvalueCheckbox().getText();
        Thread.sleep(2000);
-       LoginLocators.Branchvaluen().click();
+       LoginLocators.BranchvalueCheckbox().click();
        Thread.sleep(2000);
        LoginLocators.ApplyBtn1().click();
        Thread.sleep(2000);
@@ -3489,7 +3739,7 @@ else {
 					
 					if(i==0)
 					{
-						if(text.get(l).equalsIgnoreCase("Jayanagar III Block_TTTT")||text.get(l).equalsIgnoreCase("TTTT"))
+						if(text.get(l).equalsIgnoreCase("Jayanagar III Block_TTTT")||text.get(l).equalsIgnoreCase("PUN Branch"))
 						{
 						  pass.add(text.get(l));
 						}
@@ -3548,7 +3798,7 @@ else {
 		Thread.sleep(3000);	
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -3574,11 +3824,11 @@ else {
 	   
         LoginLocators.SelectBranch().click();
        Thread.sleep(3000);
-       LoginLocators.ExpandBranch().click();
+       LoginLocators.ExpandBranchSecond().click();
        Thread.sleep(3000);
-       String branch =LoginLocators.Branchvalues().getText();
+       String branch =LoginLocators.BranchvalueCheckbox().getText();
        Thread.sleep(2000);
-       LoginLocators.Branchvalues().click();
+       LoginLocators.BranchvalueCheckbox().click();
        Thread.sleep(2000);
        LoginLocators.ApplyBtn1().click();
        Thread.sleep(2000);
@@ -3633,7 +3883,7 @@ else {
 					
 					if(i==0)
 					{
-						if(text.get(l).equalsIgnoreCase("Pune_tcs in hinjewadi")||text.get(l).equalsIgnoreCase("tcs in hinjewadi"))
+						if(text.get(l).equalsIgnoreCase("Branch Punjab")||text.get(l).equalsIgnoreCase("tcs in hinjewadi"))
 						{
 						  pass.add(text.get(l));
 						}
@@ -3693,7 +3943,7 @@ else {
 		Thread.sleep(3000);	
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -3711,18 +3961,18 @@ else {
 		Thread.sleep(9000);
 		LoginLocators.SelectPeriodDashboard().click();
 		Thread.sleep(2000);
-		LoginLocators.SelectPeriodValue1().click();
+		LoginLocators.SelectPeriodValue2024().click();
 		Thread.sleep(9000);
 		LoginLocators.PendingActionBox().click();				                
         Thread.sleep(2000);
 	   
         LoginLocators.SelectBranch().click();
        Thread.sleep(3000);
-       LoginLocators.ExpandBranch().click();
+       LoginLocators.ExpandBranchSecond().click();
        Thread.sleep(3000);
-       String branch =LoginLocators.Branchvalue().getText();
+       String branch =LoginLocators.BranchvalueCheckbox().getText();
        Thread.sleep(2000);
-       LoginLocators.Branchvalue().click();
+       LoginLocators.BranchvalueCheckbox().click();
        Thread.sleep(2000);
        LoginLocators.ApplyBtn1().click();
        Thread.sleep(2000);
@@ -3777,7 +4027,7 @@ else {
 					
 					if(i==0)
 					{
-						if(text.get(l).equalsIgnoreCase("Gujarat_Branch Gujarat")||text.get(l).equalsIgnoreCase("Branch Gujarat"))
+						if(text.get(l).equalsIgnoreCase("Branch Punjab")||text.get(l).equalsIgnoreCase("Branch Gujarat"))
 						{
 						  pass.add(text.get(l));
 						}
@@ -3829,6 +4079,216 @@ else {
 		
 	}
 
+	//Bilal
+	public static void CompliedChecking(ExtentTest test,String user) throws InterruptedException, IOException
+	{
+	
+
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+	//	LoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
+	//	LoginLocators.Search().sendKeys("WWKRG");
+
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.DashboardArrow()));
+		LoginLocators.DashboardArrow().click();
+		Thread.sleep(9000);
+		LoginLocators.SelectPeriodDashboard().click();
+		Thread.sleep(2000);
+//		LoginLocators.SelectPeriodValue1().click();
+		LoginLocators.SelectPeriodValue2024().click();
+		Thread.sleep(9000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	    
+	    js.executeScript("window.scrollBy(0,300)");
+	    Thread.sleep(2000);
+		int open = Integer.parseInt(LoginLocators.CompliedCount().getText());	//Reading Dashboard count.
+		Thread.sleep(2000);
+		//LoginLocators.Complied().getText();
+	//	Thread.sleep(2000);		
+		String path = "//*[local-name()='svg']//*[name()='g' and @class='k-chart-point']";
+		 List<WebElement> PathNC = getDriver().findElements(By.xpath(path));
+		Actions action = new Actions(getDriver());
+		for(WebElement e : PathNC)
+		{
+			action.moveToElement(e).click().build().perform();
+		}
+			try {	
+				LoginLocators.PenActnClosePopup().click();	
+				Thread.sleep(2000);
+		Thread.sleep(2000);
+			}
+			catch(Exception e) {
+				
+			}
+		
+   			
+	String item = LoginLocators.TotalNumberOfItems().getText();
+	String[] bits = item.split(" ");								//Splitting the String
+	String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+	int count1 = Integer.parseInt(compliancesCount);
+	String s = LoginLocators.TotalNumberOfItems().getText();
+	Thread.sleep(1000);
+	if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+	Thread.sleep(4000);
+	
+	if(count1 == open)
+				
+	{
+					
+	//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+					
+	test.log(LogStatus.PASS, "Complied Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+				
+	}
+				
+	else
+				
+	{
+					
+	//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+					
+	test.log(LogStatus.FAIL, "Complied Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+				
+	}
+	try {
+		LoginLocators.PenActnClosePopup().click();	
+    	Thread.sleep(4000);
+	}
+	catch(Exception e) {
+		
+	}
+	
+	LoginLocators.BrachCode().click();
+	Thread.sleep(3000);
+	LoginLocators.type().click();
+	Thread.sleep(3000);
+	try {
+	LoginLocators.typeValue().click();
+	}
+	catch(Exception e)
+	{
+		LoginLocators.typeValueEPF().click();
+	}
+	Thread.sleep(3000);
+//	LoginLocators.SelectValue().click();
+//	Thread.sleep(3000);
+//	LoginLocators.SelectValueDropdown().click();
+//	Thread.sleep(3000);
+	LoginLocators.ApplyBtn().click();
+	Thread.sleep(3000);
+	//LoginLocators.displayedrecord().getText();
+	Thread.sleep(3000);	
+	LoginLocators.ClearBtn().click();
+	Thread.sleep(3000);	
+	test.log(LogStatus.PASS, "Branch Code Filters working Properly");
+	LoginLocators.CloseBranchCode().click();
+    JavascriptExecutor jss = (JavascriptExecutor) getDriver();
+    
+    jss.executeScript("window.scrollBy(0,-1000)");
+    Thread.sleep(2000);
+    MethodsD.GridAndExcelCountMatch(test,workbook);
+	Thread.sleep(3000);
+	By locator = By.className("svg-icon");
+
+	wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+	Thread.sleep(4000);
+	WebElement ViewButton = getDriver().findElement(locator);	
+	Thread.sleep(3000);
+JavascriptExecutor jse=(JavascriptExecutor) getDriver();
+jse.executeScript("arguments[0].click();", ViewButton);
+	Thread.sleep(4000);
+	test.log(LogStatus.PASS, "overView Successfully");
+	Thread.sleep(2000);
+	LoginLocators.CloseDocument().click();
+	 By locate = By.xpath("//div//img[@class='svg-icon ng-star-inserted']");
+
+		wait.until(ExpectedConditions.presenceOfElementLocated(locate));
+		Thread.sleep(4000);
+		// retrieving "foo-button" HTML element
+		List<WebElement> downloadbtn = getDriver().findElements(locate);	
+		Thread.sleep(3000);
+		downloadbtn.get(2).click();
+		Thread.sleep(3000);
+		try {
+			wait.until(ExpectedConditions.visibilityOf(LoginLocators.Download()));
+
+		
+		try {
+			LoginLocators.Download().click();			
+		 	Thread.sleep(2000);
+			String msg = LoginLocators.MessageDisplayed().getText();	
+			test.log(LogStatus.FAIL, msg);
+			LoginLocators.OK().click();
+									
+		}
+		catch(Exception e) {
+			Thread.sleep(3000);
+			File dir2 = new File("C:\\Users\\bilali\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download			
+			Thread.sleep(9000);			
+			LoginLocators.Download().click();			
+		 	Thread.sleep(18000);
+			File dir3 = new File("C:\\Users\\bilali\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download		   
+	        Thread.sleep(9000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "Doc Downloaded.");
+			}
+		   else
+		   {
+			   
+				test.log(LogStatus.FAIL, "Doc does not Downloaded");
+			}		
+		   Thread.sleep(5000);
+			}
+		}
+		catch(Exception e) {
+			
+			test.log(LogStatus.PASS, "Doc not present to download");
+
+		}
+		finally {
+			LoginLocators.CloseBranchCode().click();
+			Thread.sleep(3000);
+		}		
+		View(test);	
+	Thread.sleep(3000);
+	try {
+		LoginLocators.ClosePopUp1().click();
+	Thread.sleep(3000);
+	}
+	catch(Exception e) {
+		
+		LoginLocators.ClosePopUp2().click();
+		Thread.sleep(3000);
+	}	
+	
+	}
+	
+else {
+		
+		test.log(LogStatus.PASS, "Complied Count from grid is 0");
+
+		}
+	
+	
+}
+	
+	
 	public static void PendingReviewFilter( ExtentTest test,String user) throws InterruptedException
 	{
 		
@@ -3837,7 +4297,7 @@ else {
 		Thread.sleep(3000);	
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -3855,18 +4315,21 @@ else {
 		Thread.sleep(9000);
 		LoginLocators.SelectPeriodDashboard().click();
 		Thread.sleep(2000);
-		LoginLocators.SelectPeriodValue1().click();
+		LoginLocators.SelectPeriodValue2024().click();
 		Thread.sleep(9000);
 		LoginLocators.PendingReviewBox().click();				                
-        Thread.sleep(2000);
+        Thread.sleep(5000);
 	   
-        LoginLocators.SelectBranch().click();
+       LoginLocators.SelectBranch().click();
        Thread.sleep(3000);
-       LoginLocators.ExpandBranch().click();
+       
+       
        Thread.sleep(3000);
-       String branch =LoginLocators.Branchvalue().getText();
+//     LoginLocators.ExpandBranch().click();
+       Thread.sleep(3000);
+     String branch =LoginLocators.ExpandAllclick().getText(); //clicking to All 
        Thread.sleep(2000);
-       LoginLocators.Branchvalue().click();
+      LoginLocators.ExpandAllclick().click();
        Thread.sleep(2000);
        LoginLocators.ApplyBtn1().click();
        Thread.sleep(2000);
@@ -3921,7 +4384,7 @@ else {
 					
 					if(i==0)
 					{
-						if(text.get(l).equalsIgnoreCase("Gujarat_Branch Gujarat")||text.get(l).equalsIgnoreCase("Branch Gujarat"))
+						if(text.get(l).equalsIgnoreCase("Test Automation 2")||text.get(l).equalsIgnoreCase("Branch Gujarat"))
 						{
 						  pass.add(text.get(l));
 						}
@@ -5256,7 +5719,7 @@ else {
 		Thread.sleep(3000);	
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -5271,9 +5734,9 @@ else {
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.DashboardArrow()));
 		LoginLocators.DashboardArrow().click();
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		LoginLocators.SelectPeriodDashboard().click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		LoginLocators.SelectPeriodValue1().click();
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();		
@@ -5287,8 +5750,8 @@ else {
 		{
 			action.moveToElement(e).click().build().perform();
 		}
-		Thread.sleep(2000);
-		LoginLocators.PenActnClosePopup().click();	
+		Thread.sleep(9000);
+//		LoginLocators.PenActnClosePopup().click();	
      	Thread.sleep(4000);
 //		LoginLocators.Complied().click();				                
       Thread.sleep(2000);
@@ -5297,9 +5760,9 @@ else {
       Thread.sleep(3000);
       LoginLocators.ExpandBranchh().click();
       Thread.sleep(3000);
-      String branch =LoginLocators.Branchval().getText();
+      String branch =LoginLocators.BranchPune_BranchPune().getText();
       Thread.sleep(2000);
-      LoginLocators.Branchval().click();
+      LoginLocators.BranchPune_BranchPune().click();
       Thread.sleep(2000);
        
        LoginLocators.Period().click();
@@ -5370,7 +5833,7 @@ else {
 					
 					if(i==0)
 					{
-						if(text.get(l).equalsIgnoreCase("guntur_ooooooooo")||text.get(l).equalsIgnoreCase("ooooooooo"))
+						if(text.get(l).equalsIgnoreCase("Branch Pune")||text.get(l).equalsIgnoreCase("ooooooooo"))
 						{
 						  pass.add(text.get(l));
 						}
@@ -5420,6 +5883,8 @@ else {
 		}else {
 			test.log(LogStatus.PASS,"No records found");	
 		}
+		
+		
 		
 	}
 	
@@ -6316,6 +6781,242 @@ else {
 		
 		 
 	}
+	
+	public static void StaturyDocuPT( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+	
+
+
+	//	WebDriverWait wait1 = new WebDriverWait(getDriver(), Duration.ofMinutes(2)); // 2 minutes
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(2000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(2000);
+		
+		PerformerLocator.clickStatutoryDoc().click();
+		Thread.sleep(2000);
+		PerformerLocator.clickComplianceType().click();
+		Thread.sleep(2000);
+		PerformerLocator.selectComplianceChallan().click();
+		Thread.sleep(2000);
+		PerformerLocator.clickAct2().click();
+		Thread.sleep(2000);
+		PerformerLocator.selectComplianceType4().click();
+		Thread.sleep(2000);
+		PerformerLocator.clickYear().click();
+		Thread.sleep(2000);
+		PerformerLocator.selectComplianceType1().click();
+		Thread.sleep(2000);
+		PerformerLocator.clickPeriod().click();
+		Thread.sleep(2000);
+		PerformerLocator.selectMonth().click();
+		
+		
+		Thread.sleep(2000);
+		PerformerLocator.clickBranch1().click();
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("//span[contains(text(),'Gujarat')]")).click();
+		Thread.sleep(2000);
+		PerformerLocator.clickApply().click();
+		Thread.sleep(2000);
+//		getDriver().findElement(By.xpath("(//img[@title='Download'])[1]")).click();
+		Thread.sleep(2000);
+//		getDriver().findElement(By.xpath("(//img[@title='Download'])[1]")).click(); 
+		Thread.sleep(2000);
+		
+		
+	//This code is for validate PT Gross Total	
+		try {
+	        // Step 1: Pre-download file count
+	        File downloadDir = new File("C:\\Users\\bilali\\Downloads");
+	        File[] beforeDownload = downloadDir.listFiles();
+
+	        // Step 2: Click Download Button
+//	        All_ClientPortal_Locators.DownloadBtn().click();
+	        getDriver().findElement(By.xpath("(//img[@title='Download'])[1]")).click();
+	        Thread.sleep(4000);
+	        getDriver().findElement(By.xpath("(//img[@alt='Download Document'])[1]")).click();
+	        Thread.sleep(10000); // Wait for download
+
+	        // Step 3: Post-download file count & detect new file
+	        File[] afterDownload = downloadDir.listFiles();
+	        File latestFile = null;
+	        long lastModifiedTime = Long.MIN_VALUE;
+
+	        for (File file : afterDownload) {
+	            boolean isNew = true;
+	            for (File oldFile : beforeDownload) {
+	                if (file.getName().equals(oldFile.getName()) && file.lastModified() == oldFile.lastModified()) {
+	                    isNew = false;
+	                    break;
+	                }
+	            }
+	            if (isNew && file.getName().endsWith(".xlsx") && file.lastModified() > lastModifiedTime) {
+	                latestFile = file;
+	                lastModifiedTime = file.lastModified();
+	            }
+	        }
+
+	        // Step 4: Download check
+	        if (latestFile != null) {
+	            test.log(LogStatus.PASS, "File downloaded successfully: " + latestFile.getName());
+	        } else {
+	            test.log(LogStatus.FAIL, "File not downloaded.");
+	            return;
+	        }
+
+	        // Step 5: Excel validation logic
+	        FileInputStream fis = new FileInputStream(latestFile);
+	        Workbook workbook = WorkbookFactory.create(fis);
+	        Sheet sheet = workbook.getSheet("PTChallan");
+
+	        double calculatedSum = 0;
+	        double expectedTotal = 0;
+
+	        for (Row row : sheet) {
+	            Cell cellA = row.getCell(0);
+	            if (cellA != null && cellA.getCellType() == CellType.STRING &&
+	                cellA.getStringCellValue().trim().equalsIgnoreCase("Total")) {
+
+	                Cell totalCell = row.getCell(6); // Column G
+	                if (totalCell != null && totalCell.getCellType() == CellType.NUMERIC) {
+	                    expectedTotal = totalCell.getNumericCellValue();
+	                }
+	                break;
+	            }
+
+	            Cell salaryCell = row.getCell(6); // Column G
+	            if (salaryCell != null && salaryCell.getCellType() == CellType.NUMERIC) {
+	                calculatedSum += salaryCell.getNumericCellValue();
+	            }
+	        }
+
+	        workbook.close();
+	        fis.close();
+
+	        // Step 6: Final report log
+	        if (calculatedSum == expectedTotal) {
+	            test.log(LogStatus.PASS, "PT Challan Amount Match ✅ - Calculated: " + calculatedSum + ", Expected: " + expectedTotal);
+	        } else {
+	            test.log(LogStatus.FAIL, "PT Challan Amount Mismatch ❌ - Calculated: " + calculatedSum + ", Expected: " + expectedTotal);
+	        }
+
+	    } catch (Exception e) {
+	        test.log(LogStatus.ERROR, "Exception: " + e.getMessage());
+	        e.printStackTrace();
+	    }
+		
+		
+	
+	
+//This code is for validte Genders Male and Female only but it is not working properly		
+		
+/*		// Step 1: Pre-download file count
+		File downloadDir = new File("C:\\Users\\bilali\\Downloads");
+		File[] beforeDownload = downloadDir.listFiles();
+
+		// Step 2: Click to Download
+		getDriver().findElement(By.xpath("(//img[@title='Download'])[1]")).click();
+		Thread.sleep(4000);
+		getDriver().findElement(By.xpath("(//img[@alt='Download Document'])[1]")).click();
+		Thread.sleep(10000); // Wait for download
+
+		// Step 3: Post-download file detect
+		File[] afterDownload = downloadDir.listFiles();
+		File latestFile = null;
+		long lastMod = Long.MIN_VALUE;
+		for (File file : afterDownload) {
+		    if (file.lastModified() > lastMod && !file.isDirectory() && file.getName().endsWith(".xlsx")) {
+		        latestFile = file;
+		        lastMod = file.lastModified();
+		    }
+		}
+
+		if (latestFile == null) {
+		    test.log(LogStatus.FAIL, "❌ Downloaded file not found.");
+		    return;
+		} else {
+		    test.log(LogStatus.PASS, "✅ File downloaded successfully: " + latestFile.getName());
+		}
+
+		// Step 4: Validate Gender Values
+		FileInputStream fis = new FileInputStream(latestFile);
+		Workbook workbook = new XSSFWorkbook(fis);
+		Sheet sheet = workbook.getSheetAt(0);
+
+		List<String> invalidGenders = new ArrayList<>();
+
+		// Auto-detect Gender column by header name
+		int genderColumnIndex = -1;
+		Row headerRow = sheet.getRow(0);
+		if (headerRow != null) {
+		    for (Cell cell : headerRow) {
+		        if (cell != null && cell.getCellType() == CellType.STRING) {
+		            String header = cell.getStringCellValue().trim();
+		            if (header.equalsIgnoreCase("Gender")) {
+		                genderColumnIndex = cell.getColumnIndex();
+		                break;
+		            }
+		        }
+		    }
+		}
+
+		if (genderColumnIndex == -1) {
+		    workbook.close();
+		    fis.close();
+		    test.log(LogStatus.FAIL, "❌ 'Gender' column not found in the sheet.");
+		    return;
+		}
+
+		// Validate gender values
+		for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+		    Row row = sheet.getRow(i);
+		    if (row != null) {
+		        Cell genderCell = row.getCell(genderColumnIndex);
+		        if (genderCell != null) {
+		            genderCell.setCellType(CellType.STRING);
+		            String gender = genderCell.getStringCellValue().trim();
+		            if (!gender.equalsIgnoreCase("Male") && !gender.equalsIgnoreCase("Female")) {
+		                invalidGenders.add("Row " + (i + 1) + ": " + gender);
+		            }
+		        } else {
+		            invalidGenders.add("Row " + (i + 1) + ": (Empty)");
+		        }
+		    }
+		}
+
+		workbook.close();
+		fis.close();
+
+		if (invalidGenders.isEmpty()) {
+		    test.log(LogStatus.PASS, "✅ All gender values are valid (Male/Female only).");
+		} else {
+		    test.log(LogStatus.FAIL, "❌ Invalid Gender values found:<br>" + String.join("<br>", invalidGenders));
+		}
+
+	*/
+	
+	
+		
+	}
+	
 	
 	
 	public static void Salary( ExtentTest test, String user) throws InterruptedException, IOException, AWTException

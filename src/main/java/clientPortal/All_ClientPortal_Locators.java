@@ -597,6 +597,28 @@ public class All_ClientPortal_Locators extends BasePage {
 		return clients;
 	}
 	
+	public static WebElement allNoticesColumCount() {
+	    List<By> locators = Arrays.asList(
+	        By.xpath("//td[5]"),
+	        By.cssSelector(".k-table-td.k-touch-action-auto.ng-star-inserted[data-kendo-grid-column-index='4']"),
+	        By.xpath("//*[@id=\"k-32a65902-4259-4f10-9bfd-5d120dcb0e71\"]/kendo-grid-list/div/div[1]/table/tbody/tr/td[5]")     );
+
+	    for (By locator : locators) {
+	        try {
+	            WebElement element = getDriver().findElement(locator);
+	            if (element != null && element.isDisplayed()) {
+	                return element; // 🎯 Element found, return it immediately
+	            }
+	        } catch (Exception e) {
+	            // Locator not found, try next one
+	        }
+	    }
+	    System.out.println("❌ Element not found using any locator.");
+	    return null; // All locators failed
+	}
+	
+	
+	
 	public static WebElement DownloadBtn( )		
 	{
 		clients = getDriver().findElement(By.xpath("(//img[@title='Download'])[2]"));

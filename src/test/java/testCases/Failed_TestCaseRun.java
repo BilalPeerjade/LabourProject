@@ -337,16 +337,7 @@ import org.openqa.selenium.chrome.ChromeOptions; //Headless mode
 			extent.flush();
 		}
 		
-		@Test(priority = 106) 
-		void CalendarOverview() throws InterruptedException, IOException
-		{
-			test = extent.startTest("'My Compliance Calendar - Overview button working or not?");
-			All_ClientPortal_Methods.filterEntity(test);
-			All_ClientPortal_Methods.CalendarOverview(test);
-			
-			extent.endTest(test);
-			extent.flush();
-		}
+
 		
 		
 		

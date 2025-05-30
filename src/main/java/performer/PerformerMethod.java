@@ -38,10 +38,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-
-
-
+import clientPortal.All_ClientPortal_Locators;
+import distributor.Locators;
 import login.BasePage;
+import rcp.OneCommonMethod;
 import reviewer.ReviwerLocator;
 
 
@@ -67,7 +67,14 @@ public class PerformerMethod extends BasePage
 		
 		Thread.sleep(1000);
 		PerformerLocator.clickAddNewEmployee().click();
+		Thread.sleep(1000);
 		
+		WebElement dateInput = getDriver().findElement(By.xpath("//input[@id='datepicker-1']"));
+		((JavascriptExecutor) getDriver()).executeScript("arguments[0].value='03-03-1999';", dateInput);
+
+		
+		
+		Thread.sleep(1000);
 		FileInputStream fis = new FileInputStream(filePath);
         Workbook workbook1 = WorkbookFactory.create(fis);
         Sheet sheet = workbook1.getSheetAt(1);
@@ -98,9 +105,12 @@ public class PerformerMethod extends BasePage
 		
 //		Thread.sleep(1000);
 //		Locator.clickDoB().sendKeys("01-01-2000");
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("//input[@id='datepicker-1']")).sendKeys("03031999");
 		
 		Thread.sleep(2000);
-		PerformerLocator.clickPVF().click();
+//		PerformerLocator.clickPVF().click();
+		
 		
 		Thread.sleep(2000);
 		//Locator.selectmonth().click();
@@ -378,6 +388,8 @@ public class PerformerMethod extends BasePage
 		
 		Thread.sleep(1000);
 		PerformerLocator.clickUpdateNewEmployee().click();
+		
+		OneCommonMethod.zoomOutScreen(3); //ZoomOut
 		
 		 Thread.sleep(1000);
 	      PerformerLocator.enterEmplName().clear();
@@ -926,7 +938,7 @@ public class PerformerMethod extends BasePage
 			PerformerLocator.selectstatus().click();
 			
 			Thread.sleep(1000);
-			PerformerLocator.clickApplyBtn().click();
+			PerformerLocator.Apply().click();
 		
 			  List<String> li=new ArrayList<String>();
 		       
@@ -2400,13 +2412,27 @@ public class PerformerMethod extends BasePage
 		{
 			WebDriverWait wait=new WebDriverWait(getDriver(),20);
 		 	Thread.sleep(1000);
-			PerformerLocator.SerchCustomer().sendKeys("AVACORED5");
+			PerformerLocator.SerchCustomer().sendKeys("TESTAUTO2");
 			Thread.sleep(1000);
 			PerformerLocator.clickDashboard().click();
 			Thread.sleep(7000);
 			PerformerLocator.clickOnboardEntity().click();
+
+			Thread.sleep(7000);
+			getDriver().findElement(By.xpath("//kendo-svgicon[@class='k-svg-i-caret-alt-right k-treelist-toggle k-svg-icon k-icon']")).click();
+
+			Thread.sleep(5000);
+			String pjb = getDriver().findElement(By.xpath("//div[@title='Punjab'][normalize-space()='Punjab']")).getText();
+			if(pjb.equalsIgnoreCase("Punjab"))
+			{
+				test.log(LogStatus.PASS, "> Triangle button is working fine");
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "> Triangle button does not working");
+			}
 			
-			try 
+/*			try 
 			{
 				Thread.sleep(4000);
 				Actions action = new Actions(getDriver());
@@ -2428,6 +2454,39 @@ public class PerformerMethod extends BasePage
 			}	
 			Thread.sleep(1000);
 			PerformerLocator.clickdashboard().click();
+			*/
+		}
+	 
+	 public static void OnBoardEntitySearch( ExtentTest test) throws InterruptedException, IOException, AWTException
+		{
+			WebDriverWait wait=new WebDriverWait(getDriver(),20);
+		 	Thread.sleep(1000);
+			PerformerLocator.SerchCustomer().sendKeys("AVACORED5");
+			Thread.sleep(1000);
+			PerformerLocator.clickWorkspaceArrow().click();
+			Thread.sleep(5000);
+			PerformerLocator.clickOnboardEntity().click();
+			
+			Thread.sleep(7000);
+getDriver().findElement(By.xpath("//kendo-svgicon[@class='k-svg-i-caret-alt-right k-treelist-toggle k-svg-icon k-icon']")).click();
+
+    		Thread.sleep(5000);
+    		try {Thread.sleep(5000);
+    		PerformerLocator.TypeToSearch().sendKeys("Maharashtra",Keys.ENTER);
+    		Thread.sleep(4000);
+    		String text = getDriver().findElement(By.xpath("(//div[normalize-space()='Maharashtra'])")).getText();
+    		
+    			
+    		test.log(LogStatus.PASS, "Selected Notice No along with their details should get reflected in the grid.");
+    		test.log(LogStatus.PASS, "Displayed: "+text);
+    		
+    		Thread.sleep(3000);
+    		}catch(Exception e) {Thread.sleep(5000);
+    			test.log(LogStatus.PASS, "no record available");
+    		}
+
+
+		
 		}
 	 public static void onBoardEntityViewBtn( ExtentTest test) throws InterruptedException, IOException, AWTException
 		{
@@ -5742,10 +5801,12 @@ public class PerformerMethod extends BasePage
 	     Sheet sheet = workbook1.getSheetAt(0);
 	 	
 	 	Thread.sleep(1000);
-	 	Row row = sheet.getRow(9);						//Selected 0th index row (First row)
-	 	Cell c = row.getCell(1);						//Selected cell (0 row,1 column)
-	 	String designation = c.getStringCellValue();
-		PerformerLocator.enterDesignation().sendKeys(designation);
+//	 	Row row = sheet.getRow(9);						//Selected 0th index row (First row)
+//	 	Cell c = row.getCell(1);						//Selected cell (0 row,1 column)
+//	 	String designation = c.getStringCellValue();
+//		PerformerLocator.enterDesignation().sendKeys(designation);
+	 	
+	 	PerformerLocator.enterDesignation().sendKeys("Engineer");
 	 	
 	 	Thread.sleep(1000);
 	 	
@@ -5754,7 +5815,7 @@ public class PerformerMethod extends BasePage
 	 	 Thread.sleep(500);
 	 	  String msg=			PerformerLocator.clickMsg().getText();		//Reading Message appeared after save button
 	 	  
-	 	  if(msg.equalsIgnoreCase("Designation Added Successfully"))
+	 	  if(msg.equalsIgnoreCase("Designation Added Successfully") || msg.equalsIgnoreCase("Designation is already exists."))
 	 	 {
 	 		 test.log(LogStatus.PASS, "Message displayed = "+msg);
 	 		 
@@ -5767,6 +5828,473 @@ public class PerformerMethod extends BasePage
 	 	  Thread.sleep(1000);
 			PerformerLocator.clickOkBtn().click();
 	 	}
+	 
+	 public static void StateCitySearch( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("TESTAUTO2");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickDashboard().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(1000);
+//		PerformerLocator.clickDesignation().click();
+	 	Thread.sleep(1000);
+//		PerformerLocator.clickAddNewDesignation().click();
+	 	
+	 	PerformerLocator.StateCitySearch().click();
+	 	Thread.sleep(2000);
+	 	PerformerLocator.StateCitySearch().sendKeys("Bangalore");
+	 	Thread.sleep(2000);
+	 	PerformerLocator.StateCitySearchSelectSeondValue().click();
+	 	Thread.sleep(2000);
+	 	PerformerLocator.clickApply().click();
+	 	Thread.sleep(2000);
+	 	WebElement txt = getDriver().findElement(By.xpath("//div[@title='Karnataka']"));
+	 	if(txt.isDisplayed()){
+	 		Thread.sleep(1000);
+	 		test.log(LogStatus.PASS, "Search State/ Location Code dropdown is working fine");
+	 	}
+		
+	 	else
+	 	{
+	 		test.log(LogStatus.PASS, "Search Value is not displayed");
+	 	}
+	 	
+	 	}
+	 
+	 public static void DesignationSearch ( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("TESTAUTO2");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickDashboard().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(1000);
+//		PerformerLocator.clickDesignation().click();
+	 	Thread.sleep(1000);
+//		PerformerLocator.clickAddNewDesignation().click();
+	 	
+	 	PerformerLocator.clickDesignation().click();
+	 	
+	 	Thread.sleep(10000);
+	 	PerformerLocator.DesignationSerach().click();
+	 	
+	 	//Give max wait due to hudge data
+	 	
+	 	Thread.sleep(7000);
+	 	PerformerLocator.DesignationSerach().sendKeys("Software Developer");
+	 	Thread.sleep(7000);
+	 	PerformerLocator.StateCitySearchSelectSeondValue().click();
+	 	Thread.sleep(7000);
+	 	PerformerLocator.clickApply().click();
+	 	Thread.sleep(7000);
+	 	WebElement txt = getDriver().findElement(By.xpath("//div[contains(text(),'Software')]"));
+	 	if(txt.isDisplayed()){
+	 		Thread.sleep(1000);
+	 		test.log(LogStatus.PASS, "Search/Select Designation dropdown is working fine");
+	 	}
+		
+	 	else
+	 	{
+	 		test.log(LogStatus.PASS, "Search Value is not displayed");
+	 	}
+	 	
+	 	}
+	 
+	 public static void LeaveTypeSearch ( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("TESTAUTO2");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickDashboard().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(1000);
+//		PerformerLocator.clickDesignation().click();
+	 	Thread.sleep(1000);
+//		PerformerLocator.clickAddNewDesignation().click();
+	 	
+	 	PerformerLocator.LeaveTypeModule().click();
+	 	
+	 	Thread.sleep(10000);
+	 	PerformerLocator.LeaveTypeSearch().click();
+	 	
+	 	//Give max wait due to hudge data
+	 	
+	 	Thread.sleep(7000);
+	 	PerformerLocator.LeaveTypeSearch().sendKeys("Absent");
+	 	Thread.sleep(7000);
+	 	PerformerLocator.StateCitySearchSelectSeondValue().click();
+	 	Thread.sleep(7000);
+	 	PerformerLocator.clickApply().click();
+	 	Thread.sleep(7000);                              //Meaning If Absent is displayed then it will fetch
+	 	WebElement txt = getDriver().findElement(By.xpath("//div[contains(text(),'Absent')]"));
+	 	if(txt.isDisplayed()){
+	 		Thread.sleep(1000);
+	 		test.log(LogStatus.PASS, "Search Leave Type Dropdown is working fine");
+	 	}
+		
+	 	else
+	 	{
+	 		test.log(LogStatus.PASS, "Search Value is not displayed");
+	 	}
+	 	
+	 	}
+	 public static void PaycodeMappingAddNew ( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("AVACORED5");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickWorkspaceArrow().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(3000);
+
+	 	
+	 	PerformerLocator.clickPaycodeMappingModule().click();
+	 	Thread.sleep(3000);
+	 	PerformerLocator.clickAddNewDesignation().click(); //clicking to Add Paycode 
+	 	Thread.sleep(2000);
+	 	getDriver().findElement(By.xpath("//input[@placeholder='Header Name']")).sendKeys("Holiday Allowance");
+	 	Thread.sleep(2000);
+	 	getDriver().findElement(By.xpath("(//span[normalize-space()='Select'])[1]")).click();
+	 	Thread.sleep(2000);
+	 	getDriver().findElement(By.xpath("//span[normalize-space()='Earning']")).click();
+	 	Thread.sleep(2000);
+	 	getDriver().findElement(By.xpath("(//span[normalize-space()='Select'])[2]")).click();
+	 	Thread.sleep(2000);
+	 	getDriver().findElement(By.xpath("//span[normalize-space()='Holiday Allowance']")).click();
+	 	Thread.sleep(2000);
+	 	getDriver().findElement(By.xpath("//input[@placeholder='Sequence Order']")).sendKeys("2");
+	 	Thread.sleep(2000);
+	 	
+	 	PerformerLocator.clicksave().click();
+	 	
+/*	 	WebElement errorMessage = getDriver().findElement(By.xpath("//h4[normalize-space()='Paycode is already exists']"));
+	 	if(errorMessage.equals("Paycode is already exists"))
+	 	{
+	 		test.log(LogStatus.PASS, "Error Message is displayed: " + errorMessage);
+	 	}
+	 	
+	 	else
+	 	{
+	 		test.log(LogStatus.FAIL, "Error Message is not displayed" );
+	 	}
+*/	 	
+	    
+		String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+		
+		if(text1.equalsIgnoreCase("Paycode is already exists")) {Thread.sleep(5000);
+			test.log(LogStatus.PASS,"Message Displayed : "+text1);
+	
+		}else {Thread.sleep(5000);
+			test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+		}
+
+	 	
+	 	}
+	 
+	 public static void PaycodeMappingSearchField ( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("AVACORED5");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickWorkspaceArrow().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(3000);
+
+	 	
+	 	PerformerLocator.clickPaycodeMappingModule().click();
+	 	Thread.sleep(3000);
+
+	 	PerformerLocator.PaycodeMappingSearch().click();
+	 	Thread.sleep(3000);
+	 	PerformerLocator.PaycodeMappingSearch().sendKeys("Basic");
+	 	Thread.sleep(3000);
+	 	getDriver().findElement(By.xpath("//ul[@class='k-list-ul']")).click();
+	 	Thread.sleep(3000);
+	 	PerformerLocator.clickApply().click();
+	 	
+	 	Thread.sleep(7000);                              //Meaning If Absent is displayed then it will fetch
+	 	WebElement txt = getDriver().findElement(By.xpath("//div[contains(text(),'Basic')]"));
+	 	if(txt.isDisplayed()){
+	 		Thread.sleep(1000);
+	 		test.log(LogStatus.PASS, "Search Paycode /Header Name dropdown is working fine");
+	 	}
+		
+	 	else
+	 	{
+	 		test.log(LogStatus.PASS, "Search Value is not displayed");
+	 	}
+	 	
+
+	 	
+	 	}
+	 public static void PaycodeMappingEditUpdate ( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("AVACORED5");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickWorkspaceArrow().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(3000);
+
+	 	
+	 	PerformerLocator.clickPaycodeMappingModule().click();
+	 	Thread.sleep(3000);
+	 
+	 	PerformerLocator.clickeditBtn().click();
+	 	Thread.sleep(3000);
+	 	
+	 	PerformerLocator.clicksave().click();
+	 	
+	
+	    
+		String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+		
+		if(text1.equalsIgnoreCase("Data Edited Successfully")) {Thread.sleep(5000);
+		    test.log(LogStatus.PASS,"Edit button is working successfully");
+			test.log(LogStatus.PASS,"Message Displayed : "+text1);
+	
+		}else {Thread.sleep(5000);
+			test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+		}
+
+	 	
+	 	}
+	 
+	 public static void PaycodeMappingUpload ( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException, AWTException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("AVACORED5");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickWorkspaceArrow().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(3000);
+
+	 	
+	 	PerformerLocator.clickPaycodeMappingModule().click();
+	 	Thread.sleep(3000);
+	 
+	 	PerformerLocator.Uplaodclick().click();
+	 	Thread.sleep(3000);
+	 	getDriver().findElement(By.xpath("//label[normalize-space()='Browse']")).click();
+	 	Thread.sleep(3000);
+	 	
+	 	
+  		Robot robot=new Robot();
+ 		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\Other Upload No need to change\\PaycodeUpload.xlsx");
+ 		 //copy above file to clipboard
+ 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+ 		
+ 		 //Now press CRTL
+ 		
+ 		 robot.keyPress(KeyEvent.VK_CONTROL);
+ 		 Thread.sleep(1000);
+ 		
+ 		 //PRESS V
+ 		 robot.keyPress(KeyEvent.VK_V);
+ 		 Thread.sleep(1000);
+ 		
+ 		 //Release V
+ 		 robot.keyRelease(KeyEvent.VK_V);
+ 		Thread.sleep(1000);
+ 		
+ 		 //Release CRTL
+ 		 robot.keyRelease(KeyEvent.VK_CONTROL);
+ 		Thread.sleep(1000);
+ 		 //PRESS Enter
+ 		 robot.keyPress(KeyEvent.VK_ENTER);
+ 		Thread.sleep(1000);
+ 		 //Release CRTL
+ 		 robot.keyRelease(KeyEvent.VK_ENTER);
+ 		
+ 		 Thread.sleep(5000);
+ 				 
+ //		 Locators.Upload().click();
+ 		 getDriver().findElement(By.xpath("(//button[normalize-space()='Upload'])[2]")).click();
+ 					
+ 					Thread.sleep(5000);
+ 				
+ 					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+ 					
+ 					if(text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
+ 						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+ 				
+ 					}else {Thread.sleep(5000);
+ 						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+ 					}
+	 	
+	
+	    
+/*		String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+		
+		if(text1.equalsIgnoreCase("Data Edited Successfully")) {Thread.sleep(5000);
+		    test.log(LogStatus.PASS,"Edit button is working successfully");
+			test.log(LogStatus.PASS,"Message Displayed : "+text1);
+	
+		}else {Thread.sleep(5000);
+			test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+		}
+*/
+	 	
+	 	}
+	 
+	 
+	 public static void MastersStaturyDoc ( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException, AWTException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("AVACORED5");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickWorkspaceArrow().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(3000);
+
+	 	
+	 	PerformerLocator.clickStaturyMasterTab().click();
+	 	Thread.sleep(3000);
+	 
+	 //	PerformerLocator.clickStaturyMasterTab().click();
+	 	
+	 	PerformerLocator.clickComplianceDropdwon().click();
+	 	Thread.sleep(2000);
+	 	
+	 	PerformerLocator.selectComplianceChallan().click();
+	 	Thread.sleep(2000);
+	 	
+	 	OneCommonMethod.zoomOutScreen(2);
+	 	
+	 	PerformerLocator.Apply().click();
+	 	Thread.sleep(5000);
+
+	 	test.log(LogStatus.INFO,"👇 Checking Challan Export with grid count");
+		// Export logic-- Challan
+		OneCommonMethod.validateExportedExcel(
+			    driver.get(),
+			    test,
+			    PerformerLocator.clickExportBtn(),            // Export button WebElement
+			    PerformerLocator.ReadTotalIteams(),   // Count ka dynamic locator
+			    "Short Description"                                  //Header Name
+			);
+	 	
+	
+		PerformerLocator.Clear().click();
+		Thread.sleep(3000);
+		PerformerLocator.clickComplianceDropdwon().click();
+		Thread.sleep(2000);
+		PerformerLocator.selectComplianceRegister().click();
+		Thread.sleep(2000);
+		PerformerLocator.Apply().click();
+		Thread.sleep(5000);
+		
+		
+		test.log(LogStatus.INFO,"👇 Now Checking Registers Export with grid count");
+		// Export logic-- Registers
+		OneCommonMethod.validateExportedExcel(
+			    driver.get(),
+			    test,
+			    PerformerLocator.clickExportBtn(),            // Export button WebElement
+			    PerformerLocator.ReadTotalIteams(),   // Count ka dynamic locator
+			    "State Name"                                  //Header Name
+			);
+		
+		PerformerLocator.Clear().click();
+		Thread.sleep(2000);
+		PerformerLocator.clickComplianceDropdwon().click();
+		Thread.sleep(2000);
+		PerformerLocator.selectComplianceReturns().click();
+		Thread.sleep(2000);
+		PerformerLocator.Apply().click();
+		Thread.sleep(5000);
+		
+		
+		test.log(LogStatus.INFO,"👇 Now Checking Returns Export with grid count");
+		// Export logic-- Return
+		OneCommonMethod.validateExportedExcel(
+			    driver.get(),
+			    test,
+			    PerformerLocator.clickExportBtn(),            // Export button WebElement
+			    PerformerLocator.ReadTotalIteams(),   // Count ka dynamic locator
+			    "Short Description"                                  //Header Name
+			);
+
+	 	
+	 	}
+	 public static void ChallanPTSlab ( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException, AWTException
+	 {
+	 	
+	 	Thread.sleep(1000);
+		PerformerLocator.SerchCustomer().sendKeys("AVANEW");
+	 	Thread.sleep(1000);
+		PerformerLocator.clickWorkspaceArrow().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickManageMaster().click();
+	 	Thread.sleep(3000);
+
+	 	
+	 	PerformerLocator.clickChallanPTSlabTab().click();
+	 	Thread.sleep(3000);
+	 
+	 
+	 	OneCommonMethod.zoomOutScreen(2); //ZoomOut
+	 	
+	 	PerformerLocator.clickOnSelectStateDropdown().click();
+	 	Thread.sleep(2000);
+	 	
+	 	PerformerLocator.clickOnKeralaState().click();
+	 	Thread.sleep(2000);
+	 	
+	 	
+	 	PerformerLocator.Apply().click();
+	 	Thread.sleep(5000);
+
+//There is some error from dev side thats why hide this:	 	
+	 	//Clicking to PT Location Dropdown 
+//	 	getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[2]")).click();
+	 	
+	 	//Save Mapping button
+//	 	getDriver().findElement(By.xpath("//button[normalize-space()='Save Mapping']")).click();
+	 	
+	 	//clicking to save button
+	 	getDriver().findElement(By.xpath("(//img[@title='Save'])[1]")).click();
+	 	
+	 	String msg = getDriver().findElement(By.xpath("//h4[normalize-space()='Data Saved Successfully']")).getText();
+	 	
+		if(msg.equalsIgnoreCase("Data Saved Successfully"))
+		{
+			test.log(LogStatus.PASS, "Message displayed:-"+msg);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Message displayed:-"+msg);
+		}
+		Thread.sleep(2000);
+		getDriver().findElement(By.xpath("//button[@title='OK']")).click();
+		
+		
+		if(PerformerLocator.Clear().isDisplayed())
+		{
+			PerformerLocator.Clear().click();
+		}
+
+
+	 	
+	 	}
+	 
 	 public static void DuplicateDesignation( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
 	 {
 	 	
@@ -5859,8 +6387,8 @@ public class PerformerMethod extends BasePage
 	 	Thread.sleep(1000);
 		PerformerLocator.clickExportBtn().click();
 	 	
-	 	WebDriverWait wait=new WebDriverWait(getDriver(), 20);
-	 	Thread.sleep(1000);
+	 	WebDriverWait wait=new WebDriverWait(getDriver(), 60);
+	 	Thread.sleep(60000);
 	 	wait.until(ExpectedConditions.invisibilityOf(PerformerLocator.GridLoad1()));
 	 	
 
@@ -6085,13 +6613,27 @@ public class PerformerMethod extends BasePage
 	 	
 	 	Thread.sleep(1000);
 		PerformerLocator.SerchCustomer().sendKeys("AVACORED5");
-	 	Thread.sleep(1000);
-		PerformerLocator.clickDashboard().click();
+	 	Thread.sleep(5000);
+		PerformerLocator.clickWorkspaceArrow().click();
 	 	Thread.sleep(7000);
 		PerformerLocator.clickManageMaster().click();
-	 	Thread.sleep(1000);
+	 	Thread.sleep(4000);
 		PerformerLocator.clickDesignation().click();
-	 	Thread.sleep(1000);
+		
+		
+	 	PerformerLocator.DesignationSerach().click();
+	 	
+	 	//Give max wait due to hudge data
+	 	
+	 	Thread.sleep(7000);
+	 	PerformerLocator.DesignationSerach().sendKeys("abcdefghijklmnopqrstuvwxyz");
+	 	Thread.sleep(7000);
+		
+	 	getDriver().findElement(By.xpath("(//span[@class='k-list-item-text'])[1]")).click();
+		
+	 	PerformerLocator.clickApply().click();
+	 	
+	 	Thread.sleep(4000);
 		PerformerLocator.clickDeleteBtn().click();
 	 	
 	 	

@@ -1761,17 +1761,17 @@ public class CoordinatorMethod extends BasePage
 			CoordinatorLocator.clickRegistration().click();
 			
 				Thread.sleep(3000);
-				CoordinatorLocator.SearchBox().sendKeys("Andhra Pradesh",Keys.ENTER);
+				CoordinatorLocator.SearchBox().sendKeys("TESTAUTO2",Keys.ENTER);
 			
 				List<String> li=new ArrayList<String>();
 		        
 		       
-		        li.add("Andhra Pradesh");
+		        li.add("TESTAUTO2");
 	       
 		        
 				List<String> filter=new ArrayList<String>();	
 				
-				filter.add("Andhra Pradesh");	
+				filter.add("TESTAUTO2");	
 				
 				
 				js.executeScript("window.scrollBy(0,150)");	
@@ -1784,7 +1784,7 @@ public class CoordinatorMethod extends BasePage
 				if(!s.equalsIgnoreCase("No items to display")) {
 				Thread.sleep(5000);
 		
-				List<WebElement> typecol=getDriver().findElements(By.xpath("//*[@class='k-grid-aria-root']/kendo-grid-list/div/div[1]/table/tbody/tr[1]/td[3]"));
+				List<WebElement> typecol=getDriver().findElements(By.xpath("//*[@id=\"k-14dcbc10-aef9-4d0d-8606-3f3e7dfcfd8f\"]/kendo-grid-list/div/div[1]/table/tbody/tr[1]/td[1]/div"));
 				Thread.sleep(2000);
 
 				for(int i=0; i<li.size(); i++){

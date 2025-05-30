@@ -162,7 +162,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 	private void openBrower(int no) throws IOException {
 
 		if (browser.contains("chrome")) {
-					System.setProperty("webdriver.chrome.driver", "D:\\Labour Angular 2\\chromedriver-win64 (1)\\chromedriver-win64\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", "D:\\Labour Angular 2\\chromedriver-win64 (1)2025\\chromedriver-win64\\chromedriver.exe");
 					//WebDriverManager.chromedriver().setup();
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("--remote-allow-origins=*");

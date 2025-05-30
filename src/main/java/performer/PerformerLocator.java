@@ -1,5 +1,8 @@
 package performer;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,6 +23,11 @@ private static WebElement labour = null;			//WebElement variable created for Use
 	public static WebElement clickDashboard()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("//img[@title='Dashboard']"));
+		return labour;
+	}
+	public static WebElement clickWorkspaceArrow()		//Method for searching Username input
+	{
+		labour = getDriver().findElement(By.xpath("(//img[@title='Workspace'])[1]"));
 		return labour;
 	}
 	
@@ -53,7 +61,7 @@ private static WebElement labour = null;			//WebElement variable created for Use
 	}
 	public static WebElement clickGender()		//Method for searching Username input
 	{
-		labour = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[3]"));
+		labour = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'][normalize-space()='Select'])[1]"));
 		return labour;
 	}
 	public static WebElement selectGender()		//Method for searching Username input
@@ -63,7 +71,7 @@ private static WebElement labour = null;			//WebElement variable created for Use
 	}
 	public static WebElement clickRelationship()		//Method for searching Username input
 	{
-		labour = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[4]"));
+		labour = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'][normalize-space()='Select'])[2]"));
 		return labour;
 	}
 	public static WebElement selectRelationship()		//Method for searching Username input
@@ -955,6 +963,22 @@ private static WebElement labour = null;			//WebElement variable created for Use
 		labour = getDriver().findElement(By.xpath("//*[@class='k-list-ul']/li[2]"));
 		return labour;
 	}
+	public static WebElement selectComplianceChallan()		//Method for searching Username input
+	{
+		labour = getDriver().findElement(By.xpath("//span[normalize-space()='Challan']"));
+		return labour;
+	}
+	public static WebElement selectComplianceRegister()		
+	{
+		labour = getDriver().findElement(By.xpath("//span[normalize-space()='Register']"));
+		return labour;
+	}
+	public static WebElement selectComplianceReturns()		
+	{
+		labour = getDriver().findElement(By.xpath("//span[normalize-space()='Returns']"));
+		return labour;
+	}
+	
 	public static WebElement selectComplianceType5()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("//*[@class='k-list-ul']/li[4]"));
@@ -995,6 +1019,8 @@ private static WebElement labour = null;			//WebElement variable created for Use
 		labour = getDriver().findElement(By.xpath("//span[contains(text(),'Year')]"));
 		return labour;
 	}
+
+	
 	public static WebElement clickPeriod()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("//span[contains(text(),'Period')]"));
@@ -1263,12 +1289,12 @@ private static WebElement labour = null;			//WebElement variable created for Use
 
 	public static WebElement clickDeletemsg()		//Method for searching Username input
 	{
-		labour = getDriver().findElement(By.xpath("//h4[normalize-space()='Are you sure you want to delete this record?']"));
+		labour = getDriver().findElement(By.xpath("//h4[normalize-space()='Are you sure you want to inactive this record?']"));
 		return labour;
 	}
 	public static WebElement clickDeletemsg1()		//Method for searching Username input
 	{
-		labour = getDriver().findElement(By.xpath("//h4[normalize-space()='Data Deleted Successfully']"));
+		labour = getDriver().findElement(By.xpath("//h4[normalize-space()='Designation Inactivated Successfully']"));
 		return labour;
 	}
 	public static WebElement clickclearBtn()		//Method for searching Username input
@@ -1276,6 +1302,108 @@ private static WebElement labour = null;			//WebElement variable created for Use
 		labour = getDriver().findElement(By.xpath("//*[@src='../assets/vectors/ClearFilter.svg']"));
 		return labour;
 	}
+	public static WebElement StateCitySearch()		//Method for searching Username input
+	{
+		labour = getDriver().findElement(By.xpath("//input[@placeholder='Search State/Location Code']"));
+		return labour;
+	}
+	public static WebElement StateCitySearchSelectSeondValue()		//Method for searching Username input
+	{
+		labour = getDriver().findElement(By.xpath("//div[@class='k-list-content']//ul//li[2]"));
+		return labour;
+	}
+	public static WebElement DesignationSerach()		
+	{
+		labour = getDriver().findElement(By.xpath("//input[@placeholder='Search/Select Designation']"));
+		return labour;
+	}
+	public static WebElement LeaveTypeModule()		
+	{
+		labour = getDriver().findElement(By.xpath("//a[normalize-space()='Leave Type']"));
+		return labour;
+	}
+	public static WebElement LeaveTypeSearch()		
+	{
+		labour = getDriver().findElement(By.xpath("//input[@placeholder='Search Leave Type/Description']"));
+		return labour;
+	}
+	public static WebElement clickPaycodeMappingModule()		
+	{
+		labour = getDriver().findElement(By.xpath("//a[normalize-space()='Paycode Mapping']"));
+		return labour;
+	}
+	public static WebElement PaycodeMappingSearch()		
+	{
+		labour = getDriver().findElement(By.xpath("//input[@placeholder='Search Paycode/Header Name']"));
+		return labour;
+	}
+	public static WebElement Uplaodclick()		
+	{
+		labour = getDriver().findElement(By.xpath("//button[normalize-space()='Upload']"));
+		return labour;
+	}
+	
+	public static WebElement clickStaturyMasterTab()		
+	{
+		labour = getDriver().findElement(By.xpath("//a[normalize-space()='Statutory Master']"));
+		return labour;
+	}
+	public static WebElement clickChallanPTSlabTab()		
+	{
+		labour = getDriver().findElement(By.xpath("//a[normalize-space()='Challan PT Slab']"));
+		return labour;
+	}
+	public static WebElement clickComplianceDropdwon()		
+	{
+		labour = getDriver().findElement(By.xpath("//span[normalize-space()='Compliance Type']"));
+		return labour;
+	}
+	public static WebElement Apply()		
+	{
+		labour = getDriver().findElement(By.xpath("//button[@title='Apply']"));
+		return labour;
+	}
+	public static WebElement Clear()		
+	{
+		labour = getDriver().findElement(By.xpath("//button[@title='Clear']"));
+		return labour;
+	}
+	public static WebElement clickOnSelectStateDropdown()		
+	{
+		labour = getDriver().findElement(By.xpath("//span[contains(text(),'Select State')]"));
+		return labour;
+	}
+	public static WebElement clickOnKeralaState()		
+	{
+		labour = getDriver().findElement(By.xpath("//span[normalize-space()='Kerala']"));
+		return labour;
+	}
+	public static WebElement TypeToSearch()		
+	{
+		labour = getDriver().findElement(By.xpath("//input[@placeholder='Type to Search']"));
+		return labour;
+	}
+	
+	public static WebElement ReadTotalIteams() {
+	    List<By> locators = Arrays.asList(
+	        By.xpath("//kendo-pager-info[@class='k-pager-info k-label']"),
+	        By.xpath(""),
+	        By.xpath("")     );
+
+	    for (By locator : locators) {
+	        try {
+	            WebElement element = getDriver().findElement(locator);
+	            if (element != null && element.isDisplayed()) {
+	                return element; // 🎯 Element found, return it immediately
+	            }
+	        } catch (Exception e) {
+	            // Locator not found, try next one
+	        }
+	    }
+	    System.out.println("Reead Total Iteams");
+	    return null; // All locators failed
+	}
+	
 	
 	
 }

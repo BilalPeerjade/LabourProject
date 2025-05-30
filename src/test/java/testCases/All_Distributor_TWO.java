@@ -5,11 +5,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.testng.ITestResult;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -20,18 +21,18 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import clientPortal.All_ClientPortal_Methods;
-import clientPortal.All_ClientPortal_Methods;
-import clientPortal.All_ClientPortal_Methods;
+import distributor.All_Distributor_Methods;
+import distributor.Methods;
+import distributor.All_Distributor_Methods;
 import login.BasePage;
-import rcp.OneCommonMethod;
-
-//Take screenshot
-import org.testng.ITestResult;
+import login.LoginLocators;
 
 
 
-public class FailedTC2 extends BasePage {
+
+
+public class All_Distributor_TWO  extends BasePage {
+	
 	public static WebElement upload = null;		//WebElement to get upload button
 	public static ExtentReports extent;			//Instance created for report file
 	public static ExtentTest test;				//Instance created for tests
@@ -50,12 +51,11 @@ public class FailedTC2 extends BasePage {
 	
 	public static String link = "mgmt1";  
 	
-	
 	@BeforeTest
 	void setBrowser() throws InterruptedException, IOException
 	{
-		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\Labour Angular\\LabourMergeProject\\LabourMergeProject\\Report\\FailedTC2.html",true);
-		test = extent.startTest("Loging In - Client Portal"); // Need to change
+		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\Labour Angular\\LabourMergeProject\\LabourMergeProject\\Report\\LabourD.html",true);
+		test = extent.startTest("Loging In - DistributorAdmin");
 		test.log(LogStatus.PASS, "Logging into system");
 
 		extent.endTest(test);
@@ -65,70 +65,62 @@ public class FailedTC2 extends BasePage {
 	@BeforeMethod
 	void Login() throws InterruptedException, IOException
 	{
-		initialization(link,6,"Statutory"); //Need to change
+		initialization(link,0,"Statutory");
 	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	
 	
-
-//	@Test(retryAnalyzer = RetryAnalyzer.class , priority = 27)
-	void exportERE() throws InterruptedException, IOException
-	{
-		test = extent.startTest("'Expired Registrations' - Edit - Validate Download button working or not?");
-		All_ClientPortal_Methods.filterEntityAUTO2(test);
-		All_ClientPortal_Methods.exportERE(test);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
+	    @Test(priority = 1)
+		void ComplianceBox() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Count by Clicking on 'Compliance'");
+			
+			All_Distributor_Methods.complianceBox(test,"Distributor");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	   
+		@Test(priority = 2)
+		void ComplianceFilter1() throws InterruptedException, IOException
+		{
+			test = extent.startTest("Compliance Box Filter Verification'");
+			
+			All_Distributor_Methods.ComplianceFilter1(test,"Distributor");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority = 3)
+		void UpcomingBox() throws InterruptedException, IOException
+		{
+			test = extent.startTest(" Count by Clicking on 'Upcoming'");
+			
+			All_Distributor_Methods.UpcomingBox(test,"Distributor");
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	
 	
 	
-
 	
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 	
 	
 	@AfterMethod
-	void browserClosing(ITestResult result) throws InterruptedException
-  	{	
-		
-//	    boolean isFailed = result.getStatus() == ITestResult.FAILURE;
-//	    OneCommonMethod.captureScreenshotOnFailure(getDriver(), test, isFailed); // call to your common method
-		
-	    
-	    boolean isFailed = result.getStatus() == ITestResult.FAILURE;
-	    OneCommonMethod.captureScreenshotOnFailure(getDriver(), test, isFailed); // Your common method call
-	    Thread.sleep(3000);
+  	void browserClosing() throws InterruptedException
+  	{
 		closeBrowser();
   		//Thread.sleep(1000);
   		//getDriver().close();
@@ -139,9 +131,6 @@ public class FailedTC2 extends BasePage {
   	{
   		
   	}
-	
-	
-	
 	
 	
 	

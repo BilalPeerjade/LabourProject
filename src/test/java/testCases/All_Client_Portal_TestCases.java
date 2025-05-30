@@ -69,7 +69,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
 
-	
+	/*
 	
 	
 	
@@ -177,7 +177,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 
 	
-	@Test(priority = 10) //Bilal
+	@Test(priority = 10) //Bilal 21-05-25
 	void assignedCompRegisterExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Assigned Compliances - Compliance dropdown Register - Verify Export count");
@@ -378,7 +378,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 27)
+	@Test(priority = 28)
 	void ExpiredRegistrationPagination() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Expired Registrations' - Verify to check all Pagination is working or not?");
@@ -389,7 +389,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 28)
+	@Test(priority = 29)
 	void OpenNotices() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - Count verification");
@@ -400,7 +400,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 29)
+	@Test(priority = 30)
 	void OpenNoticesView() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - View button working or not?");
@@ -410,7 +410,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 30) //Bilal Done Failing due to time issue
+	@Test(priority = 31) //Bilal Done Failing due to time issue
 	void OpenNoticesEditDelete() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - Download and Edit button working or not?");
@@ -432,7 +432,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 //		extent.flush();
 //	}
 	
-	@Test(priority = 31) //Bilal
+	@Test(priority = 32) //Bilal
 	void OpenNoticesPagination() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - Verify to check all Pagination is working fine or not?");
@@ -444,7 +444,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 32)//05/02/2025 Pass
+	@Test(priority = 33)//05/02/2025 Pass
 	void ViewAddNewNotices() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("'Open Notices' - View - add new button working or not?");
@@ -457,7 +457,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 33)
+	@Test(priority = 34)
 	void exportNotice() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("'Open Notices' - View - Export button working or not?");
@@ -472,7 +472,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 34)
+	@Test(priority = 35)
 	void NoticeSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - View - Validate Notice search field working or not?");
@@ -483,7 +483,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 35)
+	@Test(priority = 36)
 	void NoticeSearchClear() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - View - Validate Notice clear button working or not?");
@@ -496,7 +496,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 36)
+	@Test(priority = 37)
 	void OpenNoticesEditback() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - View - edit - Validate Notice Back button working or not?");
@@ -509,7 +509,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-		@Test(priority = 37) // Bilal Covered 4 TC
+		@Test(priority = 38) // Bilal Covered 4 TC
 		void NoticeViewEditTabs() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'Open Notices' - View - Edit - Check All tabs will be displayed or not?");
@@ -520,7 +520,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 			extent.flush();
 		}
 	
-	@Test(priority = 38) // Bilal Covered 5 Test Cases
+	@Test(priority = 39) // Bilal Covered 5 Test Cases
 	void NoticeViewEditDocumentDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - View - Edit - Document Section - All Documents are downloading or not?");
@@ -532,7 +532,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 39)
+	@Test(priority = 40)
 	void OverviewNotice() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - View - Overview button working or not?");
@@ -545,7 +545,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 39) //Bilal
+	@Test(priority = 41) //Bilal
 	void OpenNoticeViewPagination() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - View - all Pagination is working or not?");
@@ -559,7 +559,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 40)
+	@Test(priority = 42)
 	void OpenNoticesback() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Open Notices' - Edit - Validate Notice Back button working or not?");
@@ -575,7 +575,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
  // 27 to 29 Comment by Mayuri
-//	@Test(priority = 38) //pending //06/02/2025
+//	@Test(priority = 43) //pending //06/02/2025
 	void CompliancePerformance() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance' - Overdue Count Verification");
@@ -586,7 +586,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-//	@Test(priority = 39) 
+//	@Test(priority = 44) 
 	void PayrollCompliancesOverdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance' - Payroll Compliances - Overdue - Overview button working or not");
@@ -597,7 +597,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-//	@Test(priority = 40) 
+//	@Test(priority = 45) 
 	void exportPayrollCompliancesOverdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance' - Payroll Compliances - Overdue - Export button working or not");
@@ -610,7 +610,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 //---- Payroll Compliance Complied
 	
-//	@Test(priority = 41) //Bilal Pass //Checking need to check in Friday
+//	@Test(priority = 46) //Bilal Pass //Checking need to check in Friday
 	void RCCompliedCount() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Count Checking Complied and Grid");
@@ -623,7 +623,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 41) //Bilal Pass
+	@Test(priority = 47) //Bilal Pass
 	void searchRCComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Click on the complied count to verify if the search field works correctly?");
@@ -633,7 +633,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 42) //Bilal Pass
+	@Test(priority = 48) //Bilal Pass
 	void ClearExportRCComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Click on the complied count to verify if the Clear and Export button works correctly?");
@@ -644,7 +644,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 43) //Bilal Pass
+	@Test(priority = 49) //Bilal Pass
 	void ViewOverDownloadRCComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Click on the complied count to verify if the View, Overview and Download buttons works correctly?");
@@ -655,7 +655,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 44) //Bilal Pass
+	@Test(priority = 50) //Bilal Pass
 	void RCCompliedPagination() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Click on the complied count to verify if the all Pagination buttons works correctly?");
@@ -667,7 +667,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	//Complience Perfromance Graph -- Payroll Compliances --> Overdue
-	@Test(priority = 45) //Bilal Pass
+	@Test(priority = 51) //Bilal Pass
 	void RCOverdueSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Click on the overdue count to verify if the search field works correctly?");
@@ -678,7 +678,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 46) //Bilal Pass
+	@Test(priority = 52) //Bilal Pass
 	void RCOverdueClearExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Click on the overdue count to verify if the Clear and Export button works correctly?");
@@ -688,7 +688,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 46) //Bilal Pass
+	@Test(priority = 53) //Bilal Pass
 	void RCOverdueOverview() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Click on the overdue count to verify if the Overview button works correctly?");
@@ -698,7 +698,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 46) //Bilal Pass
+	@Test(priority = 54) //Bilal Pass
 	void RCOverduePagination() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Payroll Compliances - Click on the overdue count to verify if the all Pagination buttons works correctly?");
@@ -710,7 +710,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	//Compliance Performance -- Establishment Compliances
-	@Test(priority = 47) //Bilal Pass
+	@Test(priority = 55) //Bilal Pass
 	void searchEcComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance Graph – Establishment Compliances - Click on the complied count to verify if the search field works correctly?");
@@ -721,7 +721,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48) //Bilal Pass
+	@Test(priority = 56) //Bilal Pass
 	void clearbtnEcComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the complied count to verify if the 'clear button' works correctly?");
@@ -731,7 +731,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 49) //Bilal Pass
+	@Test(priority = 57) //Bilal Pass
 	void exportEcComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the complied count to verify if the 'Export button' works correctly?");
@@ -743,7 +743,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	//Bilal Pass
-	@Test(priority = 50) 
+	@Test(priority = 58) 
 	void ECComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the complied count to verify if the 'View button' works correctly?");
@@ -755,7 +755,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	//Bilal Pass
-	@Test(priority = 51) 
+	@Test(priority = 59) 
 	void overviewECComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the complied count to verify if the 'Overview button' works correctly?");
@@ -766,7 +766,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 52) 
+	@Test(priority = 60) 
 	void downloadECComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the complied count to verify if the 'Download button' works correctly?");
@@ -777,7 +777,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 52) 
+	@Test(priority = 61) 
 	void PaginationECComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the complied count to verify if the all 'Pagination buttons' works correctly?");
@@ -792,7 +792,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	//Establishment Compliances Overdue:
 	
-	@Test(priority = 53) //Bilal done
+	@Test(priority = 62) //Bilal done
 	void searchECOverdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the overdue count to verify if the 'Search field' works correctly?");
@@ -804,7 +804,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 54) //Bilal done
+	@Test(priority = 63) //Bilal done
 	void clearBtnECOverdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the overdue count to verify if the 'Clear button' works correctly?");
@@ -816,21 +816,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	@Test(priority = 55) 
-	void ECOverdue() throws InterruptedException, IOException
-	{
-		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the overdue count to verify if the 'Overview button' works correctly?");
-		
-		All_ClientPortal_Methods.filterEntityAUTO2(test);
-		
-		All_ClientPortal_Methods.ECOverdue(test);
-		
-		extent.endTest(test);
-		extent.flush();
-	}
-	
-	@Test(priority = 56) 
+	@Test(priority = 64) 
 	void exportEC() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the overdue count to verify if the 'Export button' works correctly?");
@@ -842,11 +828,37 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
+	
+	@Test(priority = 65) 
+	void ECOverdue() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the overdue count to verify if the 'Overview button' works correctly?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.ECOverdue(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 66) 
+	void ECOverduePagination() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Compliance Performance Graph – Establishment Compliances - Click on the overdue count to verify if the all 'Pagination buttons' works correctly?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.ECOverduePagination(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
 
 	
 	
 	
-//     @Test(priority = 51) me
+//     @Test(priority = 68) me
 	void FCOverdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance' - Factory Compliances - Overdue - Overview button working or not");
@@ -859,7 +871,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-//	@Test(priority = 52) Me
+//	@Test(priority = 69) Me
 	void exportFC() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance' - Factory Compliances - Overdue - Export button working or not");
@@ -875,7 +887,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
 //Comment By Mayuri
-//    @Test(priority = 53) 
+//    @Test(priority = 70) 
 	void ClraOverdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance' - Clra Compliances - Overdue - Overview button working or not");
@@ -977,7 +989,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
 	// -- Registration Status Pie Chart
-	@Test(priority = 62)
+	@Test(priority = 71)
 	void RegistrationSExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Export button working or not?");
@@ -990,7 +1002,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 63) 
+	@Test(priority = 72) 
 	void RegistrationSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Active validate Search field working or not?");
@@ -1004,7 +1016,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 64) 
+//	@Test(priority = 73) Not Required Because it is taking Active / Expring all count  
 	void RegistrationStatus() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Active Count Verification");
@@ -1016,8 +1028,21 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 74) //Bilal 2TCs
+	void RegistrationStatusActiveColumnCount() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Registration Status' - Verify Active column hyper link working and Active count matching with grid or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.RegistrationStatusActiveColumnCount(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
-	@Test(priority = 65) //06/02/2025
+	
+	@Test(priority = 75) //06/02/2025
 	void ActiveSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Active - Validate search filter working or not?");
@@ -1031,7 +1056,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 66) //2 test case //10/02/2025
+	@Test(priority = 76) //2 test case //10/02/2025
 	void RegistrationStatusExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Active - Export button working or not?");
@@ -1044,7 +1069,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 67) // Bilal 1 done
+	@Test(priority = 77) // Bilal 1 done
 	void RegistrationActiveEditbtn() throws InterruptedException, IOException
 	{
 	test = extent.startTest("'Registration Status' - Active - Edit button working or not?");
@@ -1056,7 +1081,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	}
 	
-	@Test(priority = 68) //Bilal 2 done
+	@Test(priority = 78) //Bilal 2 done
 	void RegistrationActiveEditSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registrations Status' - Active - Edit - search field working or not?");
@@ -1067,7 +1092,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 69) //Bilal 3 Done
+	@Test(priority = 79) //Bilal 3 Done
 	void RegistrationActiveEditExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registrations Status' - Active - Edit - Export button is working or not?");
@@ -1077,7 +1102,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 70) //Bilal 4 Done
+	@Test(priority = 80) //Bilal 4 Done
 	void RegistrationActiveEditClear() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registrations Status' - Active - Edit - Clear button is working or not?");
@@ -1088,7 +1113,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 71) //Bilal 5 Done
+	@Test(priority = 81) //Bilal 5 Done
 	void RegistrationActiveEditView() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registrations Status' - Active - Edit - View button is working or not?");
@@ -1098,7 +1123,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 72) //Bilal ---
+	@Test(priority = 82) //Bilal ---
 	void RegistrationActiveEditInitiateActionSubmit() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registrations Status' - Active - Edit - InitiateAction Submit button is working or not?");
@@ -1110,7 +1135,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 73) //Bilal 6 Done
+	@Test(priority = 83) //Bilal 6 Done
 	void RegistrationActiveEditInitiateAction() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registrations Status' - Active - Edit - InitiateAction Back button is working or not?");
@@ -1120,7 +1145,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 74) //Bilal 7 test case is failing 
+	@Test(priority = 84) //Bilal 7 test case is failing 
 	void RegistrationActiveEditDownloadbtn() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registrations Status' - Active - Edit - Download button is working or not?");
@@ -1133,7 +1158,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 75) //07/02/2025
+	@Test(priority = 85) //07/02/2025
 	void RegistrationSView() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Active - view button working or not?");
@@ -1146,7 +1171,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 76) //07/02/2025
+	@Test(priority = 86) //07/02/2025
 	void DownloadActive() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Active - Download button working or not?");
@@ -1159,10 +1184,10 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 77) //07/02/2025
+	@Test(priority = 87) //07/02/2025 //Search Bilal
 	void RegistrationSHistory() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'Registration Status' - Active - History button working or not?");
+		test = extent.startTest("'Registration Status' - Active - History button and Type to search field are working or not?");
 		
 		All_ClientPortal_Methods.filterEntityAUTO2(test);
 		
@@ -1172,7 +1197,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 78) //07/02/2025
+	@Test(priority = 88) //07/02/2025
 	void RegistrationSHistoryExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Active - History - Export button working or not?");
@@ -1184,13 +1209,25 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 89) //07/02/2025
+	void RegistrationSActivePagination() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Registration Status' - Active - Verify to check all Pagination buttons are working fine or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.RegistrationSActivePagination(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 
 	
-	@Test(priority = 79) //24/02/2024
+	@Test(priority = 90) //Bilal
 	void RegistrationStatusEx() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'Registration Status' - Expired Count Verification");
+		test = extent.startTest("'Registration Status' - Verify Expired link is working and Expired count is matching with grid or not?");
 		
 		All_ClientPortal_Methods.filterEntityAUTO2(test);
 		
@@ -1200,7 +1237,10 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 80) //2 test case //24/02/2025
+	
+	
+	
+	@Test(priority = 91) //2 test case //24/02/2025
 	void RegistrationStatusExportE() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Export button working or not?");
@@ -1212,7 +1252,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 81) //25/02/2025
+	@Test(priority = 92) //25/02/2025
 	void ExpiredSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Validate Search field working or not?");
@@ -1225,7 +1265,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 82) //Bilal 8 Done
+	@Test(priority = 93) //Bilal 8 Done
 	void RegistrationStatusEdit() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Edit button working or not?");
@@ -1237,7 +1277,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 83) //Bilal 9 Done
+	@Test(priority = 94) //Bilal 9 Done
 	void RegistrationStatusEditSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Edit - Search field working or not?");
@@ -1249,7 +1289,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 84) //Bilal 10 Done
+	@Test(priority = 95) //Bilal 10 Done
 	void RegistrationStatusEditExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Edit - Export button working or not?");
@@ -1263,7 +1303,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 
-	@Test(priority = 85) //Bilal 11 Done
+	@Test(priority = 96) //Bilal 11 Done
 	void RegistrationStatusEditClearbtn() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Edit - Clear button working or not?");
@@ -1276,7 +1316,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 86) //Bilal 12 Done
+	@Test(priority = 97) //Bilal 12 Done
 	void RegistrationStatusEditView() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Edit - View button working or not?");
@@ -1291,7 +1331,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	
 	
 	
-	@Test(priority = 87) //Bilal 13 Done
+	@Test(priority = 98) //Bilal 13 Done
 	void RegistrationStatusEditInitiateAction() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Edit - InitiateAction Back button working or not?");
@@ -1305,7 +1345,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 88) //Bilal 14 failed file is not getting download
+	@Test(priority = 99) //Bilal 14 failed file is not getting download
 	void RegistrationStatusEditDownloadbtn() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Edit - Download button working or not?");
@@ -1319,7 +1359,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 89) //25/02/2025
+	@Test(priority = 100) //25/02/2025
 	void RegistrationSViewEx() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - View button working or not?");
@@ -1332,7 +1372,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 90) //25/02/2025
+	@Test(priority = 101) //25/02/2025
 	void DownloadActiveEx() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - Download button working or not?");
@@ -1345,7 +1385,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 91) //25/02/2025
+	@Test(priority = 102) //25/02/2025
 	void RegistrationSHistoryEx() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - History button working or not?");
@@ -1357,7 +1397,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 92) //25/02/2025
+	@Test(priority = 103) //25/02/2025
 	void RegistrationSHistorySearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - History - Search field working or not?");
@@ -1371,7 +1411,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 	}
 	
 	
-	@Test(priority = 93) //25/02/2025
+	@Test(priority = 104) //25/02/2025
 	void RegistrationSHistoryExportEx() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - History - Export button working or not?");
@@ -1383,7 +1423,7 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 94) //25/02/2025
+	@Test(priority = 105) //25/02/2025
 	void RegistrationSHistoryViewDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Expired - History - View and Download button working or not?");
@@ -1395,13 +1435,37 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
+	@Test(priority = 106) //Bilal
+	void RegistrationStatusExpiredPagination() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Registration Status' - Expired - Verify to check all Pagination buttons are working or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.RegistrationStatusExpiredPagination(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
+	@Test(priority = 107) //Bilal This is Registration status main screen TC
+	void RegistrationStatusPagination() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Registration Status' - Verify to check all Pagination buttons are working or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.RegistrationStatusPagination(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 
 	
-	@Test(priority = 95) //07/02/2025
+	@Test(priority = 108) //07/02/2025
 	void OpenStatus() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'Notice Status' - Open Count Verification");
+		test = extent.startTest("'Notice Status' - Open Count Verification in dashboard");
 		
 		All_ClientPortal_Methods.filterEntityAUTO2(test);
 		
@@ -1410,21 +1474,42 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	@Test(priority = 96) //Failing raise issue as well
-	void OpenView() throws InterruptedException, IOException
+	@Test(priority = 109) //Bilal
+	void NoticeStatusSearch() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'Notice Status' - Open - Overview button working or not?");
+		test = extent.startTest("'Notice Status' - Verify to search field is working properly or not?");
 		
 		All_ClientPortal_Methods.filterEntityAUTO2(test);
 		
-		All_ClientPortal_Methods.OpenView(test);
+		All_ClientPortal_Methods.NoticeStatusSearch(test);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	@Test(priority = 97) 
+	@Test(priority = 110) // 
+	void exportNoticeStatus() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Notice Status' - Export button working or not?");
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		All_ClientPortal_Methods.exportNoticeStatus(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 111) //Bilal
+	void NoticeStatusOpenHyperLinkCount() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Notice Status' - Verify Open link is working and count matching with grid or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.NoticeStatusOpenHyperLinkCount(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 112) 
 	void exportOpen() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Notice Status' - Open - Export button working or not?");
@@ -1437,10 +1522,36 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 98) 
+	@Test(priority = 113) //
+	void OpenView() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Notice Status' - Open - View button working or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.OpenView(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 114) //Bilal
+	void NoticeStatusOpenPagination() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Notice Status' - Open - Verify to check all Pagination buttons are working or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.NoticeStatusOpenPagination(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	@Test(priority = 115) 
 	void ClosedStatus() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'Notice Status' - Closed Count Verification?");
+		test = extent.startTest("'Notice Status' - Closed Count Verification in dashboard");
 		
 		All_ClientPortal_Methods.filterEntityAUTO2(test);
 		
@@ -1449,21 +1560,20 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	@Test(priority = 99) 
-	void ClosedView() throws InterruptedException, IOException
+	@Test(priority = 116) 
+	void NoticeStatusClosedHyperLinkCount() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'Notice Status' - Closed - View button working or not?");
+		test = extent.startTest("'Notice Status' - Verify Closed link is working and count matching with grid or not?");
 		
 		All_ClientPortal_Methods.filterEntityAUTO2(test);
 		
-		All_ClientPortal_Methods.ClosedView(test);
+		All_ClientPortal_Methods.NoticeStatusClosedHyperLinkCount(test);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	@Test(priority = 100) 
+	@Test(priority = 117) 
 	void exportClosed() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Notice Status' - Closed - Export button working or not?");
@@ -1475,21 +1585,74 @@ public class All_Client_Portal_TestCases extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-
-	@Test(priority = 101) 
-	void exportNoticeStatus() throws InterruptedException, IOException
+	
+	@Test(priority = 118) 
+	void ClosedView() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'Notice Status' - Export button working or not?");
+		test = extent.startTest("'Notice Status' - Closed - View button working or not?");
+		
 		All_ClientPortal_Methods.filterEntityAUTO2(test);
-		All_ClientPortal_Methods.exportNoticeStatus(test);
+		
+		All_ClientPortal_Methods.ClosedView(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 119) //Bilal
+	void NoticeStatusClosedPagination() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Notice Status' - Closed - Verify to check all Pagination buttons are working or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.NoticeStatusClosedPagination(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 120) //Bilal
+	void NoticeStatusOpenClosedCountWithTotalNotices() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Notice Status' - Verify to check Open & Closed Notices column count is mathcing with Total Notices Column or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.NoticeStatusOpenClosedCountWithTotalNotices(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 121) //Bilal
+	void NoticeStatusPagination() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Notice Status' - Verify to check all Pagination buttons are working or not?");
+		
+		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.NoticeStatusPagination(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 122) //Bilal
+	void AbstractStatusIsDisplayed() throws InterruptedException, IOException
+	{
+		test = extent.startTest("Abstract Status - Verify to check Abstract Status graph is displayed or not?");
+		
+//		All_ClientPortal_Methods.filterEntityAUTO2(test);
+		
+		All_ClientPortal_Methods.AbstractStatusIsDisplayed(test);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	//Compliances Performance Bar Graph 
 	
-	@Test(priority = 102) //Bilal done
+	
+    //Hide due to all baar graphs hide	
+/*	
+	//Compliances Performance Bar Graph 
+	@Test(priority = 112) //Bilal done
 	void compliancePerformanceBarGraph() throws InterruptedException, IOException
 	{
 test = extent.startTest("Compliance Performance bar graph - Verify Search field , Challan dropdown , Apply button , Clear button and Export button is working or not? In Payroll Compliances complied");
@@ -1500,7 +1663,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify Search field 
 		extent.flush();
 	}
 	
-	@Test(priority = 103) //Bilal done
+	@Test(priority = 113) //Bilal done
 	void compliancePerformanceBarGraphPRCViewOvewviewDown() throws InterruptedException, IOException
 	{
 test = extent.startTest("Compliance Performance bar graph - Verify View button , Ovewview button and Download button is working or not? In Payroll Compliances complied");
@@ -1512,7 +1675,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify View button ,
 	}
 	
 	
-	@Test(priority = 104) //Bilal done
+	@Test(priority = 114) //Bilal done
 	void compliancePerformanceG() throws InterruptedException, IOException
 	{
 test = extent.startTest("Compliance Performance bar graph - Verify Search field , Compliance dropdown , Apply button , Clear button and Export is working or not? In Establishment Compliances complied ");
@@ -1522,7 +1685,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify Search field 
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 105) //Bilal done
+	@Test(priority = 115) //Bilal done
 	void compliancePerformanceECViewOverviewDownload() throws InterruptedException, IOException
 	{
 test = extent.startTest("Compliance Performance bar graph - Verify to View button , Overview button and Download button is working or not? In Establishment Compliances complied");
@@ -1536,7 +1699,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 
     //	Registration Status Graph--
 	
-//	@Test(priority = 106) //10/02/2025 Failed due to not capturing get.text 
+//	@Test(priority = 116) //10/02/2025 Failed due to not capturing get.text 
 	void RegistrationStatusBar() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Active Licences Count Verification");
@@ -1548,7 +1711,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 	}
 	
 	
-	@Test(priority = 107) //2 test case 
+	@Test(priority = 117) //2 test case 
 	void RegistrationStatusExportBar() throws InterruptedException, IOException
 	{
 		test = extent.startTest("''Registration Status' - Total Active Licences - Export button working or not?");
@@ -1560,7 +1723,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 	}
 	
 	
-	@Test(priority = 108) //2 test case 
+	@Test(priority = 118) //2 test case 
 	void RegistrationStatusGraphSearchBar() throws InterruptedException, IOException
 	{
 		test = extent.startTest("''Registration Status' - Total Active Licences - Search field working or not?");
@@ -1573,7 +1736,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 	
 	
 	
-	@Test(priority = 109)
+	@Test(priority = 119)
 	void RegistrationSViewL() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Active Licences - view button working or not?");
@@ -1584,7 +1747,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 110) 
+	@Test(priority = 120) 
 	void DownloadActiveBar() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Active Licences - Download button working or not?");
@@ -1595,7 +1758,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 111)
+	@Test(priority = 121)
 	void RegistrationSHistoryBar() throws InterruptedException, IOException
 	{
 		test = extent.startTest("''Registration Status' - Total Active Licences - History button working or not?");
@@ -1606,7 +1769,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 112) 
+	@Test(priority = 122) 
 	void RegistrationSHistoryExportBar() throws InterruptedException, IOException
 	{
 		test = extent.startTest("''Registration Status' - Total Active Licences - History - Export button working or not?");
@@ -1617,7 +1780,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 113) //Bilal Done
+	@Test(priority = 123) //Bilal Done
 	void RSG_ActiveEditSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("''Registration Status' - Total Active Licences - Edit - Search field working or not?");
@@ -1627,7 +1790,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 114) //Bilal Done
+	@Test(priority = 124) //Bilal Done
 	void RSG_ActiveEditClear() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Active Licences - Edit - Clear button working or not?");
@@ -1638,7 +1801,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 
-	@Test(priority = 115) //Bilal Done
+	@Test(priority = 125) //Bilal Done
 	void RSG_ActiveEditExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Active Licences - Edit - Export button working or not?");
@@ -1649,7 +1812,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 116) //Bilal Done
+	@Test(priority = 126) //Bilal Done
 	void RSG_ActiveEditView() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Active Licences - Edit - View button working or not?");
@@ -1660,7 +1823,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 117) //Bilal Done
+	@Test(priority = 127) //Bilal Done
 	void RSG_ActiveEditInitiateAction() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Active Licences - Edit - InitiateAction button working or not?");
@@ -1670,7 +1833,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 118) //Bilal Done
+	@Test(priority = 128) //Bilal Done
 	void RSG_ActiveEditInitiateDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Active Licences - Edit - Download button working or not?");
@@ -1681,7 +1844,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 119) //Bilal N 27-03-25 
+	@Test(priority = 129) //Bilal N 27-03-25 
 	void RSG_ExpireSearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Expired Licences - Search field working or not?");
@@ -1691,7 +1854,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 120) //Bilal
+	@Test(priority = 130) //Bilal
 	void RSG_ExpiredExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Expired Licences - Export button working or not?");
@@ -1701,7 +1864,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 121) //Bilal
+	@Test(priority = 131) //Bilal
 	void RSG_ExpiredViewDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Expired Licences - View and Download button working or not?");
@@ -1712,7 +1875,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 122) //Bilal
+	@Test(priority = 131) //Bilal
 	void RSG_ExpiredHistorySearch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Expired Licences - History button and Search Field and Export button working or not?");
@@ -1722,7 +1885,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 123) //Bilal - Fail raised an issue
+	@Test(priority = 132) //Bilal - Fail raised an issue
 	void RSG_ExpiredHistoryViewDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Expired Licences - History - View and Download button working or not?");
@@ -1732,7 +1895,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 124) //Bilal
+	@Test(priority = 133) //Bilal
 	void RSG_ExpiredEditSearchClearExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Expired Licences - Edit and Search Clear and Export button working or not?");
@@ -1742,7 +1905,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 125) //Bilal
+	@Test(priority = 134) //Bilal
 	void RSG_ExpiredEditViewDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Expired Licences - Edit - View and Download button working or not?");
@@ -1752,7 +1915,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 126) //Bilal
+	@Test(priority = 135) //Bilal
 	void RSG_ExpiredEditInitiateAction() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Registration Status' - Total Expired Licences - Edit - InitiateAction Submit and Back button working or not?");
@@ -1763,13 +1926,30 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
+	*/ 
+	
+	//Hide due to all baar graphs hide
 	
 	
 	
+	
+	
+	
+	/*
 	
 	// ---Compliance Calendar---
+	@Test(priority = 137) //2 test case 
+	void CalendarNextPreviousToday() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'My Compliance Calendar - Verify Next & Previous buttons & Today hyper link is working or not?");
+//		All_ClientPortal_Methods.filterEntity(test);
+		All_ClientPortal_Methods.CalendarNextPreviousToday(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
-	@Test(priority = 127) //2 test case 
+	@Test(priority = 138) //2 test case 
 	void CalendarExport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'My Compliance Calendar - Export button working or not?");
@@ -1779,7 +1959,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.endTest(test);
 		extent.flush();
 	}
-	@Test(priority = 128) //11/02/2025
+	@Test(priority = 139) //11/02/2025
 	void CalendarCount() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'My Compliance Calendar - Calendar Count Verification");
@@ -1790,18 +1970,19 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 		extent.flush();
 	}
 	
-	@Test(priority = 129) 
-	void CalendarOverview() throws InterruptedException, IOException
+	@Test(priority = 140) 
+	void CalendarOverviewPagination() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'My Compliance Calendar - Overview button working or not?");
+		test = extent.startTest("'My Compliance Calendar - Overview button & all Pagination buttons are working or not?");
 		All_ClientPortal_Methods.filterEntity(test);
-		All_ClientPortal_Methods.CalendarOverview(test);
+		All_ClientPortal_Methods.CalendarOverviewPagination(test);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
-	@Test(priority = 130) 
+	
+	@Test(priority = 141) 
 	void DailyUpdates() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Daily Updates - Read more Link working or not?");
@@ -1821,6 +2002,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 	
 	
 	
+	*/
 	
 	
 	
@@ -1828,8 +2010,7 @@ test = extent.startTest("Compliance Performance bar graph - Verify to View butto
 	
 	
 	
-	
-	
+	//---------Part 2-------For Daily Execution------
 
 	
 	//----------------------------New Input Upload---------------------------------------

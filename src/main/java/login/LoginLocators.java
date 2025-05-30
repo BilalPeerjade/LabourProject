@@ -307,9 +307,20 @@ public class LoginLocators extends BasePage {
 	}
 	
 	
+	
+	public static WebElement ExpandAllclick()	//Bilal
+	{
+		submit = getDriver().findElement(By.xpath("//span[@id='0']"));
+		return submit;
+	}
 	public static WebElement ExpandBranch()	//Method for searching button for Save/Sign-in
 	{
 		submit = getDriver().findElement(By.xpath("(//kendo-svgicon[@class='k-svg-i-caret-alt-right k-svg-icon k-icon ng-star-inserted'])[5]"));
+		return submit;
+	}
+	public static WebElement ExpandBranchSecond()	//Method for searching button for Save/Sign-in
+	{
+		submit = getDriver().findElement(By.xpath("(//kendo-svgicon[@class='k-svg-i-caret-alt-right k-svg-icon k-icon ng-star-inserted'])[2]"));
 		return submit;
 	}
 	public static WebElement ExpandB()	//Method for searching button for Save/Sign-in
@@ -362,9 +373,14 @@ public class LoginLocators extends BasePage {
 		submit = getDriver().findElement(By.xpath("(//span[.=' Jayanagar III Block_TTTT '])[1]"));
 		return submit;
 	}
+	public static WebElement BranchvalueCheckbox()	
+	{
+		submit = getDriver().findElement(By.xpath("//span[contains(text(),'Mohali')]"));
+		return submit;
+	}
 	public static WebElement Branchvalue3()	//Method for searching button for Save/Sign-in
 	{
-		submit = getDriver().findElement(By.xpath("(//span[.=' Itanagar_www '])[1]"));
+		submit = getDriver().findElement(By.xpath("//span[contains(text(),'Mohali_Branch Punjab')]"));
 		return submit;
 	}
 	public static WebElement Branchval()	//Method for searching button for Save/Sign-in
@@ -378,6 +394,11 @@ public class LoginLocators extends BasePage {
 		submit = getDriver().findElement(By.xpath("(//span[.=' Pune_Branch Pune '])[1]"));
 		return submit;
 	}
+	public static WebElement BranchPune_BranchPune()	//Method for searching button for Save/Sign-in
+	{
+		submit = getDriver().findElement(By.xpath("(//span[.=' pune_Branch Pune '])[1]"));
+		return submit;
+	}
 	
 	public static WebElement ActFilter()	//Method for searching button for Save/Sign-in
 	{
@@ -386,7 +407,7 @@ public class LoginLocators extends BasePage {
 	}
 	public static WebElement ActFilterValue()	//Method for searching button for Save/Sign-in
 	{
-		submit = getDriver().findElement(By.xpath("//ul[@class='k-list-ul']//li[1]"));
+		submit = getDriver().findElement(By.xpath("//ul[@class='k-list-ul']//li[2]"));
 		return submit;
 	}
 	
@@ -409,7 +430,16 @@ public class LoginLocators extends BasePage {
 		submit = getDriver().findElement(By.xpath("//span[@class='k-input-inner']"));
 		return submit;
 	}
-	
+	public static WebElement Entity_ExcelFile()	//Method for searching button for Save/Sign-in
+	{
+		submit = getDriver().findElement(By.xpath("//button[@title='Entity']"));
+		return submit;
+	}
+	public static WebElement EntityLocation_ExcelFile()	//Method for searching button for Save/Sign-in
+	{
+		submit = getDriver().findElement(By.xpath("//button[@title='Entity']"));
+		return submit;
+	}
 	public static WebElement SelectPeriodValue()	//Method for searching button for Save/Sign-in
 	{
 		submit = getDriver().findElement(By.xpath("//span[.='2024']"));
@@ -418,6 +448,11 @@ public class LoginLocators extends BasePage {
 	public static WebElement SelectPeriodValue1()	//Method for searching button for Save/Sign-in
 	{
 		submit = getDriver().findElement(By.xpath("//span[.='2025']"));
+		return submit;
+	}
+	public static WebElement SelectPeriodValue2024()	//Method for searching button for Save/Sign-in
+	{
+		submit = getDriver().findElement(By.xpath("//span[.='2024']"));
 		return submit;
 	}
 	public static WebElement CompHighRisk()	//Method for searching button for Save/Sign-in
@@ -1394,7 +1429,25 @@ public class LoginLocators extends BasePage {
 	    return null; // All locators failed
 	}
 	
-	
+	public static WebElement profileButtonLogout() {
+	    List<By> locators = Arrays.asList(
+	        By.xpath("//img[@src='../assets/vectors/Profile.svg']"),
+	        By.xpath("//span[@title='Vaibhav performer']"),
+	        By.xpath("//i[@class='fa fa-solid fa-caret-down toggle-Profile']")     );
+
+	    for (By locator : locators) {
+	        try {
+	            WebElement element = getDriver().findElement(locator);
+	            if (element != null && element.isDisplayed()) {
+	                return element; // 🎯 Element found, return it immediately
+	            }
+	        } catch (Exception e) {
+	            // Locator not found, try next one
+	        }
+	    }
+	    System.out.println("❌ Element not found using any locator.");
+	    return null; // All locators failed
+	}
 	
 	
 	

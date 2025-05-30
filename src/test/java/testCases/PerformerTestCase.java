@@ -69,7 +69,7 @@ public class PerformerTestCase extends BasePage
 //-------------------------------Manage Master------------------------------------
 
 	
-/*	@Test(priority =1)
+//	@Test(priority =1)
    	void UploadSealandSignature() throws InterruptedException, IOException, AWTException
    	{
    		test = extent.startTest("State-City Master -Upload Seal and Signature verification");
@@ -82,11 +82,10 @@ public class PerformerTestCase extends BasePage
 
    	}
 	
-@Test(priority =2)
+    @Test(priority = 2) //Moved in all
    	void AddDesignation() throws InterruptedException, IOException
    	{
-   		test = extent.startTest("Add Designation master verification");
-   		
+test = extent.startTest("Manage Master - Designation - Verify Add New Designation Error is throwing or not?");
    		
    		PerformerMethod.AddDesignation(test, workbook);
    		
@@ -95,30 +94,27 @@ public class PerformerTestCase extends BasePage
 
    	}
 	
-	@Test(priority =3)
+	@Test(priority = 3)// Duplicate TC
    	void DuplicateDesignation() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Duplicate Designation verification");
-   		
    		
    		PerformerMethod.DuplicateDesignation(test, workbook);
    		
    		extent.endTest(test);
    		extent.flush();
-
    	}
-	@Test(priority =4)
+	@Test(priority = 4) //Moved in all
    	void DesignationExportBtn() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Designation Master-Export Button verification");
-   		
    		
    		PerformerMethod.DesignationExportBtn(test, workbook);
    		
    		extent.endTest(test);
    		extent.flush();
-
    	}
+	
 @Test(priority =5) 
    	void BulkUploadDesignation() throws InterruptedException, IOException, AWTException
    	{
@@ -131,11 +127,10 @@ public class PerformerTestCase extends BasePage
    		extent.flush();
 
    	}
-@Test(priority =6) 
+@Test(priority = 6) 
 	void BulkUploadDesignationDetailes() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Designation Master-Bulk Upload designation Detailes verification");
-		
 		
 		PerformerMethod.BulkUploadDesignationDetailes(test, workbook);
 		
@@ -143,34 +138,34 @@ public class PerformerTestCase extends BasePage
 		extent.flush();
 
 	}
-@Test(priority =7)
+    @Test(priority = 7) //Moved in all
    	void DeleteDesignation() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Designation Master-Delete Designation verification");
-   		
    		
    		PerformerMethod.DeleteDesignation(test, workbook);
    		
    		extent.endTest(test);
    		extent.flush();
-
    	}
-		@Test(priority =8)
+
+	@Test(priority = 8) //Moved in all
    	void DesignationClearBtn() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Designation Master-Clear Button verification");
-   		
    		
    		PerformerMethod.DesignationClearBtn(test, workbook);
    		
    		extent.endTest(test);
    		extent.flush();
-
    	}
+	
+
+	
 	
 	//========================On Board Employee==========================
 	
-@Test(priority =9)
+@Test(priority = 9)
    	void AddEmployee() throws InterruptedException, IOException, AWTException
    	{
    		test = extent.startTest("OnBoard Employee- Add Employee verification");
@@ -182,7 +177,7 @@ public class PerformerTestCase extends BasePage
    		extent.flush();
 
    	}
-  @Test(priority =10)
+  @Test(priority = 10)
    	void UpdateEmployee() throws InterruptedException, IOException
    	{
    		test = extent.startTest("OnBoard Employee- Update Employee verification");
@@ -220,44 +215,40 @@ public class PerformerTestCase extends BasePage
    		extent.flush();
 
    	}
-@Test(priority =13)
+    @Test(priority = 13) //Moved in all
  	void SearchFilerEmp() throws InterruptedException, IOException
  	{
  		test = extent.startTest("OnBoard Employee- Search filter verification");
- 		
  		
  		PerformerMethod.SearchFilerEmp(test);
  		
  		extent.endTest(test);
  		extent.flush();
- 
  	}
   
   
-@Test(priority =14)
+    @Test(priority = 14)
 	void UploadEmp() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("OnBoard Employee- Upload Employee verification");
-		
 		
 		PerformerMethod.UploadEmp(test);
 		
 		extent.endTest(test);
 		extent.flush();
-
 	}
-@Test(priority =15)
+
+@Test(priority = 15)
 void InvalidDateUploadEmp() throws InterruptedException, IOException, AWTException
 {
 	test = extent.startTest("OnBoard Employee- Bulk Upload-Invalid data verification");
-	
 	
 	PerformerMethod.InvalidDataUploadEmp(test);
 	
 	extent.endTest(test);
 	extent.flush();
-
 }
+
 @Test(priority =16)
 void InvalidPersonalEmpDeatiles() throws InterruptedException, IOException, AWTException
 {
@@ -490,21 +481,23 @@ void UploadCTCInvalidFileFormat() throws InterruptedException, IOException, AWTE
 	extent.flush();
 
 }
+
+
+
 //-------------------------Onboard Entity---------------------------------
 
-@Test(priority =35)
+@Test(priority = 35) //Moved in all
 void OnBoardEntityExport() throws InterruptedException, IOException, AWTException
 {
 	test = extent.startTest("OnBoard Entity- Export Button verfication");
-	
 	
 	PerformerMethod.OnBoardEntityExport(test);
 	
 	extent.endTest(test);
 	extent.flush();
-
 }
-@Test(priority =36)
+
+@Test(priority = 36)
 void UploadHolidayMaster() throws InterruptedException, IOException, AWTException
 {
 	test = extent.startTest("OnBoard Entity- Upload Holiday Master verfication");
@@ -564,18 +557,18 @@ void WithoutUploadHolidayMaster() throws InterruptedException, IOException, AWTE
 	extent.flush();
 
 }
-@Test(priority =41)
+
+@Test(priority = 41) //Moved in all
 void onBoardEntityPremiseViewBtn() throws InterruptedException, IOException, AWTException
 {
 	test = extent.startTest("OnBoard Entity- triangle button -Premise details frame verfication");
-	
 	
 	PerformerMethod.onBoardEntityPremiseViewBtn(test);
 	
 	extent.endTest(test);
 	extent.flush();
+}
 
-}*/
 @Test(priority =42)
 void onBoardEntityViewBtn() throws InterruptedException, IOException, AWTException
 {

@@ -4837,7 +4837,7 @@ for(String Fal : fail)
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
@@ -5603,7 +5603,7 @@ else
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
@@ -8026,7 +8026,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
@@ -8182,7 +8182,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
@@ -8200,15 +8200,15 @@ else {
 		LoginLocators.SelectPeriodValue1().click();
 		Thread.sleep(9000);
 		LoginLocators.UpcomingBox().click();				                
-        Thread.sleep(2000);
+        Thread.sleep(7000);
 	   
         LoginLocators.SelectBranch().click();
        Thread.sleep(3000);
-       LoginLocators.ExpandBranchn().click();
+       LoginLocators.ExpandBranchnew().click();
        Thread.sleep(3000);
-       String branch =LoginLocators.Branchvaluen().getText();
+       String branch =LoginLocators.BranchvalueCheckbox().getText(); //
        Thread.sleep(2000);
-       LoginLocators.Branchvaluen().click();
+       LoginLocators.BranchvalueCheckbox().click(); //
        Thread.sleep(2000);
        LoginLocators.ApplyBtn1().click();
        Thread.sleep(2000);

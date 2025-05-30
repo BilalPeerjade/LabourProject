@@ -68,7 +68,8 @@ import login.LoginLocators;
 		
 
 		/*
-	   @Test(priority = 1)
+		
+	   @Test(priority = 1)//Moved in all
 		void ComplianceBox() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Count by Clicking on 'Compliance'");
@@ -79,7 +80,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 2)
+		@Test(priority = 2)//Moved in all
 		void UpcomingBox() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Count by Clicking on 'Upcoming'");
@@ -222,7 +223,7 @@ import login.LoginLocators;
 		}
 		
 		
-		@Test(priority = 15)
+		@Test(priority = 15) //Moved in all
 		void ComplianceFilter1() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Compliance Box Filter Verification'");
@@ -233,7 +234,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-//		@Test(priority = 16)
+		@Test(priority = 16)
 		void UpcomingFilter() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Upcoming Box Filter Verification'");
@@ -441,7 +442,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 24)
+//		@Test(priority = 24) Not Complied
 		void NotComplied() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Pie Chart - Performance summary - Not Complied - match verification");
@@ -1313,8 +1314,8 @@ import login.LoginLocators;
 		
 		
 		
-		
 		*/
+		
 		
 		
 		
@@ -1338,7 +1339,7 @@ import login.LoginLocators;
 
 		
 		
-		@Test(priority = 2)
+//		@Test(priority = 2) Hide this not required
 		void UserAddNew() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Validadte Add New Button of User Master Page");
@@ -1349,7 +1350,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 3)
+//		@Test(priority = 3) Hide this not required
 		void UserEdit() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Validadte Edit Button of User Master Page");
@@ -1360,7 +1361,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 4)
+//		@Test(priority = 4) Hide this
 		void UserEditInvalid() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Validadte Edit Button of User Master with Invalid Data");
@@ -1393,7 +1394,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 7)
+//		@Test(priority = 7) Hide this not required
 		void UserDelete() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Validate Delete Button of User Master Page With No Compliances Assign");
@@ -1415,7 +1416,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 9) 
+//		@Test(priority = 9) Hide this
 		void UserDeleteCancel() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Validate 'Cancel' Button of Delete User from User Master Page");
@@ -1652,7 +1653,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 30)
+//		@Test(priority = 30) Hide this
 		void EntityDelete() throws InterruptedException, IOException
 		{
 			test = extent.startTest("To check whether entity is getting deleted or not");

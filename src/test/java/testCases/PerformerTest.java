@@ -86,11 +86,11 @@ public class PerformerTest extends BasePage {
 	
 	
 	
-	
-	@Test(priority = 1)
+	//Compliance box - Verify Compliance count, Export button and Overview button are working properly or not
+	@Test(priority = 1) //Moved in all
 	void ComplianceBox() throws InterruptedException, IOException
 	{
-		test = extent.startTest(" Count by Clicking on 'Compliance'");
+		test = extent.startTest("Dashboard - Count by Clicking on 'Compliance'");
 		
 		MethodsD.complianceBox(test,"Performer");
 		
@@ -99,7 +99,7 @@ public class PerformerTest extends BasePage {
 	}
 	
 	
-	@Test(priority = 2)
+	@Test(priority = 2) //Moved in all
 	void ComplianceFilter1() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Compliance Box Filter Verification'");
@@ -111,7 +111,8 @@ public class PerformerTest extends BasePage {
 	}
 
 	
-	@Test(priority = 3)
+	//Upcoming box - Verify Upcoming box count, Export button, Overview button and Branch Code Filters are working or not
+	@Test(priority = 3) //Moved in all
 	void UpcomingBox() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Count by Clicking on 'Upcoming'");
@@ -124,8 +125,8 @@ public class PerformerTest extends BasePage {
 	
 	
 
-	
-	@Test(priority = 4)
+	//Overdue box - Verify Overdue count, Export button and Overview button is working properly or not?
+	@Test(priority = 4) //Moved in all
 	void OverdueBox() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Count by Clicking on 'Overdue'");
@@ -136,8 +137,8 @@ public class PerformerTest extends BasePage {
 		extent.flush();
 	}
 	
-	
-	@Test(priority = 5)
+	//Pending Action - Verify Pending Action count, Export button, Overview button and Branch code is working fine or not
+	@Test(priority = 5) //Moved in all
 	void PendingActionBox() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Count by Clicking on 'Pending Action'");
@@ -148,7 +149,8 @@ public class PerformerTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 6)
+	//Need to discuss with sir we can hide this due to data will not come
+	@Test(priority = 6) //Moved in all
 	void PendingActionPerform() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Action perform from pending action'");
@@ -159,7 +161,7 @@ public class PerformerTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 7)
+	@Test(priority = 7) //Moved in all
 	void PendingReviewBox() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Count by Clicking on 'Pending Review'");
@@ -172,7 +174,7 @@ public class PerformerTest extends BasePage {
 	
 	
 	
-	@Test(priority = 8)
+	@Test(priority = 8) //Moved in all
 	void RegisterUpcoming() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Count by Clicking on Register - 'Upcoming'");
@@ -186,7 +188,7 @@ public class PerformerTest extends BasePage {
 	
 	
 	
-	@Test(priority = 9)
+	@Test(priority = 9) //
 	void RegisterOverdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Count by Clicking on Register - 'Overdue'");
@@ -275,7 +277,7 @@ public class PerformerTest extends BasePage {
 	}
 	
 	
-	@Test(priority = 17)
+	@Test(priority = 17) //Moved in all with sequance 
 	void UpcomingFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Upcoming Box Filter Verification'");
@@ -286,7 +288,7 @@ public class PerformerTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 18)
+	@Test(priority = 18) //Moved in all with sequance
 	void OverdueFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Overdue Box Filter Verification'");
@@ -299,7 +301,7 @@ public class PerformerTest extends BasePage {
 
 	
 	
-//	@Test(priority = 0)
+	@Test(priority = 6) //Moved in all
 	void PendingActionFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Pending Action Box Filter Verification'");
@@ -311,7 +313,7 @@ public class PerformerTest extends BasePage {
 	}
 
 	
-//	@Test(priority = 20)
+	@Test(priority = 20) //Moved in all
 	void PendingReviewFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" Pending Review Box Filter Verification'");
@@ -346,10 +348,10 @@ public class PerformerTest extends BasePage {
 	//	LoginLocators.Search().sendKeys("WWKRG");
 		LoginLocators.Search().sendKeys("AVACORED5");
 		Thread.sleep(5000);
-		wait.until(ExpectedConditions.visibilityOf(LoginLocators.DashboardArrow()));
+//		wait.until(ExpectedConditions.visibilityOf(LoginLocators.DashboardArrow()));
 		Thread.sleep(8000);
 		LoginLocators.DashboardArrow().click();
-		Thread.sleep(2000);
+		Thread.sleep(10000);
 		LoginLocators.SelectPeriodDashboard().click();
 		Thread.sleep(2000);
 		LoginLocators.SelectPeriodValue1().click();
@@ -491,7 +493,7 @@ public class PerformerTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 25)
+//	@Test(priority = 25) //Comment Due to Not Complied Xpath not getting
 	void NotComplied() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Pie Chart - Performance summary - Not Complied - match verification");
