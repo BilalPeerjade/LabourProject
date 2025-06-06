@@ -32,18 +32,18 @@ public class LocatorsP extends BasePage {
 	
 	public static WebElement CompHighRisk()	//Method for searching button for Save/Sign-in
 	{
-		submit = getDriver().findElement(By.cssSelector("body > app-root > div > app-layout > section > div > div > app-compliance-dashboard > div:nth-child(4) > div:nth-child(2) > div > app-cd-risk-summary > div > kendo-chart > div > svg > g > g:nth-child(3) > g:nth-child(20) > text"));
+		submit = getDriver().findElement(By.cssSelector("body > app-root > div > app-layout > section > div > div > app-compliance-dashboard > div:nth-child(4) > div:nth-child(2) > div > app-cd-risk-summary > div > kendo-chart > div > svg > g > g:nth-child(3) > g:nth-child(4) > g > g:nth-child(1) > g > g:nth-child(1) > path"));
 		return submit;
 	}
 	
 	public static WebElement CompMediumRisk()	//Method for searching button for Save/Sign-in
 	{
-		submit = getDriver().findElement(By.cssSelector("body > app-root > div > app-layout > section > div > div > app-compliance-dashboard > div:nth-child(4) > div:nth-child(2) > div > app-cd-risk-summary > div > kendo-chart > div > svg > g > g:nth-child(3) > g:nth-child(23) > text"));
+		submit = getDriver().findElement(By.cssSelector("body > app-root > div > app-layout > section > div > div > app-compliance-dashboard > div:nth-child(4) > div:nth-child(2) > div > app-cd-risk-summary > div > kendo-chart > div > svg > g > g:nth-child(3) > g:nth-child(4) > g > g:nth-child(2) > g > g:nth-child(1) > path:nth-child(1)"));
 		return submit;
 	}
 	public static WebElement CompLowRisk()	//Method for searching button for Save/Sign-in
 	{
-		submit = getDriver().findElement(By.cssSelector("body > app-root > div > app-layout > section > div > div > app-compliance-dashboard > div:nth-child(4) > div:nth-child(2) > div > app-cd-risk-summary > div > kendo-chart > div > svg > g > g:nth-child(3) > g:nth-child(26) > text"));
+		submit = getDriver().findElement(By.cssSelector("body > app-root > div > app-layout > section > div > div > app-compliance-dashboard > div:nth-child(4) > div:nth-child(2) > div > app-cd-risk-summary > div > kendo-chart > div > svg > g > g:nth-child(3) > g:nth-child(4) > g > g:nth-child(3) > g > g:nth-child(1) > path:nth-child(1)"));
 		return submit;
 	}
 	

@@ -1,6 +1,8 @@
 package rcp;
 
 import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.IOException;
@@ -549,6 +551,48 @@ public class OneCommonMethod {
             e.printStackTrace();
         }
     }
+
+    
+  //Not working  
+ /*   public static void validateFileUpload_Workspace(WebDriver driver, ExtentTest test, WebElement browseButton, WebElement uploadButton, WebElement messageElement, String filePath, String expectedText, String customMessage) {
+        try {
+            Thread.sleep(2000);
+            browseButton.click();
+            Thread.sleep(2000);
+
+            Robot robot = new Robot();
+            StringSelection filepath = new StringSelection(filePath);
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            Thread.sleep(2000);
+            robot.keyPress(KeyEvent.VK_V);
+            Thread.sleep(2000);
+            robot.keyRelease(KeyEvent.VK_V);
+            Thread.sleep(2000);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            Thread.sleep(2000);
+            robot.keyPress(KeyEvent.VK_ENTER);
+            Thread.sleep(2000);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+
+            Thread.sleep(2000);
+            uploadButton.click();
+            Thread.sleep(3000);
+
+            String actualMessage = messageElement.getText();
+
+            if (actualMessage.equalsIgnoreCase(expectedText)) {
+                test.log(LogStatus.PASS, customMessage + " " + actualMessage);
+            } else {
+                test.log(LogStatus.FAIL, customMessage + " Unexpected Message: " + actualMessage);
+            }
+
+        } catch (Exception ex) {
+            test.log(LogStatus.FAIL, customMessage + " Something went wrong during upload process.");
+        }
+    }
+*/
 
     
     

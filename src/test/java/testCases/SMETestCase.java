@@ -57,7 +57,7 @@ public class SMETestCase extends BasePage
 	@BeforeMethod
 	void Login() throws InterruptedException, IOException
 	{
-		initialization(link,4,"Labour");
+		initialization(link,9,"Labour");
 	
 	}
 	
@@ -85,7 +85,7 @@ public class SMETestCase extends BasePage
 		extent.flush();
 
 	}
-@Test(priority =3)
+    @Test(priority = 3)
 	void Overdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice- Overdue count verification");

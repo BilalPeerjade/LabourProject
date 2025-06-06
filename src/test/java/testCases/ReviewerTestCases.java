@@ -67,7 +67,7 @@ public class ReviewerTestCases extends BasePage
 		extent.flush();
 
 	}
-	@Test(priority =3)
+	@Test(priority = 3)
 	void StateDocZipFile() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Statutoty Document-Branch -Registor Compliance Type -Action Column -Zip File Verification");
@@ -79,19 +79,17 @@ public class ReviewerTestCases extends BasePage
 		extent.flush();
 
 	}
-	@Test(priority =4)
+	@Test(priority = 4)
 	void StateDownloadDoc() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Statutoty Document-Branch -Registor Compliance type-Action Column -Download Doc Verification");
-		
 		
 		ReviewerMethod.StateDownloadDoc(test);
 		
 		extent.endTest(test);
 		extent.flush();
-
 	}
-	@Test(priority =5)
+	@Test(priority = 5)
 	void StatutoryDocViewandOverview() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Statutoty Document-Branch - Registor Compliance type -Action Column -Overview and view button Verification");
@@ -104,7 +102,7 @@ public class ReviewerTestCases extends BasePage
 
 	}
 	
-	@Test(priority =6)
+	@Test(priority = 6)
 	void StatutoryDocZipFile() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Statutoty Document-State -Registor Compliance Type -Action Column -Zip File Verification");
@@ -116,7 +114,7 @@ public class ReviewerTestCases extends BasePage
 		extent.flush();
 
 	}
-	@Test(priority =7)
+	@Test(priority = 7)
 	void StatutoryDocDownloadDoc() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Statutoty Document-State -Registor Compliance type-Action Column -Download Doc Verification");
@@ -131,11 +129,10 @@ public class ReviewerTestCases extends BasePage
 	
 	
 	
-	@Test(priority =8)
+	@Test(priority = 8)
 	void ChallanDocDownload() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Statutoty Document-Branch -Challan Compliance type-Action Column -Download Doc Verification");
-		
 		
 		ReviewerMethod.ChallanDocDownload(test);
 		
@@ -143,7 +140,7 @@ public class ReviewerTestCases extends BasePage
 		extent.flush();
 
 	}
-	@Test(priority =9)
+	@Test(priority = 9)
 	void ChallanDocViewandOverview() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Statutoty Document-Branch -Challan Compliance type-Action Column -Overview and view button Verification");
@@ -168,7 +165,7 @@ public class ReviewerTestCases extends BasePage
 		extent.flush();
 
 	}
-	@Test(priority =11)
+	@Test(priority = 11)
 	void ChallanComplianceDocViewandOverview() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Statutoty Document-Compliance -Challan Compliance type-Action Column -Overview and view button Verification");
@@ -198,7 +195,7 @@ public class ReviewerTestCases extends BasePage
 	
 	//------------------------------Manage Masters---------------------------
 	
-	@Test(priority =13)
+//	@Test(priority =13) 
    	void UploadSealandSignature() throws InterruptedException, IOException, AWTException
    	{
    		test = extent.startTest("State-City Master -Upload Seal and Signature verification");
@@ -211,11 +208,10 @@ public class ReviewerTestCases extends BasePage
 
    	}
 	
-@Test(priority =14)
+//    @Test(priority = 14)
    	void AddDesignation() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Add Designation master verification");
-   		
    		
    		ReviewerMethod.AddDesignation(test, workbook);
    		
@@ -224,7 +220,7 @@ public class ReviewerTestCases extends BasePage
 
    	}
 	
-	@Test(priority =15)
+	@Test(priority = 15)
    	void DuplicateDesignation() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Duplicate Designation verification");
@@ -236,11 +232,10 @@ public class ReviewerTestCases extends BasePage
    		extent.flush();
 
    	}
-	@Test(priority =16)
+	@Test(priority = 16)
    	void DesignationExportBtn() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Designation Master-Export Button verification");
-   		
    		
    		ReviewerMethod.DesignationExportBtn(test, workbook);
    		
@@ -248,7 +243,7 @@ public class ReviewerTestCases extends BasePage
    		extent.flush();
 
    	}
-@Test(priority =17) 
+//    @Test(priority =17) 
    	void BulkUploadDesignation() throws InterruptedException, IOException, AWTException
    	{
    		test = extent.startTest("Designation Master-Bulk Upload verification");
@@ -260,7 +255,7 @@ public class ReviewerTestCases extends BasePage
    		extent.flush();
 
    	}
-@Test(priority =18) 
+@Test(priority = 18) 
 	void BulkUploadDesignationDetailes() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Designation Master-Bulk Upload designation Detailes verification");
@@ -272,29 +267,27 @@ public class ReviewerTestCases extends BasePage
 		extent.flush();
 
 	}
-@Test(priority =19)
+    @Test(priority = 19)
    	void DeleteDesignation() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Designation Master-Delete Designation verification");
    		
-   		
    		ReviewerMethod.DeleteDesignation(test, workbook);
+   	//	PerformerMethod.DeleteDesignation(test, workbook); //Performer Method
    		
    		extent.endTest(test);
    		extent.flush();
 
    	}
-		@Test(priority =20)
+	@Test(priority = 20)
    	void DesignationClearBtn() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Designation Master-Clear Button verification");
-   		
    		
    		ReviewerMethod.DesignationClearBtn(test, workbook);
    		
    		extent.endTest(test);
    		extent.flush();
-
    	}
 	
 	

@@ -322,6 +322,101 @@ test = extent.startTest("Manage Masters - Challan PT Slab - Verify the Employee 
 	
 	
 	
+	//Workspace----
+	@Test(priority = 200) //Moved in all //Bilal
+	void WorkspaceRegister() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest(" Workspace - Verify Frequency Dropdown is enable or not?");
+		
+		MethodsD.WorkspaceFrequencyDropdown(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 200) //Bilal //Moved in all
+	void WorkspaceApplyClearProceed() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest(" Workspace - Verify Apply button, Proceed button & Clear button is working or not?");
+		
+		MethodsD.WorkspaceApplyClearProceed(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 201) //Moved in all //Bilal
+	void WorkspaceChallanAct() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest(" Workspace - Verify after selecting Challan, Registers & Returns "
+				               + "Act values are reflecting properly or not?");
+		
+		MethodsD.WorkspaceChallanAct(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 202) //Bilal //Moved in all
+	void WorkspaceChallanForms() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify Challan Forms are reflecting or not?");
+		
+		MethodsD.WorkspaceChallanForms(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 203)//Bilal//Moved in all
+	void WorkspaceRegistersForms() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify Registers Forms are reflecting or not?");
+		
+		MethodsD.WorkspaceRegistersForms(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 204)//Bilal//Moved in all
+	void WorkspaceReturnForms() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify Returns Forms are reflecting or not?");
+		
+		MethodsD.WorkspaceReturnForms(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 204) //Bilal //Moved in all
+	void WorkspaceRegistersSingleFormSelection() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select single form checkbox");
+		
+		MethodsD.WorkspaceRegistersSingleFormSelection(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	@Test(priority = 204) //Bilal //Moved in all
+	void WorkspaceChallanActs() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select Challan in Act dropdown Acts are displayed properly or not?");
+		
+		MethodsD.WorkspaceChallanActs(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	
+	
+	
 	//Test for clicking Not Complied
 //	@Test(priority = 1)
 	void NotCompliedCheck() throws InterruptedException, IOException

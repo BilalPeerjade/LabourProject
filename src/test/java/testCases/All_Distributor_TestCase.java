@@ -23,9 +23,11 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import distributor.All_Distributor_Methods;
 import distributor.Methods;
+import distributor.MethodsD;
 import distributor.All_Distributor_Methods;
 import login.BasePage;
 import login.LoginLocators;
+import performer.PerformerMethod;
 
 	
 	public class All_Distributor_TestCase  extends BasePage {
@@ -67,7 +69,7 @@ import login.LoginLocators;
 		}
 		
 
-		/*
+	/*	
 		
 	   @Test(priority = 1)//Moved in all
 		void ComplianceBox() throws InterruptedException, IOException
@@ -239,7 +241,8 @@ import login.LoginLocators;
 		{
 			test = extent.startTest(" Upcoming Box Filter Verification'");
 			
-			All_Distributor_Methods.UpcomingFilter(test,"Distributor");
+		//	All_Distributor_Methods.UpcomingFilter(test,"Distributor");
+			MethodsD.UpcomingFilter(test,"Distributor");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -289,7 +292,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 21)
+//		@Test(priority = 21)
 		void RiskSummaryNotCompliedGraph() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Bar Graph -Risk Summary - Not Complied - Count Verification");
@@ -322,7 +325,8 @@ import login.LoginLocators;
 				if(high >= 0)
 				{
 					//Methods.HighRisk(test);
-					All_Distributor_Methods.RiskGraph( test, "High", high);
+			//		All_Distributor_Methods.RiskGraph( test, "High", high);
+					MethodsD.RiskGraph( test, "High", high);
 				}
 				else
 				{
@@ -332,7 +336,8 @@ import login.LoginLocators;
 				if(medium >= 0)
 				{
 					js.executeScript("window.scrollBy(0,300)");
-					All_Distributor_Methods.RiskGraph( test, "Medium", medium);
+				//	All_Distributor_Methods.RiskGraph( test, "Medium", medium);
+					MethodsD.RiskGraph( test, "Medium", medium);
 				}
 				else
 				{
@@ -343,7 +348,8 @@ import login.LoginLocators;
 				if(low >= 0)
 				{
 					js.executeScript("window.scrollBy(0,300)");
-					All_Distributor_Methods.RiskGraph( test, "Low", low);
+				//	All_Distributor_Methods.RiskGraph( test, "Low", low);
+					MethodsD.RiskGraph( test, "Low", low);
 				}
 				else
 				{
@@ -360,7 +366,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 22)
+//		@Test(priority = 22)
 		void RiskSummaryCompliedGraph() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Bar Graph -Risk Summary - Complied - Count Verification");
@@ -437,6 +443,7 @@ import login.LoginLocators;
 			test = extent.startTest("Pie Chart - Performance summary - Complied - match verification");
 			
 			All_Distributor_Methods.Complied(test,"Distributor");
+		//	MethodsD.Complied(test,"Distributor");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -499,6 +506,8 @@ import login.LoginLocators;
 			extent.endTest(test);
 			extent.flush();
 		}
+	
+		
 		
 		@Test(priority = 29)
 		void Report() throws InterruptedException, IOException
@@ -671,7 +680,7 @@ import login.LoginLocators;
 
 	   	}
 		
-	     @Test(priority = 42)
+//	     @Test(priority = 42) No Need to add
 	   	void AddDesignation() throws InterruptedException, IOException
 	   	{
 	   		test = extent.startTest("Add Designation master verification");
@@ -689,8 +698,8 @@ import login.LoginLocators;
 	   	{
 	   		test = extent.startTest("Duplicate Designation verification");
 	   		
-	   		
-	   		All_Distributor_Methods.DuplicateDesignation(test, workbook);
+	   	//	All_Distributor_Methods.DuplicateDesignation(test, workbook);
+	   		PerformerMethod.AddDesignation(test, workbook); //Common Method
 	   		
 	   		extent.endTest(test);
 	   		extent.flush();
@@ -700,7 +709,6 @@ import login.LoginLocators;
 	   	void DesignationExportBtn() throws InterruptedException, IOException
 	   	{
 	   		test = extent.startTest("Designation Master-Export Button verification");
-	   		
 	   		
 	   		All_Distributor_Methods.DesignationExportBtn(test, workbook);
 	   		
@@ -1102,13 +1110,12 @@ import login.LoginLocators;
 	   	{
 	   		test = extent.startTest("OnBorad CLRA-Search Box location verification");
 	   		
-	   		
 	   		All_Distributor_Methods.SearchBoxLocation(test, workbook);
 	   		
 	   		extent.endTest(test);
 	   		extent.flush();
-
 	   	}
+		
 		@Test(priority = 76)
 	   	void Contractor() throws InterruptedException, IOException, AWTException
 	   	{
@@ -1314,10 +1321,10 @@ import login.LoginLocators;
 		
 		
 		
+		
+		
+		
 		*/
-		
-		
-		
 		
 		
 		
@@ -1486,7 +1493,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 15)
+//		@Test(priority = 15)
 		void CorporateEditInvalid() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Validate Corporate Page Edit customer with invalid details");
@@ -1576,7 +1583,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 23) //Change in labour1 sheet Entity Name line 18
+	//	@Test(priority = 23) //Change in labour1 sheet Entity Name line 18
 		void EntityAddNew() throws InterruptedException, IOException, AWTException
 		{
 			test = extent.startTest("Validate Add new entity Button With valid data.");
@@ -1587,7 +1594,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 24) 
+//		@Test(priority = 24) Hide
 		void EntityEdit() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Validate Entity Page Entity Edit Button With Valid Data.");
@@ -1598,7 +1605,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 25) 
+//		@Test(priority = 25) 
 		void EntityEditinvalid() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Validate Entity Page Entity Edit Button With Invalid Data.");
@@ -1642,7 +1649,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 29)
+//		@Test(priority = 29)
 		void EntityDeleteCancel() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Validate entity Page Delete customer 'Cancel' button.");
@@ -1695,7 +1702,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 33)
+		@Test(priority = 33)//pass
 		void EntityBulkUploadCheck() throws InterruptedException, IOException, AWTException
 		{
 			test = extent.startTest("Validate message for valid file upload in selected(Checkbox) Entity functionality.");
@@ -1882,7 +1889,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 48)
+		@Test(priority = 48) //Pass
 		void UploadBranchCheckEmpty() throws InterruptedException, IOException, AWTException
 		{
 			test = extent.startTest("Upload Selected(Checkbox) Location with Empty File");
@@ -1893,7 +1900,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 49) 
+		@Test(priority = 49) //Pass
 		void UploadBranchInvalidTemp() throws InterruptedException, IOException, AWTException
 		{
 			test = extent.startTest("To check whether error message display or not for invalid template file upload from premise upload.");
@@ -1916,7 +1923,7 @@ import login.LoginLocators;
 			extent.flush();
 		}
 		
-		@Test(priority = 51)
+		@Test(priority = 51)//Pass
 		void Upload() throws InterruptedException, IOException, AWTException
 		{
 			test = extent.startTest("Validate validation message for the no choose file button from bulk upload of premise master.");
@@ -1964,7 +1971,7 @@ import login.LoginLocators;
 		@Test(priority = 55)
 		void UploadAddMapping() throws InterruptedException, IOException, AWTException
 		{
-			test = extent.startTest("Validate  Sample Document  download of address mapping upload from premise master.");
+			test = extent.startTest("Validate Sample Document download of address mapping upload from premise master.");
 			
 				Methods.UploadAddMapping(test);
 			

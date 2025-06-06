@@ -201,6 +201,27 @@ import com.relevantcodes.extentreports.ExtentReports;
 		LoginMethods.UserLogin(uname,password);		//Method of Login class to login user.
 		
 		
+	}
+	public void initializationSDExecutor(String link,int no,String text) throws InterruptedException, IOException {
+		try {
+		//loadProperties(no);
+		openBrower(no);
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+
+		
+		read_Login_username(no);
+		read_Login_password(no);
+		
+		
+		LoginMethods.UserLoginSDExecutor(uname,password,"SD");		//Method of Login class to login user.
+		
+		
+		
+		
 
 	}
 	

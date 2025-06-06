@@ -1274,7 +1274,11 @@ public class All_ClientPortal_Methods extends BasePage {
 			Thread.sleep(5000);
 	  		
 	  		All_ClientPortal_Locators.InitiateAction().click();
-	  		CoordinatorMethod.zoomOutScreen(2); //Zoom Out
+	  		CoordinatorMethod.zoomOutScreen(4); //Zoom Out
+	  		
+	        JavascriptExecutor js2 = (JavascriptExecutor) getDriver();
+	        js2.executeScript("window.scrollBy(0,1000)");
+	  		
 	  		Thread.sleep(5000);
 	       	All_ClientPortal_Locators.clickActivityType().click();
 	  		Thread.sleep(2000);
@@ -3193,7 +3197,7 @@ public class All_ClientPortal_Methods extends BasePage {
 		
  // 		All_ClientPortal_Locators.ViewER().click();
   		
-		CoordinatorMethod.zoomOutScreen(2); //Zoom Out for 2 times
+		CoordinatorMethod.zoomOutScreen(4); //Zoom Out for 2 times
 		
   		All_ClientPortal_Locators.InitiateAction().click();
   		Thread.sleep(5000);
@@ -7453,7 +7457,7 @@ public class All_ClientPortal_Methods extends BasePage {
 	{Thread.sleep(5000);
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+		WebElement element = getDriver().findElement(By.xpath("//h4[normalize-space()='My Compliance Calendar']"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
@@ -7562,7 +7566,7 @@ public class All_ClientPortal_Methods extends BasePage {
 	{Thread.sleep(5000);
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+		WebElement element = getDriver().findElement(By.xpath("//h4[normalize-space()='My Compliance Calendar']"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
@@ -7617,7 +7621,7 @@ public class All_ClientPortal_Methods extends BasePage {
 	{Thread.sleep(5000);
 	
     	JavascriptExecutor js = (JavascriptExecutor) getDriver();
-    	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+    	WebElement element = getDriver().findElement(By.xpath("//h4[normalize-space()='My Compliance Calendar']"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
@@ -7665,7 +7669,7 @@ public class All_ClientPortal_Methods extends BasePage {
   	{Thread.sleep(5000);
   	
       	JavascriptExecutor js = (JavascriptExecutor) getDriver();
-      	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+      	WebElement element = getDriver().findElement(By.xpath("//h4[normalize-space()='My Compliance Calendar']"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
   		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;

@@ -6640,7 +6640,7 @@ getDriver().findElement(By.xpath("//kendo-svgicon[@class='k-svg-i-caret-alt-righ
 	 	Thread.sleep(500);
 	 	  String msg=PerformerLocator.clickDeletemsg().getText();		//Reading Message appeared after save button
 	 	  
-	 	  if(msg.equalsIgnoreCase("Are you sure you want to delete this record?"))
+	 	  if(msg.equalsIgnoreCase("Are you sure you want to inactive this record?"))
 	 	 {
 	 		 test.log(LogStatus.PASS, "Message displayed = "+msg);
 	 		 
@@ -6656,7 +6656,7 @@ getDriver().findElement(By.xpath("//kendo-svgicon[@class='k-svg-i-caret-alt-righ
 	 		Thread.sleep(500);
 	 		  String msg1=PerformerLocator.clickDeletemsg1().getText();		//Reading Message appeared after save button
 	 		  
-	 		  if(msg1.equalsIgnoreCase("Data Deleted Successfully"))
+	 		  if(msg1.equalsIgnoreCase("Designation Inactivated Successfully"))
 	 		 {
 	 			 test.log(LogStatus.PASS, "Message displayed = "+msg1);
 	 			 

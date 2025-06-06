@@ -3,28 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.ReviewerTestCases">
+      <class name="testCases.All_Distributor_TestCase">
         <methods>
-          <include name="BulkUploadDesignationDetailes"/>
-          <include name="ChallanComplianceDocViewandOverview"/>
-          <include name="Login"/>
-          <include name="StateDownloadDoc"/>
-          <include name="AddDesignation"/>
-          <include name="ChallanDocViewandOverview"/>
-          <include name="ChallanDocDownload"/>
-          <include name="StatutoryDocZipFile"/>
-          <include name="DesignationExportBtn"/>
-          <include name="StatutoryDocViewandOverview"/>
-          <include name="DeleteDesignation"/>
-          <include name="Close"/>
+          <include name="Closing"/>
           <include name="setBrowser"/>
-          <include name="StateDocZipFile"/>
-          <include name="StatutoryDocDownloadDoc"/>
-          <include name="BulkUploadDesignation"/>
-          <include name="DuplicateDesignation"/>
-          <include name="ChallanComplianceDocDownload"/>
+          <include name="browserClosing"/>
+          <include name="EntityBulkUploadInvalidCheck"/>
+          <include name="Login"/>
         </methods>
-      </class> <!-- testCases.ReviewerTestCases -->
+      </class> <!-- testCases.All_Distributor_TestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

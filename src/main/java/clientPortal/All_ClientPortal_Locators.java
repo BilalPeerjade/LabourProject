@@ -108,7 +108,7 @@ public class All_ClientPortal_Locators extends BasePage {
 	
 	public static WebElement readTotalItems1( )		//Method for closing Message Popup
 	{
-		clients = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-client-dashboard/div[2]/div[7]/div/div/app-client-compliance-calender/div[2]/div[2]/kendo-grid/kendo-pager/kendo-pager-info"));
+		clients = getDriver().findElement(By.xpath("//kendo-pager-info[@class='k-pager-info k-label']"));
 		return clients;
 	}
 	

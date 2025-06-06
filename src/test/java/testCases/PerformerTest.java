@@ -418,15 +418,15 @@ public class PerformerTest extends BasePage {
 		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
 		Thread.sleep(7000);
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
-		LoginLocators.Search().sendKeys("AVACORED5");
+		LoginLocators.Search().sendKeys("TESTAUTO2");
 		//LoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
 		Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.DashboardArrow()));
 		LoginLocators.DashboardArrow().click();
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		LoginLocators.SelectPeriodDashboard().click();
-		Thread.sleep(2000);
-		LoginLocators.SelectPeriodValue1().click();
+		Thread.sleep(5000);
+		LoginLocators.SelectPeriodValue2024().click();
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	    
@@ -527,6 +527,10 @@ public class PerformerTest extends BasePage {
 	}
 	
 	
+	
+	
+	
+	
 	@Test(priority = 27)
 	void WorkspaceRegister() throws InterruptedException, IOException, AWTException
 	{
@@ -539,7 +543,7 @@ public class PerformerTest extends BasePage {
 	}
 	
 	
-	@Test(priority = 28)
+	@Test(priority = 28) //Moved in all
 	void History() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest(" Workspace - 'History file download verification' ");

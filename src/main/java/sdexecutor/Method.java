@@ -300,7 +300,15 @@ public class Method extends BasePage
 	 	
 	 }
 	
-	 			
+	 public static void DoNotHaveOTP(ExtentTest test) throws InterruptedException, EncryptedDocumentException, IOException, AWTException
+	 {
+	 	
+
+	 	 getDriver().navigate().refresh();
+	 	 JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	 	 
+	 	 
+	 }			
 	
 	 
 	 public static void NoticeEditDownload(ExtentTest test) throws InterruptedException, EncryptedDocumentException, IOException, AWTException

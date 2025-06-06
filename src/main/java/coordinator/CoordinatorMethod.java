@@ -1222,6 +1222,10 @@ public class CoordinatorMethod extends BasePage
 			getDriver().findElement(By.xpath("//a[normalize-space()='Document Section']")).click();
 
 
+			// + Document Repository label bar
+			Thread.sleep(5000);
+			getDriver().findElement(By.xpath("(//img[@class='svg-icon-btn'])[1]")).click();
+			
 			// 1 Logic for Notice Document
 			Thread.sleep(3000);
 			File dir = new File("C:\\Users\\bilali\\Downloads");
@@ -1427,7 +1431,7 @@ public class CoordinatorMethod extends BasePage
 			CoordinatorLocator.clickAddNew().click();
 			
 			Thread.sleep(1000);
-		 	CoordinatorLocator.clickEntity().click();
+		 	CoordinatorLocator.clickEntityRehistrationDropdown().click();
 		 	Thread.sleep(1000);
 		 	CoordinatorLocator.selectEntity().click();
 			
@@ -1439,7 +1443,7 @@ public class CoordinatorMethod extends BasePage
 //			Row row = sheet.getRow(4);						//Selected 0th index row (First row)
 //			Cell c = row.getCell(1);						//Selected cell (0 row,1 column)
 //			String state = c.getStringCellValue();
-			CoordinatorLocator.clickState().click();
+			CoordinatorLocator.clickStateRegistrationDropdown().click();
 			Thread.sleep(1000);
 			CoordinatorLocator.selectState1().click();
 			

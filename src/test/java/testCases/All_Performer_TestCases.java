@@ -87,7 +87,7 @@ public class All_Performer_TestCases extends BasePage{
 	
 	}
 	
-	
+	/*
 	
 	@Test(priority = 1) //Bilal
 	void CompanyLogo() throws InterruptedException, IOException
@@ -290,7 +290,7 @@ public class All_Performer_TestCases extends BasePage{
 	
 	
 	
-	/*
+	*/
 	
 	//---Manage Masters---
 	
@@ -372,7 +372,7 @@ test = extent.startTest("Manage Master - Leave Type - Verify to check Search Lea
 	@Test(priority = 57) //Bilal
    	void PaycodeMappingSearchField() throws InterruptedException, IOException
    	{
-test = extent.startTest("Manage Masters - Paycode Mapping - Verify to check Add New error is displayed or not?");
+test = extent.startTest("Manage Masters - Paycode Mapping - Verify to check search field is working or not?");
    		   		
    		PerformerMethod.PaycodeMappingSearchField(test, workbook);
 
@@ -490,12 +490,244 @@ test = extent.startTest("Manage Masters - Challan PT Slab - Verify the Employee 
    	}
    	
    	
-   	*/
    	
+   	
+   	
+   	//-----Workspace----
+	@Test(priority = 200) //Bilal
+	void WorkspaceRegister() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest(" Workspace - Verify Frequency Dropdown is enable or not?");
+		
+		MethodsD.WorkspaceFrequencyDropdown(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+
+	
+	@Test(priority = 201) //Bilal
+	void WorkspaceChallanAct() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select Compliance dropdown Compliances are reflecting properly or not?");
+		
+		MethodsD.WorkspaceChallanAct(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 202) //Bilal
+	void WorkspaceChallanActs() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select Challan in Act dropdown Acts are displayed properly or not?");
+		
+		MethodsD.WorkspaceChallanActs(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 203) //Bilal
+	void WorkspaceRegisterActs() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select Register in Act dropdown Acts are displayed properly or not?");
+		
+		MethodsD.WorkspaceRegisterActs(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 204) //Bilal
+	void WorkspaceReturnActs() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select 'Return - Monthly' in Act dropdown Acts are displayed properly or not?");
+		
+		MethodsD.WorkspaceReturnActs(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 205) //Bilal
+	void WorkspaceReturnQuarterlyActs() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select 'Return - Quarterly' in Act dropdown Acts are displayed properly or not?");
+		
+		MethodsD.WorkspaceReturnQuarterlyActs(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 206) //Bilal
+	void WorkspaceReturnHalfYearlyActs() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select 'Return - HalfYearly' in Act dropdown Acts are displayed properly or not?");
+		
+		MethodsD.WorkspaceReturnHalfYearlyActs(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 207) //Bilal
+	void WorkspaceReturnAnnualActs() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select 'Return - Annual' in Act dropdown Acts are displayed properly or not?");
+		
+		MethodsD.WorkspaceReturnAnnualActs(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 208) //Bilal
+	void WorkspaceReturnBiAnnualActs() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select 'Return - BiAnnual' in Act dropdown Acts are displayed properly or not?");
+		
+		MethodsD.WorkspaceReturnBiAnnualActs(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 209) //Bilal
+	void WorkspaceSelectYearColumn() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select 'Select Year' dropdown & check Years are displayed properly or not?");
+		
+		MethodsD.WorkspaceSelectYearColumn(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 210) //Bilal
+	void WorkspaceSelectPeriodColumn() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select 'Select Period' dropdown & check Periods are displayed properly or not?");
+		
+		MethodsD.WorkspaceSelectPeriodColumn(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 211) //Bilal
+	void WorkspaceApplyClearProceed() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest(" Workspace - Verify Apply button, Proceed button & Clear button is working or not?");
+		
+		MethodsD.WorkspaceApplyClearProceed(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 212) //Bilal
+	void WorkspaceChallanForms() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify Challan Forms are reflecting or not?");
+		MethodsD.WorkspaceChallanForms(test,"Performer");
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 213)//Bilal
+	void WorkspaceRegistersForms() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify Registers Forms are reflecting or not?");
+		
+		MethodsD.WorkspaceRegistersForms(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 214)//Bilal
+	void WorkspaceReturnForms() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify Returns Forms are reflecting or not?");
+		
+		MethodsD.WorkspaceReturnForms(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 215) //Bilal
+	void WorkspaceRegistersSingleFormSelection() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to select forms check box & Input File view button is working or not?");
+		
+		MethodsD.WorkspaceRegistersSingleFormSelection(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 216) //Bilal
+	void WorkspaceProceedBtn() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify to check proceed button works correctly according to input forms check box selection");
+		
+		MethodsD.WorkspaceProceedBtn(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 217) //
+	void History() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest(" Workspace - 'History file download verification' ");
+		
+		MethodsD.History(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 218) //Bilal
+	void WorkspaceSampleTemplate() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest(" Workspace - Verify to download sample document");
+		
+		MethodsD.WorkspaceSampleTemplate(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 219) //Bilal
+	void WorkspaceEmptyFile() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify Errors without selecting file upload & Empty file upload");
+		
+		MethodsD.WorkspaceEmptyFile(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 220) //Bilal
+	void WorkspaceErrorFileUpload() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify error with uploading only 2 columns data & Invalid Headers File");
+		
+		MethodsD.WorkspaceErrorFileUpload(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	@Test(priority = 221) //Bilal
+	void WorkspaceInvalidFileDownloadErrorFile() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Workspace - Verify error with uploading only 2 columns data & Invalid Headers File");
+		
+		MethodsD.WorkspaceInvalidFileDownloadErrorFile(test,"Performer");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
+	
+	
+	
 	@AfterMethod
   	void browserClosing() throws InterruptedException
   	{
-		Thread.sleep(1000);
+		Thread.sleep(10000);
 		closeBrowser();
   		//Thread.sleep(1000);
   		//getDriver().close();

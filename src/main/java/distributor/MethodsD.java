@@ -33,6 +33,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
@@ -66,7 +67,7 @@ public class MethodsD extends BasePage {
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 		
 	//	LoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
@@ -1072,7 +1073,7 @@ else
 		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
 		if(user.equalsIgnoreCase("Performer"))
 		{
-			LoginLocators.Search().sendKeys("TESTAUTO");
+			LoginLocators.Search().sendKeys("TESTAUTO2");
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
@@ -1080,7 +1081,7 @@ else
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 	//	LoginLocatorsLoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
 	//	LoginLocators.Search().sendKeys("WWKRG");
@@ -1202,7 +1203,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 		//LoginLocatorsLoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
 		//LoginLocators.Search().sendKeys("WWKRG");
@@ -1330,7 +1331,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 	//	LoginLocatorsLoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
 	//	LoginLocators.Search().sendKeys("WWKRG");
@@ -1572,7 +1573,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 	//	LoginLocators.Search().sendKeys("WWKRG");
 	//	LoginLocatorsLoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
@@ -1698,7 +1699,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 	//	LoginLocatorsLoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
 	//	LoginLocators.Search().sendKeys("WWKRG");
@@ -1824,7 +1825,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 	//	LoginLocatorsLoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
 	//	LoginLocators.Search().sendKeys("WWKRG");
@@ -1950,7 +1951,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 	//	LoginLocatorsLoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
 	//	LoginLocators.Search().sendKeys("WWKRG");
@@ -2937,7 +2938,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO2");	
 		}
 	//	LoginLocators.Search().sendKeys("Regtrack Pvt Ltd");
 	//	LoginLocators.Search().sendKeys("WWKRG");
@@ -3658,7 +3659,7 @@ else {
 		}
 		else if(user.equalsIgnoreCase("Distributor"))
 		{
-			LoginLocators.Search().sendKeys("AVACORED5");	
+			LoginLocators.Search().sendKeys("TESTAUTO");	
 		}
 		else if(user.equalsIgnoreCase("Reviewer"))
 		{
@@ -6668,7 +6669,7 @@ else {
     	       Thread.sleep(4000);  // Wait for dialog to appear
 
     	        // Specify the file path
-    	        String filePath = "E:\\Labor Upload\\Live Upload Sheet\\Sample-MonthlyAttendance_03Mar2025040814.xlsx";
+    	        String filePath = "D:\\Upload Automation Files\\WorkSpace\\AttendanceFile.xlsx";
     	        StringSelection selection = new StringSelection(filePath);
 
     	        // Copy file path to clipboard
@@ -6779,6 +6780,1697 @@ else {
 			LoginLocators.OK().click();
 			   Thread.sleep(2000);	
 		
+		 
+	}
+	public static void WorkspaceChallanAct( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+ 
+/*		LoginLocators.SelectChallan().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(3000);
+        
+        //txt & txt2 & txt3 same xpath need to modify if changed
+        String txt = getDriver().findElement(By.xpath("//kendo-list//ul/li")).getText();
+
+        if (txt.equalsIgnoreCase("Employee Provident Fund Act") || 
+            txt.equalsIgnoreCase("Employee State Insurance Act") || 
+            txt.equalsIgnoreCase("Professional Tax Act")) 
+        {
+            
+        	test.log(LogStatus.PASS, "On Selcting Challan Act dropdown values are displayed");
+        	//test.log(LogStatus.PASS, );
+        }
+        else
+        {
+        	test.log(LogStatus.FAIL, "On Selcting Challan Act dropdown values not displayed");
+        }
+        
+        LoginLocators.Clear().click();
+        
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.ClickRegister().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(3000);
+        
+        String txt2 = getDriver().findElement(By.xpath("//kendo-list//ul/li")).getText();
+
+        if (txt2.equalsIgnoreCase("Shops and Establishment and Allied Acts") || 
+            txt2.equalsIgnoreCase("Factory and Allied Acts") || 
+            txt2.equalsIgnoreCase("Shops/Contract Labour Regulation & Abolition Act") ||
+            txt2.equalsIgnoreCase("Factory/Contract Labour Regulation & Abolition Act")) 
+        {
+            
+        	test.log(LogStatus.PASS, "On Selcting Register Act dropdown values are displayed");
+        	//test.log(LogStatus.PASS, );
+        }
+        else
+        {
+        	test.log(LogStatus.FAIL, "On Selcting Register Act dropdown values not displayed");
+        }
+        LoginLocators.Clear().click();
+        
+        
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+		LoginLocators.SelectReturnn().click();
+		Thread.sleep(1000);
+        LoginLocators.FrequencyDropdown().click();
+        Thread.sleep(3000);
+        LoginLocators.FrequencyQuarterly().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(3000);
+        
+        String txt3 = getDriver().findElement(By.xpath("//kendo-list//ul/li")).getText();
+        
+        if (txt3.equalsIgnoreCase("Employee's Compensation Act, 1923") || 
+                txt3.equalsIgnoreCase("Employment Exchange (Compulsory Notification of Vacancies) Act, 1959") || 
+                txt3.equalsIgnoreCase("Labor Welfare Fund Act, 1965") ||
+                txt3.equalsIgnoreCase("Shops & Commercial Establishment Act") ||
+                txt3.equalsIgnoreCase("Shops/Contract Labour Regulation & Abolition Act") || 
+        	    txt3.equalsIgnoreCase("The Factories Act, 1948")) 
+            {
+                
+            	test.log(LogStatus.PASS, "On Selcting Return Act dropdown values are displayed");
+            	//test.log(LogStatus.PASS, );
+            }
+            else
+            {
+            	test.log(LogStatus.FAIL, "On Selcting Return Act dropdown values not displayed");
+            }
+
+		*/
+		
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<String> actualActs = new ArrayList<>();
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Act: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+                "Challan",
+                "Register",
+                "Return"
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Compliance: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Compliances are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+	}
+	
+	public static void WorkspaceChallanForms( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.SelectChallan().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(1000);
+        LoginLocators.SelectChallanEPF().click();
+        Thread.sleep(1000);
+        LoginLocators.YearDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.Year2024().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodJan().click();
+        Thread.sleep(1000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(1000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		
+        WebElement viewbutton = getDriver().findElement(By.xpath("//img[@title='View']"));
+        System.out.println(viewbutton);
+        
+        Thread.sleep(6000);
+        if(viewbutton.isDisplayed())
+        {
+        	test.log(LogStatus.PASS, "Challans Forms are displayed");
+        }
+        else
+        {
+        	test.log(LogStatus.FAIL, "Challans Forms are not displayed");
+        }
+        
+		
+	}
+	public static void WorkspaceRegistersForms( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.ClickRegisterDrp().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(1000);
+        LoginLocators.SelectRegisterSEA().click();
+        Thread.sleep(1000);
+        LoginLocators.YearDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.Year2024().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodJan().click();
+        Thread.sleep(1000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(1000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		
+        WebElement viewbutton = getDriver().findElement(By.xpath("//img[@title='View']"));
+        System.out.println(viewbutton);
+        
+        Thread.sleep(6000);
+        if(viewbutton.isDisplayed())
+        {
+        	test.log(LogStatus.PASS, "Registers Forms are displayed");
+        }
+        else
+        {
+        	test.log(LogStatus.FAIL, "Registers Forms are not displayed");
+        }
+		
+	}
+	public static void WorkspaceRegistersSingleFormSelection( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.ClickRegisterDrp().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(1000);
+        LoginLocators.SelectRegisterSEA().click();
+        Thread.sleep(1000);
+        LoginLocators.YearDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.Year2024().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodJan().click();
+        Thread.sleep(1000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(1000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		
+		WebElement allCB=getDriver().findElement(By.xpath("//div[@class='header-checkbox']"));
+		
+		WebElement singleCB=getDriver().findElement(By.xpath("(//input[@type='checkbox'])[2]"));
+		
+		WebElement InputFileView=getDriver().findElement(By.xpath("(//img[@title='View'])[1]"));
+		
+		
+		if(singleCB.isDisplayed() && allCB.isDisplayed() && InputFileView.isDisplayed())
+		{
+			allCB.click();
+			Thread.sleep(6000);
+			test.log(LogStatus.PASS, "Select all check box is working properly");
+			allCB.click();
+			Thread.sleep(5000);
+			singleCB.click();
+			test.log(LogStatus.PASS, "Select single check box is working properly");
+			Thread.sleep(5000);
+			InputFileView.click();
+			test.log(LogStatus.PASS, "Input file view button is working properly");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Grid data is not displayed");
+		}
+		
+	}
+	public static void WorkspaceProceedBtn( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.ClickRegisterDrp().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(1000);
+        LoginLocators.SelectRegisterSEA().click();
+        Thread.sleep(1000);
+        LoginLocators.YearDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.Year2024().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodJan().click();
+        Thread.sleep(1000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(1000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		
+		WebElement allCB=getDriver().findElement(By.xpath("//div[@class='header-checkbox']"));
+		
+		
+		List<WebElement> proceedButtons = getDriver().findElements(By.xpath("//button[normalize-space()='Proceed']"));
+
+		if (!proceedButtons.isEmpty() && proceedButtons.get(0).isDisplayed()) {
+		    test.log(LogStatus.FAIL, "Without selection of input check box, Proceed button is displayed");
+		} else {
+		    test.log(LogStatus.PASS, "Without selection of input check box, Proceed button is not displayed");
+		}
+		
+		
+	/*	if(LoginLocators.Proceed().isDisplayed())
+		{
+			test.log(LogStatus.FAIL, "Wihout selection of input check box proceed button is displayed");
+		}
+		else
+		{
+			test.log(LogStatus.PASS, "Wihout selection of input check box proceed button is not displayed");
+		}*/
+		
+		
+		Thread.sleep(6000);
+		allCB.click();
+		Thread.sleep(6000);
+		if(LoginLocators.Proceed().isDisplayed())
+		{
+			test.log(LogStatus.PASS, "With selection of input check box proceed button is displayed");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "With selection of input check box proceed button is not displayed");
+		}
+		Thread.sleep(8000);
+		
+		LoginLocators.Proceed().click();
+		if(LoginLocators.RefreshBtn().isDisplayed())
+		{
+			test.log(LogStatus.PASS, "Clicking the Proceed button takes the user to the Input Web Upload page.");
+		}
+		else
+		{
+			test.log(LogStatus.PASS, "Clicking the Proceed button does not redirect the user to the Input Web Upload page.");
+		}
+		
+		
+	}
+	
+	public static void WorkspaceChallanActs( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.SelectChallan().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(5000);
+        
+        
+        
+//        String texsctt =  getDriver().findElement(By.xpath("//span[@class='k-list-item-text']")).getText();
+        
+//        System.out.println("TEXT FOUND: " + texsctt);
+        
+ 
+       
+        
+        
+        
+ /*       try {
+            // Click on "Compliance" > "Challan"
+//            LoginLocators.ComplianceDropdown().click();
+ //           LoginLocators.SelectChallan().click();
+            Thread.sleep(1000); // Wait for Act dropdown to populate
+
+            // Click Act dropdown to reveal options
+//            LoginLocators.ActDropdown().click();
+            Thread.sleep(1000);
+
+            // Fetch all dropdown values
+            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+ 
+            
+            List<String> actualActs = new ArrayList<>();
+
+            for (WebElement option : actOptions) {
+                System.out.println("Found: " + option.getText());
+            }
+
+            
+            for (WebElement option : actOptions) {
+                actualActs.add(option.getText().trim());
+            }
+
+            // Expected list
+            List<String> expectedActs = Arrays.asList(
+            		"Employee Provident Fund Act",
+            		"Employee State Insurance Act",
+            		"Professional Tax Act"
+            );
+
+            if (actualActs.containsAll(expectedActs)) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown: " + actualActs);
+            } else {
+                test.log(LogStatus.FAIL, "Missing values. Expected: " + expectedActs + ", but found: " + actualActs);
+            }
+
+        } catch (Exception e) {
+            test.log(LogStatus.FAIL, "Exception occurred: " + e.getMessage());
+        }
+        */
+        
+/*        try {
+            Thread.sleep(1000); // Wait for dropdown to load
+
+            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<String> actualActs = new ArrayList<>();
+
+            // Print and log each act line by line
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                System.out.println("Found: " + actText);
+                test.log(LogStatus.INFO, "Found Act: " + actText);    // Each act on separate line
+                actualActs.add(actText);
+            }
+
+            List<String> expectedActs = Arrays.asList(
+                "Employee Provident Fund Act",
+                "Employee State Insurance Act",
+                "Professional Tax Act",
+                "ABC scsc sjisnpoj"
+            );
+
+            if (actualActs.containsAll(expectedActs)) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown.");
+            } else {
+                test.log(LogStatus.FAIL, "Missing values. Expected: " + expectedActs + ", but found: " + actualActs);
+            }
+
+        } catch (Exception e) {
+            test.log(LogStatus.FAIL, "Exception occurred: " + e.getMessage());
+        }
+*/
+        
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<String> actualActs = new ArrayList<>();
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Act: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+                "Employee Provident Fund Act",
+                "Employee State Insurance Act",
+                "Professional Tax Act"
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Act: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+		
+	}
+	
+	public static void WorkspaceRegisterActs( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.ClickRegisterDrp().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(5000);
+            
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<String> actualActs = new ArrayList<>();
+            Thread.sleep(5000);
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Act: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+                "Shops and Establishment and Allied Acts",
+                "Factory and Allied Acts",
+                "Shops/Contract Labour Regulation & Abolition Act",
+                "Factory/Contract Labour Regulation & Abolition Act"
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Act: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+		
+	}
+	
+	public static void WorkspaceReturnActs( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+        LoginLocators.SelectReturnn().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyDropdown().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyMonthly().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(5000);
+            
+        //Checking Return Monthly Acts
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+//            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<WebElement> actOptions = getDriver().findElements(LoginLocators.UniqueValues());
+            List<String> actualActs = new ArrayList<>();
+            Thread.sleep(5000);
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Act: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+                "Employee's Compensation Act, 1923",
+                "Employees State Insurance Act, 1948",
+                "Employees' Provident Funds & Miscellaneous Provisions Act, 1952",
+                "Labour Welfare Fund Act, 1965",
+                "Payment of Bonus Act, 1965",
+                "Payment of Gratuity Act, 1972",
+                "Shops & Commercial Establishment Act",
+                "Shops/Contract Labour Regulation & Abolition Act",
+                "Tax on Professions, Trades, Callings and Employment's Act, 1976",
+                "The Factories Act, 1948"
+                
+                
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Act: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+	}
+	public static void WorkspaceReturnQuarterlyActs( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+        LoginLocators.SelectReturnn().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyDropdown().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyQuarterly().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(5000);
+            
+        //Checking Return Monthly Acts
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+//            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<WebElement> actOptions = getDriver().findElements(LoginLocators.UniqueValues());
+            List<String> actualActs = new ArrayList<>();
+            Thread.sleep(5000);
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Act: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+                "Employee's Compensation Act, 1923",
+                "Employment Exchange (Compulsory Notification of Vacancies) Act, 1959",
+                "Labour Welfare Fund Act, 1965",
+                "Shops & Commercial Establishment Act",
+                "Shops/Contract Labour Regulation & Abolition Act",
+                "The Factories Act, 1948"
+                
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Act: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+		
+	}
+	
+	public static void WorkspaceReturnHalfYearlyActs( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+        LoginLocators.SelectReturnn().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyDropdown().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyHalfYearly().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(5000);
+            
+        //Checking Return Monthly Acts
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+//            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<WebElement> actOptions = getDriver().findElements(LoginLocators.UniqueValues());
+            List<String> actualActs = new ArrayList<>();
+            Thread.sleep(5000);
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Act: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+            		"Labour Welfare Fund Act, 1965",
+            		"Shops & Commercial Establishment Act",
+            		"Shops/Contract Labour Regulation & Abolition Act",
+            		"Tax on Professions, Trades, Callings and Employment's Act, 1976",
+            		"The Factories Act, 1948"
+                
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Act: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+		
+	}
+	public static void WorkspaceReturnAnnualActs( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+        LoginLocators.SelectReturnn().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyDropdown().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyAnnual().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(9000);
+            
+        //Checking Return Monthly Acts
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+//            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<WebElement> actOptions = getDriver().findElements(LoginLocators.UniqueValues());
+            List<String> actualActs = new ArrayList<>();
+            Thread.sleep(8000);
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Act: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+              "Contract Labour (Regulation & Abolition) Act,1970",
+              "Employee's Compensation Act, 1923",
+              "Employees State Insurance Act, 1948",
+              "Industrial Establishment (National and Festival Holidays) Act, 1958",
+              "Labour Welfare Fund Act, 1965",
+              "Maternity Benefit Act, 1961",
+              "Minimum Wages Act, 1948",
+              "Payment of Bonus Act, 1965",
+              "Payment of Gratuity Act, 1972",
+              "Payment of wages Act,1936",
+              "Shops & Commercial Establishment Act",
+              "Shops/Contract Labour Regulation & Abolition Act",
+              "Tax on Professions, Trades, Callings and Employment's Act, 1976",
+              "The Factories Act, 1948",
+              "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013"
+                
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Act: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+		
+	}
+	public static void WorkspaceReturnBiAnnualActs( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+        LoginLocators.SelectReturnn().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyDropdown().click();
+        Thread.sleep(2000);
+        LoginLocators.FrequencyBiAnnual().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(9000);
+            
+        //Checking Return Bi Annual Acts
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+//            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<WebElement> actOptions = getDriver().findElements(LoginLocators.UniqueValues());
+            List<String> actualActs = new ArrayList<>();
+            Thread.sleep(8000);
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Act: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+              "Employment Exchange (Compulsory Notification of Vacancies) Act, 1959"
+                
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Act: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Acts are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+		
+	}
+	
+	public static void WorkspaceSelectYearColumn( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+//        LoginLocators.SelectReturnn().click();
+        Thread.sleep(2000);
+//        LoginLocators.FrequencyDropdown().click();
+        Thread.sleep(2000);
+//        LoginLocators.FrequencyBiAnnual().click();
+        Thread.sleep(3000);
+//        LoginLocators.Act().click();
+        LoginLocators.SelectYearDropdown().click();
+        Thread.sleep(9000);
+            
+        //Checking Return Bi Annual Acts
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+//            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<WebElement> actOptions = getDriver().findElements(LoginLocators.UniqueValues());
+            List<String> actualActs = new ArrayList<>();
+            Thread.sleep(8000);
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Year: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+            		"2025",
+            		"2024",
+            		"2023",
+            		"2022",
+            		"2021",
+            		"2020",
+            		"2019",
+            		"2018",
+            		"2017"
+                
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Year: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Years are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+		
+	}
+	public static void WorkspaceSelectPeriodColumn( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		
+//		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+
+		LoginLocators.PeriodDrp().click();
+        Thread.sleep(9000);
+            
+        //Checking Return Bi Annual Acts
+        try {
+            Thread.sleep(5000);
+
+            // Get dropdown options
+//            List<WebElement> actOptions = getDriver().findElements(By.xpath("//span[@class='k-list-item-text']"));
+            List<WebElement> actOptions = getDriver().findElements(LoginLocators.UniqueValues());
+            List<String> actualActs = new ArrayList<>();
+            Thread.sleep(8000);
+
+            for (WebElement option : actOptions) {
+                String actText = option.getText().trim();
+                test.log(LogStatus.PASS, "Found Period: " + actText);
+                actualActs.add(actText);
+            }
+
+            // Expected Acts
+            List<String> expectedActs = Arrays.asList(
+            		"January",
+            		"February",
+            		"March",
+            		"April",
+            		"May",
+            		"June",
+            		"July",
+            		"August",
+            		"September",
+            		"October",
+            		"November",
+            		"December"
+                
+            );
+
+            // Compare and log missing acts only
+            List<String> missingActs = new ArrayList<>();
+            for (String expected : expectedActs) {
+                if (!actualActs.contains(expected)) {
+                    missingActs.add(expected);
+                    test.log(LogStatus.FAIL, "Not Found Period: - " + expected);
+                }
+            }
+
+            // Final Result
+            if (missingActs.isEmpty()) {
+                test.log(LogStatus.PASS, "All expected Periods are present in the dropdown.");
+            }
+
+        } catch (Exception e) {
+            
+        }
+        
+		
+	}
+	public static void WorkspaceReturnForms( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.SelectReturnn().click();
+        Thread.sleep(3000);
+        LoginLocators.FrequencyDropdown().click();
+        Thread.sleep(1000);
+        LoginLocators.FrequencyAnnual().click();
+        Thread.sleep(1000);
+        LoginLocators.Act().click();
+        Thread.sleep(1000);
+        LoginLocators.ActPaymentOfBonus1965().click();
+        Thread.sleep(1000);
+        LoginLocators.YearDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.Year2024().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodAnnual().click();
+        Thread.sleep(1000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(1000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		
+        WebElement viewbutton = getDriver().findElement(By.xpath("//img[@title='View']"));
+        System.out.println(viewbutton);
+        
+        Thread.sleep(6000);
+        if(viewbutton.isDisplayed())
+        {
+        	test.log(LogStatus.PASS, "Returns Forms are displayed");
+        }
+        else
+        {
+        	test.log(LogStatus.FAIL, "Returns Forms are not displayed");
+        }
+		
+	}
+	
+	
+	public static void WorkspaceFrequencyDropdown( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+	
+	//	WebDriverWait wait1 = new WebDriverWait(getDriver(), Duration.ofMinutes(2)); // 2 minutes
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+
+/*
+		try {
+		    // ----------- Challan -----------
+		    LoginLocators.ComplianceDropdown().click();
+		    Thread.sleep(1000);
+		    LoginLocators.SelectChallan().click();
+		    Thread.sleep(1000);
+		    LoginLocators.Clear().click();
+		    Thread.sleep(1000);
+
+		    try {
+		        LoginLocators.FrequencyDropdown().click();
+		        test.log(LogStatus.PASS, "On selecting 'Challan', Frequency dropdown is ENABLED.");
+		    } catch (Exception e) {
+		        test.log(LogStatus.INFO, "On selecting 'Challan', Frequency dropdown is DISABLED.");
+		    }
+
+		    // ----------- Register -----------
+		    Thread.sleep(1000);
+		    LoginLocators.ComplianceDropdown().click();
+		    Thread.sleep(1000);
+		    LoginLocators.ClickRegister().click();
+		    Thread.sleep(1000);
+		    LoginLocators.Clear().click();
+		    Thread.sleep(1000);
+
+		    try {
+		        LoginLocators.FrequencyDropdown().click();
+		        test.log(LogStatus.PASS, "On selecting 'Register', Frequency dropdown is ENABLED.");
+		    } catch (Exception e) {
+		        test.log(LogStatus.INFO, "On selecting 'Register', Frequency dropdown is DISABLED.");
+		    }
+
+		    // ----------- Return -----------
+		    Thread.sleep(1000);
+		    LoginLocators.ComplianceDropdown().click();
+		    Thread.sleep(1000);
+		    LoginLocators.SelectReturn().click();
+		    Thread.sleep(1000);
+		    LoginLocators.Clear().click();
+		    Thread.sleep(1000);
+
+		    try {
+		        LoginLocators.FrequencyDropdown().click();
+		        test.log(LogStatus.PASS, "On selecting 'Return', Frequency dropdown is ENABLED.");
+		    } catch (Exception e) {
+		        test.log(LogStatus.INFO, "On selecting 'Return', Frequency dropdown is DISABLED.");
+		    }
+
+		} catch (Exception e) {
+		    test.log(LogStatus.ERROR, "Unexpected error: " + e.getMessage());
+		}
+
+
+*/
+		
+/*		
+		// ----------- Challan -----------
+	    LoginLocators.ComplianceDropdown().click();
+	    Thread.sleep(1000);
+	    LoginLocators.SelectChallan().click();
+	    Thread.sleep(1000);
+	    LoginLocators.Clear().click();
+	    Thread.sleep(1000);
+
+	    if(LoginLocators.FrequencyDropdown().isEnabled()&&LoginLocators.FrequencyDropdown().isEnabled())
+	    {
+	    	LoginLocators.FrequencyDropdown().click();
+	    	LoginLocators.FrequencyQuarterly().click();
+	    	test.log(LogStatus.PASS, "On clicking Challans Frequency dropdown is ENABLED");
+	    }
+	    else {
+	    	test.log(LogStatus.INFO, "On clicking Challans Frequency dropdown is DISABLED");
+	    }
+
+
+	    // ----------- Register -----------
+	    Thread.sleep(1000);
+	    LoginLocators.ComplianceDropdown().click();
+	    Thread.sleep(1000);
+	    LoginLocators.ClickRegister().click();
+	    Thread.sleep(1000);
+	    LoginLocators.Clear().click();
+	    Thread.sleep(1000);
+	    
+	    if(LoginLocators.FrequencyDropdown().isEnabled()&&LoginLocators.FrequencyDropdown().isEnabled())
+	    {
+	    	LoginLocators.FrequencyDropdown().click();
+	    	LoginLocators.FrequencyQuarterly().click();
+	    	test.log(LogStatus.PASS, "On clicking Register Frequency dropdown is ENABLED");
+	    }
+	    else {
+	    	test.log(LogStatus.INFO, "On clicking Register Frequency dropdown is DISABLED");
+	    }
+
+
+*/
+	    // ----------- Return -----------
+	    Thread.sleep(1000);
+	    LoginLocators.ComplianceDropdown().click();
+	    Thread.sleep(1000);
+	    LoginLocators.SelectReturnn().click();
+	    Thread.sleep(1000);
+//	    LoginLocators.Clear().click();
+	    Thread.sleep(1000);
+		
+	    if(LoginLocators.FrequencyDropdown().isEnabled()&&LoginLocators.FrequencyDropdown().isEnabled())
+	    {
+	    	LoginLocators.FrequencyDropdown().click();
+	    	LoginLocators.FrequencyQuarterly().click();
+	    	test.log(LogStatus.PASS, "On clicking Return Frequency dropdown is ENABLED");
+	    }
+	    else {
+	    	test.log(LogStatus.INFO, "On clicking Return Frequency dropdown is DISABLED");
+	    }
+		
+	
+		
+		
+/*		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+
+		// ----------- Challan -----------
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+		LoginLocators.SelectChallan().click();
+		Thread.sleep(1000);
+		LoginLocators.Clear().click();
+		Thread.sleep(1000);
+
+		WebElement challanDropdown = LoginLocators.FrequencyDropdown();
+		Boolean challanDisabled = (Boolean) js.executeScript("return arguments[0].hasAttribute('disabled') || arguments[0].disabled;", challanDropdown);
+
+		if (!challanDisabled) {
+		    challanDropdown.click();
+		    LoginLocators.FrequencyQuarterly().click();
+		    test.log(LogStatus.PASS, "On clicking Challans Frequency dropdown is ENABLED");
+		} else {
+		    test.log(LogStatus.INFO, "On clicking Challans Frequency dropdown is DISABLED");
+		}
+
+		// ----------- Register -----------
+		Thread.sleep(1000);
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+		LoginLocators.ClickRegister().click();
+		Thread.sleep(1000);
+		LoginLocators.Clear().click();
+		Thread.sleep(1000);
+
+		WebElement registerDropdown = LoginLocators.FrequencyDropdown();
+		Boolean registerDisabled = (Boolean) js.executeScript("return arguments[0].hasAttribute('disabled') || arguments[0].disabled;", registerDropdown);
+
+		if (!registerDisabled) {
+		    registerDropdown.click();
+		    LoginLocators.FrequencyQuarterly().click();
+		    test.log(LogStatus.PASS, "On clicking Register Frequency dropdown is ENABLED");
+		} else {
+		    test.log(LogStatus.INFO, "On clicking Register Frequency dropdown is DISABLED");
+		}
+
+		// ----------- Return -----------
+		Thread.sleep(1000);
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+		LoginLocators.SelectReturn().click();
+		Thread.sleep(1000);
+		LoginLocators.Clear().click();
+		Thread.sleep(1000);
+
+		WebElement returnDropdown = LoginLocators.FrequencyDropdown();
+		Boolean returnDisabled = (Boolean) js.executeScript("return arguments[0].hasAttribute('disabled') || arguments[0].disabled;", returnDropdown);
+
+		if (!returnDisabled) {
+		    returnDropdown.click();
+		    LoginLocators.FrequencyQuarterly().click();
+		    test.log(LogStatus.PASS, "On clicking Return Frequency dropdown is ENABLED");
+		} else {
+		    test.log(LogStatus.INFO, "On clicking Return Frequency dropdown is DISABLED");
+		}
+		*/
+
+		 
+	}
+	
+	public static void WorkspaceApplyClearProceed( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+	
+	//	WebDriverWait wait1 = new WebDriverWait(getDriver(), Duration.ofMinutes(2)); // 2 minutes
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(5000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(5000);
+		
+		
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(1000);
+        LoginLocators.SelectChallan().click();
+        Thread.sleep(3000);
+        LoginLocators.Act().click();
+        Thread.sleep(1000);
+        LoginLocators.SelectChallanEPF().click();
+        Thread.sleep(1000);
+        LoginLocators.YearDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.Year2024().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodDrp().click();
+        Thread.sleep(1000);
+        LoginLocators.PeriodJan().click();
+        Thread.sleep(1000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(1000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+//		LoginLocators.ApplyButton().click();
+		Thread.sleep(4000);
+		
+		if(LoginLocators.ApplyButton().isDisplayed())
+		{
+			LoginLocators.ApplyButton().click();
+			test.log(LogStatus.PASS, "Apply button is working fine");
+			Thread.sleep(8000);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Apply button is not working");
+		}
+		Thread.sleep(8000);
+		LoginLocators.CheckBox().click();
+		
+		Thread.sleep(5000);
+		if(LoginLocators.Proceed().isDisplayed())
+		{
+			LoginLocators.Proceed().click();
+			test.log(LogStatus.PASS, "Proceed button is working fine");
+			Thread.sleep(8000);
+		}
+		else
+		{
+			test.log(LogStatus.PASS, "Proceed button is not working");
+		}
+		Thread.sleep(5000);
+		
+		if(LoginLocators.Back().isEnabled())
+		{
+			LoginLocators.Back().click();
+			test.log(LogStatus.PASS, "Back button is working fine");
+		}
+		else
+		{
+			test.log(LogStatus.PASS, "Back button is not working");
+		}
+		
+		Thread.sleep(6000);
+		if(LoginLocators.Clear().isEnabled())
+		{
+			LoginLocators.Clear().click();
+			test.log(LogStatus.PASS, "Clear button is working fine");
+		}
+		else
+		{
+			test.log(LogStatus.PASS, "Clear button is not working");
+		}
+
 		 
 	}
 	
@@ -7090,7 +8782,7 @@ else {
     	       Thread.sleep(4000);  // Wait for dialog to appear
 
     	        // Specify the file path
-    	        String filePath = "E:\\Labor Upload\\Live Upload Sheet\\Sample-MonthlySalary_03Mar2025041212.xlsx";
+    	        String filePath = "D:\\Upload Automation Files\\WorkSpace\\SalaryFile.xlsx";
     	        StringSelection selection = new StringSelection(filePath);
 
     	        // Copy file path to clipboard
@@ -7442,6 +9134,549 @@ else {
 
 		}
 		
+		
+	}
+	
+	public static void WorkspaceSampleTemplate( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(2000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(2000);
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.ClickRegister().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectActDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.ClickAct().click();
+		Thread.sleep(2000);
+		LoginLocators.YearDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.Clickyear().click();
+		Thread.sleep(2000);
+		LoginLocators.PeriodDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.ClickPeriod().click();
+		Thread.sleep(2000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(2000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		LoginLocators.CheckBox().click();
+		Thread.sleep(2000);
+		LoginLocators.Proceed().click();
+		Thread.sleep(9000);	
+		
+		Thread.sleep(2000);	
+		
+		File dir = new File("C:\\Users\\bilali\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(5000);
+		
+		getDriver().findElement(By.xpath("//img[@title='Download']")).click(); //sample download
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\bilali\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
+			test.log(LogStatus.PASS,  "Sample Document File is downloaded Successfully");
+		} else {Thread.sleep(5000);
+			test.log(LogStatus.FAIL,  "Sample Document File is not downloaded");
+		}
+		
+		
+	}
+
+		
+	public static void WorkspaceEmptyFile( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(2000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(2000);
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectChallan().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectActDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectChallanEPF().click();
+		Thread.sleep(2000);
+		LoginLocators.YearDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.Clickyear().click();
+		Thread.sleep(2000);
+		LoginLocators.PeriodDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.PeriodJune().click();
+		Thread.sleep(2000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(2000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		LoginLocators.CheckBox().click();
+		Thread.sleep(2000);
+		LoginLocators.Proceed().click();
+		Thread.sleep(9000);	
+		
+		Thread.sleep(2000);	
+		
+/*		File dir = new File("C:\\Users\\bilali\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(5000);
+		
+		getDriver().findElement(By.xpath("//img[@title='Download']")).click(); //sample download
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\bilali\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
+			test.log(LogStatus.PASS,  "Sample Document File is downloaded Successfully");
+		} else {Thread.sleep(5000);
+			test.log(LogStatus.FAIL,  "Sample Document File is not downloaded");
+		}
+		
+		*/
+		
+		//No File selected Validation:
+		
+//		GetMessageText
+		
+		LoginLocators.UploadFile().click();
+		Thread.sleep(5000);
+		String txt = LoginLocators.GetMessageText().getText();
+		
+		if (txt.equalsIgnoreCase("No file chosen")) {
+			Thread.sleep(5000);
+			test.log(LogStatus.PASS, "Without Selecting File clicking to upload Message Displayed : " + txt);
+
+		} else {
+			Thread.sleep(5000);
+			test.log(LogStatus.FAIL, "Without Selecting File clicking to upload Message Displayed : " + txt);
+		}
+		
+		LoginLocators.ClickOK().click();
+		
+		
+		Thread.sleep(5000);
+		LoginLocators.BrowseFile().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\WorkSpace\\Empty.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(2000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(2000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		Thread.sleep(2000);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		Thread.sleep(2000);
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		Thread.sleep(2000);
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(3000);
+  				 
+  		LoginLocators.UploadFile().click();
+  					
+			Thread.sleep(3000);
+
+			
+			String text1 = LoginLocators.GetMessageText().getText();
+
+			if (text1.equalsIgnoreCase("Empty sheet")) {
+				Thread.sleep(5000);
+				test.log(LogStatus.PASS, "While Uploading Empty File Error Message Displayed : " + text1);
+
+			} else {
+				Thread.sleep(5000);
+				test.log(LogStatus.FAIL, "While Uploading Empty File Error Message Displayed : " + text1);
+			}
+		
+		
+	}
+	
+	public static void WorkspaceErrorFileUpload( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(2000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(2000);
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectChallan().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectActDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectChallanEPF().click();
+		Thread.sleep(2000);
+		LoginLocators.YearDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.Clickyear().click();
+		Thread.sleep(2000);
+		LoginLocators.PeriodDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.PeriodJune().click();
+		Thread.sleep(2000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(2000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		LoginLocators.CheckBox().click();
+		Thread.sleep(2000);
+		LoginLocators.Proceed().click();
+		Thread.sleep(9000);	
+		
+		Thread.sleep(2000);	
+		
+		Thread.sleep(5000);
+		LoginLocators.BrowseFile().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\WorkSpace\\2 Column Data Invalid File.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(2000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(2000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		Thread.sleep(2000);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		Thread.sleep(2000);
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		Thread.sleep(2000);
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(3000);
+  				 
+  		LoginLocators.UploadFile().click();
+  					
+			Thread.sleep(3000);
+
+			
+			String text1 = LoginLocators.GetMessageText().getText();
+
+			if (text1.equalsIgnoreCase("Error uploading file")) {
+				Thread.sleep(5000);
+				test.log(LogStatus.PASS, "While Uploading File with only 2 columns data Message displayed : " + text1);
+
+			} else {
+				Thread.sleep(5000);
+				test.log(LogStatus.FAIL, "While Uploading File with only 2 columns data Message displayed: " + text1);
+			}
+		
+		
+			
+			Thread.sleep(5000);
+			LoginLocators.ClickOK().click();
+			Thread.sleep(5000);
+			
+			
+			
+			//Invalid Template:
+			LoginLocators.BrowseFile().click();
+	  		Thread.sleep(3000);
+	  		Robot robot2=new Robot();
+	  		 StringSelection filepath2= new  StringSelection("D:\\Upload Automation Files\\WorkSpace\\InvalidTemplate.xlsx");
+	  		 //copy above file to clipboard
+	  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath2, null);
+	  		
+	  		 //Now press CRTL
+	  		
+	  		 robot2.keyPress(KeyEvent.VK_CONTROL);
+	  		 Thread.sleep(2000);
+	  		
+	  		 //PRESS V
+	  		 robot2.keyPress(KeyEvent.VK_V);
+	  		 Thread.sleep(2000);
+	  		
+	  		 //Release V
+	  		 robot2.keyRelease(KeyEvent.VK_V);
+	  		Thread.sleep(2000);
+	  		
+	  		 //Release CRTL
+	  		 robot2.keyRelease(KeyEvent.VK_CONTROL);
+	  		Thread.sleep(2000);
+	  		 //PRESS Enter
+	  		 robot2.keyPress(KeyEvent.VK_ENTER);
+	  		Thread.sleep(2000);
+	  		 //Release CRTL
+	  		 robot2.keyRelease(KeyEvent.VK_ENTER);
+	  		
+	  		 Thread.sleep(3000);
+	  				 
+	  		LoginLocators.UploadFile().click();
+	  					
+				Thread.sleep(3000);
+
+				
+				String text2 = LoginLocators.GetMessageText().getText();
+
+				if (text2.equalsIgnoreCase("Please upload a file with correct headers.")) {
+					Thread.sleep(5000);
+					test.log(LogStatus.PASS, "While Uploading Invalid Headers File Error Message displayed : " + text2);
+
+				} else {
+					Thread.sleep(5000);
+					test.log(LogStatus.FAIL, "While Uploading Invalid Headers File Error Message displayed: " + text2);
+				}
+
+
+		
+	}
+	
+	public static void WorkspaceInvalidFileDownloadErrorFile( ExtentTest test, String user) throws InterruptedException, IOException, AWTException
+	{
+	
+		WebDriverWait wait = new WebDriverWait(getDriver(), (120));
+		Thread.sleep(7000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.Search()));
+		if(user.equalsIgnoreCase("Performer"))
+		{
+			LoginLocators.Search().sendKeys("TESTAUTO");
+		}
+		else if(user.equalsIgnoreCase("Distributor"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		else if(user.equalsIgnoreCase("Reviewer"))
+		{
+			LoginLocators.Search().sendKeys("AVACORED5");	
+		}
+		
+		Thread.sleep(2000);
+		wait.until(ExpectedConditions.visibilityOf(LoginLocators.WorkspaceArrow()));
+		Thread.sleep(2000);
+		LoginLocators.WorkspaceArrow().click();
+		Thread.sleep(2000);
+		LoginLocators.ComplianceDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectChallan().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectActDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectChallanEPF().click();
+		Thread.sleep(2000);
+		LoginLocators.YearDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.Clickyear().click();
+		Thread.sleep(2000);
+		LoginLocators.PeriodDropdown().click();
+		Thread.sleep(2000);
+		LoginLocators.PeriodJune().click();
+		Thread.sleep(2000);
+		LoginLocators.AllFile().click();
+		Thread.sleep(2000);
+		LoginLocators.SelectAllCheckbox().click();
+		Thread.sleep(2000);
+		LoginLocators.branch().click();
+		Thread.sleep(2000);
+		LoginLocators.ExpandB().click();
+		Thread.sleep(2000);
+		LoginLocators.branchvalue().click();
+		Thread.sleep(2000);
+		LoginLocators.ApplyButton().click();
+		Thread.sleep(6000);
+		LoginLocators.CheckBox().click();
+		Thread.sleep(2000);
+		LoginLocators.Proceed().click();
+		Thread.sleep(9000);	
+		
+		Thread.sleep(2000);	
+		
+				
+			
+			//Invalid Template:
+			LoginLocators.BrowseFile().click();
+	  		Thread.sleep(3000);
+	  		Robot robot2=new Robot();
+	  		 StringSelection filepath2= new  StringSelection("D:\\Upload Automation Files\\WorkSpace\\SampleTemplateInvalid.xlsx");
+	  		 //copy above file to clipboard
+	  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath2, null);
+	  		
+	  		 //Now press CRTL
+	  		
+	  		 robot2.keyPress(KeyEvent.VK_CONTROL);
+	  		 Thread.sleep(2000);
+	  		
+	  		 //PRESS V
+	  		 robot2.keyPress(KeyEvent.VK_V);
+	  		 Thread.sleep(2000);
+	  		
+	  		 //Release V
+	  		 robot2.keyRelease(KeyEvent.VK_V);
+	  		Thread.sleep(2000);
+	  		
+	  		 //Release CRTL
+	  		 robot2.keyRelease(KeyEvent.VK_CONTROL);
+	  		Thread.sleep(2000);
+	  		 //PRESS Enter
+	  		 robot2.keyPress(KeyEvent.VK_ENTER);
+	  		Thread.sleep(2000);
+	  		 //Release CRTL
+	  		 robot2.keyRelease(KeyEvent.VK_ENTER);
+	  		
+	  		 Thread.sleep(3000);
+	  				 
+	  		LoginLocators.UploadFile().click();
+	  					
+				Thread.sleep(3000);
+
+				
+				String text2 = LoginLocators.GetMessageText().getText();
+
+				if (text2.equalsIgnoreCase("Error uploading file")) {
+					Thread.sleep(5000);
+					test.log(LogStatus.PASS, "While Uploading Invalid File Error Message displayed : " + text2);
+
+				} else {
+					Thread.sleep(5000);
+					test.log(LogStatus.FAIL, "While Uploading Invalid File Error Message displayed: " + text2);
+				}
+				
+				Thread.sleep(5000);
+				LoginLocators.ClickOK().click();
+				Thread.sleep(5000);
+				LoginLocators.RefreshBtn().click();
+				Thread.sleep(5000);
+				LoginLocators.RefreshBtn().click();
+				Thread.sleep(5000);
+				LoginLocators.RefreshBtn().click();
+				Thread.sleep(5000);
+				LoginLocators.RefreshBtn().click();
+				Thread.sleep(5000);
+				LoginLocators.RefreshBtn().click();
+				Thread.sleep(5000);
+				
+				
+				//Downloading Error File:
+				Thread.sleep(3000);
+				File dir = new File("C:\\Users\\bilali\\Downloads");
+				File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+				Thread.sleep(5000);
+				
+				LoginLocators.ErrorFileDownload().click();
+		
+				Thread.sleep(8000);
+				File dir1 = new File("C:\\Users\\bilali\\Downloads");
+				File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+				Thread.sleep(3000);
+				if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
+					test.log(LogStatus.PASS,  "Error File downloaded successfully.");
+				} else {Thread.sleep(5000);
+					test.log(LogStatus.FAIL,  "Error File does not downloaded.");
+				}
+
+
 		
 	}
 	

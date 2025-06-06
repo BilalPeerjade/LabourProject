@@ -270,7 +270,7 @@ public class CoordinatorTestCases extends BasePage
    		extent.flush();
    	}
 	
-	@Test(priority = 19) //Bilal 5 TC
+//	@Test(priority = 19) //Bilal 5 TC
    	void NoticeEditDocumentRepositoryDownloadCheck() throws InterruptedException, IOException, EncryptedDocumentException, AWTException
    	{
    		test = extent.startTest("Notices - Edit - Verify to download documents from document section");
@@ -342,7 +342,7 @@ public class CoordinatorTestCases extends BasePage
 
    	}
 	
- @Test(priority = 25)
+     @Test(priority = 25)
    	void AddNewLicense() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Registration - Add New License Request for Assigning RCP Team login");

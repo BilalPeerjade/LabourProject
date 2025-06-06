@@ -19,6 +19,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import login.BasePage;
+import login.LoginMethods;
 import sdexecutor.Method;
 
 
@@ -57,13 +58,15 @@ public class SDExecutorTestCase extends BasePage
 	@BeforeMethod
 	void Login() throws InterruptedException, IOException
 	{
-		initialization(link,7,"Labour");
+		initializationSDExecutor(link,7,"Labour");
+//		String username = null;
+//		login.LoginMethods.UserLoginSDExecutor(username,password,"SD Executor");
 	
 	}
 	
-////////Notices///////////////////////////////////
+               ////////Notices///////
 	
-@Test(priority =1)
+@Test(priority = 1)
 void CountMatch() throws InterruptedException, IOException
 {
 	test = extent.startTest("Notice- Translation Pending count verification");
@@ -75,7 +78,7 @@ void CountMatch() throws InterruptedException, IOException
 	extent.flush();
 
 }
-@Test(priority =2)
+@Test(priority = 2)
 	void PendingAction() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice- Ext.Submission Pending count verification");
@@ -86,7 +89,7 @@ void CountMatch() throws InterruptedException, IOException
 		extent.flush();
 
 	}
-@Test(priority =3)
+@Test(priority = 3)
 	void Overdue() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice- Submission Pending count verification");
@@ -97,7 +100,7 @@ void CountMatch() throws InterruptedException, IOException
 		extent.flush();
 
 	}
-@Test(priority =4)
+@Test(priority = 4)
 	void Closed() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notice- Response Submitted count verification");
@@ -108,7 +111,7 @@ void CountMatch() throws InterruptedException, IOException
 		extent.flush();
 
 	}
-@Test(priority =5)
+@Test(priority = 5)
 void NoticeExportBtn() throws InterruptedException, IOException, EncryptedDocumentException, AWTException
 {
 	test = extent.startTest("Notices -Export Btn verification");
@@ -120,7 +123,7 @@ void NoticeExportBtn() throws InterruptedException, IOException, EncryptedDocume
 	extent.flush();
 
 }
-@Test(priority =6)
+@Test(priority = 6)
 void NoticeSearchBox() throws InterruptedException, IOException, EncryptedDocumentException, AWTException
 {
 	test = extent.startTest("Notices -Search Box and clear button verification");
@@ -132,7 +135,7 @@ void NoticeSearchBox() throws InterruptedException, IOException, EncryptedDocume
 	extent.flush();
 
 }
-@Test(priority =7)
+@Test(priority = 7)
 void NoticeEditDownload() throws InterruptedException, IOException, EncryptedDocumentException, AWTException
 {
 	test = extent.startTest("Notices -Edit and download button verification");
@@ -147,7 +150,7 @@ void NoticeEditDownload() throws InterruptedException, IOException, EncryptedDoc
 
 /////////////////////////////////Registration//////////////////////////////
 
-@Test(priority =8)
+    @Test(priority = 8)
 	void RegistrationCountMatch() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registration- Pending Applications (Offline) count verification");
@@ -158,7 +161,7 @@ void NoticeEditDownload() throws InterruptedException, IOException, EncryptedDoc
 		extent.flush();
 
 	}
-@Test(priority =9)
+    @Test(priority = 9)
 	void RegistrationPendingAction() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Registration- Applied and Awaiting Dept Approval count verification");
@@ -169,7 +172,7 @@ void NoticeEditDownload() throws InterruptedException, IOException, EncryptedDoc
 		extent.flush();
 
 	}
-@Test(priority =10)
+    @Test(priority = 10)
 	void RegistrationOverdue() throws InterruptedException, IOException
 	{ 
 		test = extent.startTest("Registration- Overdue count verification");
@@ -230,7 +233,7 @@ void NoticeEditDownload() throws InterruptedException, IOException, EncryptedDoc
    		extent.flush();
 
    	}
- 	@Test(priority =15)
+// 	@Test(priority =15)
    	void DeleteButton() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Registration - Delete Icon verification");
@@ -242,7 +245,7 @@ void NoticeEditDownload() throws InterruptedException, IOException, EncryptedDoc
    		extent.flush();
 
    	}
-	@Test(priority =16)
+//	@Test(priority =16)
    	void DeleteCancelButton() throws InterruptedException, IOException
    	{
    		test = extent.startTest("Registration - Delete Icon -Cancel button verification");

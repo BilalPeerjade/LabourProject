@@ -27,6 +27,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 import distributor.DistributerLocators;
 import login.BasePage;
+import performer.PerformerLocator;
 
 
 
@@ -195,9 +196,9 @@ public static void StateDocZipFile(ExtentTest test) throws InterruptedException
 {
  	WebDriverWait wait=new WebDriverWait(getDriver(),20);
 	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
 	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(2000);
 	ReviwerLocator.clickStatutoryDoc().click();
 	
@@ -212,7 +213,7 @@ public static void StateDocZipFile(ExtentTest test) throws InterruptedException
 	Thread.sleep(1000);
 	ReviwerLocator.clickYear().click();
 	Thread.sleep(1000);
-	ReviwerLocator.selectComplianceType().click();
+	ReviwerLocator.selectYear2024().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickPeriod().click();
 	Thread.sleep(1000);
@@ -291,9 +292,9 @@ public static void StateDownloadDoc(ExtentTest test) throws InterruptedException
 {
  	WebDriverWait wait=new WebDriverWait(getDriver(),20);
 	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
 	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(2000);
 	ReviwerLocator.clickStatutoryDoc().click();
 	Thread.sleep(1000);
@@ -309,7 +310,7 @@ public static void StateDownloadDoc(ExtentTest test) throws InterruptedException
 	Thread.sleep(1000);
 	ReviwerLocator.clickYear().click();
 	Thread.sleep(1000);
-	ReviwerLocator.selectComplianceType().click();
+	ReviwerLocator.selectYear2024().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickPeriod().click();
 	Thread.sleep(1000);
@@ -381,10 +382,10 @@ public static void StateDownloadDoc(ExtentTest test) throws InterruptedException
 public static void StatutoryDocZipFile(ExtentTest test) throws InterruptedException
 {
 	 	WebDriverWait wait=new WebDriverWait(getDriver(),20);
-		Thread.sleep(1000);
-		ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
-		Thread.sleep(1000);
-		ReviwerLocator.clickDashboard().click();
+		Thread.sleep(3000);
+		ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
+		Thread.sleep(5000);
+		ReviwerLocator.clickStaturyDocumentArrow().click();
 		Thread.sleep(2000);
 		ReviwerLocator.clickStatutoryDoc().click();
 		Thread.sleep(1000);
@@ -400,7 +401,7 @@ public static void StatutoryDocZipFile(ExtentTest test) throws InterruptedExcept
 		Thread.sleep(1000);
 		ReviwerLocator.clickYear().click();
 		Thread.sleep(1000);
-		ReviwerLocator.selectComplianceType().click();
+		ReviwerLocator.selectYear2024().click();
 		Thread.sleep(1000);
 		ReviwerLocator.clickPeriod().click();
 		Thread.sleep(1000);
@@ -469,10 +470,10 @@ public static void StatutoryDocZipFile(ExtentTest test) throws InterruptedExcept
 public static void StatutoryDocDownloadDoc(ExtentTest test) throws InterruptedException
 {
  	WebDriverWait wait=new WebDriverWait(getDriver(),20);
-	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
-	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	Thread.sleep(3000);
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
+	Thread.sleep(5000);
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(2000);
 	ReviwerLocator.clickStatutoryDoc().click();
 	Thread.sleep(1000);
@@ -488,7 +489,7 @@ public static void StatutoryDocDownloadDoc(ExtentTest test) throws InterruptedEx
 	Thread.sleep(1000);
 	ReviwerLocator.clickYear().click();
 	Thread.sleep(1000);
-	ReviwerLocator.selectComplianceType().click();
+	ReviwerLocator.selectYear2024().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickPeriod().click();
 	Thread.sleep(1000);
@@ -561,10 +562,10 @@ public static void StatutoryDocDownloadDoc(ExtentTest test) throws InterruptedEx
 }
 public static void ChallanDocDownload(ExtentTest test) throws InterruptedException
 {
-	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
-	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	Thread.sleep(3000);
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
+	Thread.sleep(5000);
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(2000);
 	ReviwerLocator.clickStatutoryDoc().click();
 	//ReviwerLocator.clickBranchRadioBtn().click();
@@ -579,7 +580,7 @@ public static void ChallanDocDownload(ExtentTest test) throws InterruptedExcepti
 	Thread.sleep(1000);
 	ReviwerLocator.clickYear().click();
 	Thread.sleep(1000);
-	ReviwerLocator.selectComplianceType().click();
+	ReviwerLocator.selectYear2024().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickPeriod().click();
 	
@@ -648,10 +649,10 @@ public static void ChallanDocDownload(ExtentTest test) throws InterruptedExcepti
 }
 public static void ChallanDocViewandOverview(ExtentTest test) throws InterruptedException
 {
-	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
-	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	Thread.sleep(3000);
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
+	Thread.sleep(5000);
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(2000);
 	ReviwerLocator.clickStatutoryDoc().click();
 	Thread.sleep(1000);
@@ -666,7 +667,7 @@ public static void ChallanDocViewandOverview(ExtentTest test) throws Interrupted
 	Thread.sleep(1000);
 	ReviwerLocator.clickYear().click();
 	Thread.sleep(1000);
-	ReviwerLocator.selectComplianceType().click();
+	ReviwerLocator.selectYear2024().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickPeriod().click();
 	Thread.sleep(1000);
@@ -705,7 +706,7 @@ public static void ChallanDocViewandOverview(ExtentTest test) throws Interrupted
 	}
 	Thread.sleep(3000);
 	ReviwerLocator.clickCloseBtn1().click();
-	Thread.sleep(1000);
+	Thread.sleep(3000);
 	ReviwerLocator.clickCloseBtn().click();
 	
 	Thread.sleep(9000);
@@ -730,10 +731,10 @@ public static void ChallanDocViewandOverview(ExtentTest test) throws Interrupted
 
 public static void ChallanComplianceDocViewandOverview(ExtentTest test) throws InterruptedException
 	{
-	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
-	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	Thread.sleep(3000);
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
+	Thread.sleep(5000);
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(2000);
 	ReviwerLocator.clickStatutoryDoc().click();
 	Thread.sleep(1000);
@@ -749,7 +750,7 @@ public static void ChallanComplianceDocViewandOverview(ExtentTest test) throws I
 	Thread.sleep(1000);
 	ReviwerLocator.clickYear().click();
 	Thread.sleep(1000);
-	ReviwerLocator.selectComplianceType().click();
+	ReviwerLocator.selectYear2024().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickPeriod().click();
 	Thread.sleep(1000);
@@ -802,7 +803,7 @@ public static void ChallanComplianceDocViewandOverview(ExtentTest test) throws I
 	{
 		test.log(LogStatus.FAIL, "Overview Popup does not open successfully:-"+msg1);
 	}
-	Thread.sleep(1000);
+	Thread.sleep(9000);
 	ReviwerLocator.clickCloseBtn().click();
 	
 	Thread.sleep(5000);
@@ -811,10 +812,10 @@ public static void ChallanComplianceDocViewandOverview(ExtentTest test) throws I
 
 public static void ChallanComplianceDocDownload(ExtentTest test) throws InterruptedException
 {
-	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
-	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	Thread.sleep(3000);
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
+	Thread.sleep(5000);
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(2000);
 	ReviwerLocator.clickStatutoryDoc().click();
 	Thread.sleep(1000);
@@ -830,7 +831,7 @@ public static void ChallanComplianceDocDownload(ExtentTest test) throws Interrup
 	Thread.sleep(1000);
 	ReviwerLocator.clickYear().click();
 	Thread.sleep(1000);
-	ReviwerLocator.selectComplianceType().click();
+	ReviwerLocator.selectYear2024().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickPeriod().click();
 	Thread.sleep(1000);
@@ -900,12 +901,12 @@ public static void StatutoryDocViewandOverview(ExtentTest test) throws Interrupt
 {
  	WebDriverWait wait=new WebDriverWait(getDriver(),20);
 	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
 	
 	
 	getDriver().navigate().refresh();
 	Thread.sleep(1000);
-	ReviwerLocator.SerchCustomer().sendKeys("AVAANGUL");
+	ReviwerLocator.SerchCustomer().sendKeys("TESTAUTO");
 	Thread.sleep(1000);
 	ReviwerLocator.clickDashboard().click();
 
@@ -923,7 +924,7 @@ public static void StatutoryDocViewandOverview(ExtentTest test) throws Interrupt
 	Thread.sleep(1000);
 	ReviwerLocator.clickYear().click();
 	Thread.sleep(1000);
-	ReviwerLocator.selectComplianceType().click();
+	ReviwerLocator.selectYear2024().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickPeriod().click();
 	Thread.sleep(1000);
@@ -1193,8 +1194,9 @@ public static void DuplicateDesignation( ExtentTest test,XSSFWorkbook workbook) 
 	Thread.sleep(1000);
 	Row row = sheet.getRow(9);						//Selected 0th index row (First row)
 	Cell c = row.getCell(1);						//Selected cell (0 row,1 column)
-	String designation = c.getStringCellValue();
-	ReviwerLocator.enterDesignation().sendKeys(designation);
+//	String designation = c.getStringCellValue();
+//	ReviwerLocator.enterDesignation().sendKeys(designation);
+	ReviwerLocator.enterDesignation().sendKeys("EXECUTIVE ADMINISTRATION");
 	
 	Thread.sleep(1000);
 	
@@ -1265,7 +1267,7 @@ public static void DesignationExportBtn( ExtentTest test,XSSFWorkbook workbook) 
 	ReviwerLocator.clickExportBtn().click();
 	
 	WebDriverWait wait=new WebDriverWait(getDriver(), 20);
-	Thread.sleep(1000);
+	Thread.sleep(60000);
 	wait.until(ExpectedConditions.invisibilityOf(ReviwerLocator.GridLoad1()));
 	
 
@@ -1409,15 +1411,15 @@ public static void BulkUploadDesignation( ExtentTest test,XSSFWorkbook workbook)
 public static void BulkUploadDesignationDetailes( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException, AWTException
 {
 	
-	Thread.sleep(1000);
+	Thread.sleep(3000);
 	ReviwerLocator.SerchCustomer().sendKeys("AVACORED5");
-	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	Thread.sleep(4000);
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(6000);
 	ReviwerLocator.clickManageMaster().click();
 	Thread.sleep(1000);
 	ReviwerLocator.clickDesignation().click();
-	Thread.sleep(1000);
+	Thread.sleep(8000);
 	ReviwerLocator.clickUploadBtn().click();
 	Thread.sleep(1000);
 	ReviwerLocator.UploadDesignationDetailes().click();
@@ -1428,7 +1430,7 @@ public static void BulkUploadDesignationDetailes( ExtentTest test,XSSFWorkbook w
 			
 			 Robot robot=new Robot();
 			 
-			 StringSelection filepath= new  StringSelection("C:\\Users\\snehalp\\Documents\\DesignationSample.xlsx");
+			 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\OtherTwo\\DesignationSample.xlsx");
 			 //copy above file to clipboard
 			 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 			 
@@ -1488,22 +1490,39 @@ public static void BulkUploadDesignationDetailes( ExtentTest test,XSSFWorkbook w
 public static void DeleteDesignation( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException
 {
 	
-	Thread.sleep(1000);
+	Thread.sleep(4000);
 	ReviwerLocator.SerchCustomer().sendKeys("AVACORED5");
-	Thread.sleep(1000);
-	ReviwerLocator.clickDashboard().click();
+	Thread.sleep(4000);
+	ReviwerLocator.clickStaturyDocumentArrow().click();
 	Thread.sleep(7000);
 	ReviwerLocator.clickManageMaster().click();
-	Thread.sleep(1000);
+	Thread.sleep(4000);
 	ReviwerLocator.clickDesignation().click();
-	Thread.sleep(1000);
+	Thread.sleep(4000);
+	
+	
+	//Locators coming from performer 
+ 	Thread.sleep(7000);
+ 	PerformerLocator.DesignationSerach().sendKeys("abcdefghijklmnopqrstuvwxyz");
+ 	Thread.sleep(7000);
+	
+ 	getDriver().findElement(By.xpath("(//span[@class='k-list-item-text'])[1]")).click();
+	
+ 	PerformerLocator.clickApply().click();
+	
+	
+	
 	ReviwerLocator.clickDeleteBtn().click();
+	
+	getDriver().findElement(By.xpath("//button[@title='OK']")).click();
+	
 	
 	
 	Thread.sleep(500);
-	  String msg=ReviwerLocator.clickDeletemsg().getText();		//Reading Message appeared after save button
+//	  String msg=ReviwerLocator.clickDeletemsg().getText();		//Reading Message appeared after save button
 	  
-	  if(msg.equalsIgnoreCase("Are you sure you want to delete this record?"))
+	  String msg=ReviwerLocator.clickMsg().getText();
+	  if(msg.equalsIgnoreCase("Designation Inactivated Successfully"))
 	 {
 		 test.log(LogStatus.PASS, "Message displayed = "+msg);
 		 
@@ -1515,9 +1534,11 @@ public static void DeleteDesignation( ExtentTest test,XSSFWorkbook workbook) thr
 	
 	 Thread.sleep(1000);
 	 ReviwerLocator.clickOkBtn().click();
-		
+/*		
 		Thread.sleep(500);
-		  String msg1=ReviwerLocator.clickDeletemsg1().getText();		//Reading Message appeared after save button
+	//	  String msg1=ReviwerLocator.clickDeletemsg1().getText();		//Reading Message appeared after save button
+		  
+		  String msg1=ReviwerLocator.clickMsg().getText();
 		  
 		  if(msg1.equalsIgnoreCase("Data Deleted Successfully"))
 		 {
@@ -1529,7 +1550,7 @@ public static void DeleteDesignation( ExtentTest test,XSSFWorkbook workbook) thr
 			 test.log(LogStatus.FAIL, "Message displayed = "+msg1);
 		 }
 	 Thread.sleep(1000);
-	 ReviwerLocator.clickOkBtn().click();
+	 ReviwerLocator.clickOkBtn().click(); */
 	
 }
 public static void DesignationClearBtn( ExtentTest test,XSSFWorkbook workbook) throws InterruptedException, IOException

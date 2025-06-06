@@ -100,7 +100,7 @@ public class RCPLocator extends BasePage
 	}
 	public static WebElement ExistingLicesneDetailes()		//Method for searching Username input
 	{
-		labour = getDriver().findElement(By.xpath("//*[@class='k-window-title k-dialog-title']"));
+		labour = getDriver().findElement(By.xpath("//span[@title='Existing License Details']"));
 		return labour;
 	}
 	public static WebElement ExistingLicesneInitiateAction()		//Method for searching Username input

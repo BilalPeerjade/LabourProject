@@ -30,6 +30,7 @@ import com.relevantcodes.extentreports.LogStatus;
 
 
 import login.BasePage;
+import rcp.OneCommonMethod;
 
 
 
@@ -72,6 +73,8 @@ public class Methods extends BasePage
 			Locator.ClosedCount().click();
 		}
 		
+		
+		OneCommonMethod.zoomOutScreen(2); //Zoom
 		
 		Thread.sleep(5000);
 		Locator.readTotalItems().click();					//Clicking on total items count
@@ -194,17 +197,17 @@ public class Methods extends BasePage
 	 	
 	 	
 	 	Thread.sleep(3000);
-	 	Locator.SearchBox().sendKeys("QWW",Keys.ENTER);
+	 	Locator.SearchBox().sendKeys("Summon",Keys.ENTER);
 
 	 	List<String> li=new ArrayList<String>();
 	     
 	    
-	     li.add("QWW");
+	     li.add("Summon");
 
 	     
 	 	List<String> filter=new ArrayList<String>();	
 	 	
-	 	filter.add("QWW");	
+	 	filter.add("Summon");	
 	 	
 	 	
 	 	js.executeScript("window.scrollBy(0,150)");	
@@ -217,7 +220,7 @@ public class Methods extends BasePage
 	 	try {
 	 	Thread.sleep(5000);
 
-	 	List<WebElement> typecol=getDriver().findElements(By.xpath("//*[@class='k-grid-aria-root']/kendo-grid-list/div/div[1]/table/tbody/tr[1]/td[3]"));
+	 	List<WebElement> typecol=getDriver().findElements(By.xpath("//tbody/tr[1]/td[5]/div[1]"));//Notice Type column xpath
 	 	Thread.sleep(2000);
 
 	 	for(int i=0; i<li.size(); i++){

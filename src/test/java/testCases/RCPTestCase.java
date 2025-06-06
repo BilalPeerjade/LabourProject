@@ -331,18 +331,16 @@ public class RCPTestCase extends  BasePage
 		{
 		test = extent.startTest("Registration - Existing Licenses -view icon verification");
 		
-		
 		RCPMethod.ExistingLicenseViewIcon(test);
 		
 		extent.endTest(test);
 		extent.flush();
-		
 		}
 		
 		@Test(priority = 23)
 		void ExistingLicenseDownload() throws InterruptedException, IOException
 		{
-		test = extent.startTest("Registration - Existing Licenses -Download Button verification");
+		test = extent.startTest("Registration - Existing Licenses - Download Button verification");
 		
 		RCPMethod.ExistingLicenseDownload(test);
 		

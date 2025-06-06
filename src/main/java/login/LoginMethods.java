@@ -72,5 +72,130 @@ public class LoginMethods extends BasePage {
 		LoginLocators.clickSubmit().click();				//Clicked on Sign-in button
 		Thread.sleep(3000);
 		
+		
+		
+}
+	
+	
+
+	public static WebDriver UserLoginSDExecutor(String username, String password, String method) throws InterruptedException
+	{		
+		
+		WebDriverWait wait = new WebDriverWait( getDriver(),(60));
+		Thread.sleep(1000);
+		LoginLocators.setUname().sendKeys(username);		//Sent username to input box 
+		Thread.sleep(500);
+		LoginLocators.setPassword().sendKeys(password);	//Sent password to input box
+		LoginLocators.clickSubmit().click();				//Clicked on Sign-in button
+		Thread.sleep(500);
+		
+			
+		try
+		{
+			Thread.sleep(500);
+			wait.until(ExpectedConditions.visibilityOf(LoginLocators.clickQALink()));
+			wait.until(ExpectedConditions.elementToBeClickable(LoginLocators.clickQALink()));
+			LoginLocators.clickQALink().click();				//Clicking on QA Link instead of OTP.
+			
+			//----------------------------------------------------------------------------//
+			
+			wait.until(ExpectedConditions.invisibilityOf(LoginLocators.clickQALink()));
+		}
+		catch(Exception e)
+		{
+			
+		}
+			
+			
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOf(LoginLocators.Question1()));
+			wait.until(ExpectedConditions.elementToBeClickable(LoginLocators.Question1()));
+			String que1 = LoginLocators.Question1().getText();	//Storing the question in que variable.
+			String ans1 = null;
+			
+			
+			
+			if(method.equalsIgnoreCase("cfo"))
+			{
+				ans1 = getAnswerCFO(que1);						//Storing the answer in ans variable.
+			}
+		
+			else if(method.equalsIgnoreCase("SD"))
+			{
+				ans1 = "123";						//Storing the answer in ans variable.
+			}
+			
+			
+			
+			
+			
+			else
+			{
+				ans1 = getAnswer(que1);							//Storing the answer in ans variable.
+			}
+			
+			
+			if(ans1.equalsIgnoreCase("birthplace"))
+				LoginLocators.Answer1().sendKeys("place");		//Sending answer to the input box.
+			else
+				LoginLocators.Answer1().sendKeys(ans1);		//Sending answer to the input box.
+			Thread.sleep(1000);
+			
+			//----------------------------------------------------------//
+			
+			String que2 = LoginLocators.Question2().getText();	//Storing the question in que variable.
+			String ans2 = null;
+			if(method.equalsIgnoreCase("cfo"))
+			{
+				ans2 = getAnswerCFO(que2);						//Storing the answer in ans variable.
+			}
+			
+			
+			else if(method.equalsIgnoreCase("SD"))
+			{
+				ans2 = "123";						//Storing the answer in ans variable.
+			}
+			
+			else if(method.equalsIgnoreCase("company"))
+			{
+				ans2 = "123";						//Storing the answer in ans variable.
+			}
+			else
+			{
+				ans2 = getAnswer(que2);							//Storing the answer in ans variable.
+			}
+			
+			
+			if(ans2.equalsIgnoreCase("birthplace"))
+				LoginLocators.Answer2().sendKeys("place");		//Sending answer to the input box.
+			else
+				LoginLocators.Answer2().sendKeys(ans2);		//Sending answer to the input box.
+			Thread.sleep(100);
+			
+			LoginLocators.SubmitAnswer().click();				//Clicking on Submit button.
+			
+			
+		return getDriver();
+	}
+
+public static String getAnswerCFO(String que)			//Method created to extract last word from question
+{														//as it is the answer of the question.
+	String last = que.substring(que.lastIndexOf(" "));	//We are selecting word after last " ".
+	int len = last.length();							
+	String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
+	if(ans.equalsIgnoreCase("pet"))
+		ans = "dog";
+	if(ans.equalsIgnoreCase("car"))
+		ans = "red";
+	return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+}
+public static String getAnswer(String que)				//Method created to extract last word from question
+{														//as it is the answer of the question.
+	String last = que.substring(que.lastIndexOf(" "));		//We are selecting word after last " ".
+	int len = last.length();							
+	String ans = last.substring(1, len-1);				//We are neglecting letters from string of position first " " and last "?"
+	return ans.toLowerCase();							//Returning answer and converting to LowerCase too.  
+	
+	
 }
 }

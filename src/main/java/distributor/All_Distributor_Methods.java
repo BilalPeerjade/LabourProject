@@ -455,7 +455,7 @@ public class All_Distributor_Methods extends BasePage
 		
 		WebDriverWait wait=new WebDriverWait(getDriver(), 20);
 		
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		wait.until(ExpectedConditions.invisibilityOf(DistributerLocators.GridLoad()));
 		
 	
@@ -1533,9 +1533,9 @@ public class All_Distributor_Methods extends BasePage
 	
 		Thread.sleep(1000);
 		DistributerLocators.SerchCustomer().sendKeys("AVACORED5");
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		DistributerLocators.clickDashboard().click();
-		Thread.sleep(7000);
+		Thread.sleep(9000);
 		DistributerLocators.clickOnboardCLRA().click();
 		
 		Thread.sleep(1000);
@@ -1556,7 +1556,7 @@ public class All_Distributor_Methods extends BasePage
 
 		
 		Thread.sleep(1000);
-		DistributerLocators.clickSearcbox2().sendKeys("AHMEDNAGAR");
+		DistributerLocators.clickSearcbox2().sendKeys("Andhra Pradesh");
 		
 	
 		  List<String> li=new ArrayList<String>();
@@ -4546,10 +4546,10 @@ for(String Fal : fail)
 		DistributerLocators.selectComplianceType1().click();
 		
 		Thread.sleep(1000);
-		DistributerLocators.clickBranch1().click();
+//		DistributerLocators.clickBranch1().click();
 
 		Thread.sleep(1000);
-		DistributerLocators.clickCheckBox2().click();
+//		DistributerLocators.clickCheckBox2().click();
 		
 //		Thread.sleep(1000);
 //		Locators.clickBranch1().click();
@@ -14771,7 +14771,7 @@ public static void MyDocumnentDigitalSignature(ExtentTest test,String user) thro
 	Thread.sleep(9000);
 	LoginLocators.MyDocument().click();
 	Thread.sleep(2000);
-	LoginLocators.DigitalSignatureTab().click();
+//	LoginLocators.DigitalSignatureTab().click(); //Hide this coz registrations is removed only digi sign is there
 	Thread.sleep(2000);
 	LoginLocators.AddNewDS().click();
 	Thread.sleep(2000);

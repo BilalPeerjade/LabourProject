@@ -132,13 +132,13 @@ public class ReviewerTest extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
-		/*
+		
 		@Test(priority = 7)
 		void RegisterUpcoming() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" Count by Clicking on Register - 'Upcoming'");
 			
-			Methods.RegisterUpcoming(test,"Reviewer");
+			MethodsD.RegisterUpcoming(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -149,7 +149,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on Register - 'Overdue'");
 			
-			Methods.RegisterOverdue(test,"Reviewer");
+			MethodsD.RegisterOverdue(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -160,7 +160,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on Register - 'Action/Review'");
 			
-			Methods.RegisterActionReview(test,"Performer");
+			MethodsD.RegisterActionReview(test,"Performer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -171,7 +171,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on Returns - 'Upcoming'");
 			
-			Methods.ReturnUpcoming(test,"Reviewer");
+			MethodsD.ReturnUpcoming(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -181,7 +181,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on Returns - 'Overdue'");
 			
-			Methods.ReturnOverdue(test,"Reviewer");
+			MethodsD.ReturnOverdue(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -191,7 +191,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on Returns - 'Action/Review'");
 			
-			Methods.ReturnActionReview(test,"Reviewer");
+			MethodsD.ReturnActionReview(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -202,7 +202,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on Challans - 'Upcoming'");
 			
-			Methods.ChallanUpcoming(test,"Reviewer");
+			MethodsD.ChallanUpcoming(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -213,7 +213,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on Challans - 'Overdue'");
 			
-			Methods.ChallanOverdue(test,"Reviewer");
+			MethodsD.ChallanOverdue(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -224,24 +224,25 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest(" Count by Clicking on Challans - 'Action/Review'");
 			
-			Methods.ChallanActionReview(test,"Reviewer");
+			MethodsD.ChallanActionReview(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
 		
-		@Test(priority = 16)
+//		@Test(priority = 16)
 		void Complied() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Pie Chart - Performance summary - Complied - match verification");
 			
-			Methods.Complied(test,"Reviewer");
+			MethodsD.Complied(test,"Reviewer");
+		//	Methods.Complied(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
-		*/
-		@Test(priority = 15)
+		
+//		@Test(priority = 17) //Hide due to not completed after its clickable unhide it
 		void NotComplied() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Pie Chart - Performance summary - Not Complied - match verification");
@@ -252,7 +253,7 @@ public class ReviewerTest extends BasePage {
 			extent.flush();
 		}
 		
-		@Test(priority = 21)
+//		@Test(priority = 21) this is not completed
 		void RiskSummaryNotCompliedGraph() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Bar Graph -Risk Summary - Not Complied - Count Verification");
@@ -322,8 +323,8 @@ public class ReviewerTest extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
-		/*
-		@Test(priority = 22)
+		
+//		@Test(priority = 22) Need to check with sheetal
 		void RiskSummaryCompliedGraph() throws InterruptedException, IOException
 		{
 			test = extent.startTest("Bar Graph -Risk Summary - Complied - Count Verification");
@@ -366,7 +367,7 @@ public class ReviewerTest extends BasePage {
 				if(medium >= 0)
 				{
 					js.executeScript("window.scrollBy(0,300)");
-					Methods.CompRiskGraph( test, "Medium", medium);
+					MethodsD.CompRiskGraph( test, "Medium", medium);
 				}
 				else
 				{
@@ -398,7 +399,7 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest("Applicable Statue verification");
 			
-			Methods.ApplicableStatues(test,"Reviewer");
+			MethodsD.ApplicableStatues(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
@@ -409,12 +410,15 @@ public class ReviewerTest extends BasePage {
 		{
 			test = extent.startTest("Daily Update verification");
 			
-			Methods.DailyUpdate(test,"Reviewer");
+			MethodsD.DailyUpdate(test,"Reviewer");
 			
 			extent.endTest(test);
 			extent.flush();
 		}
+
 		
+		
+		/*
 		@Test(priority = 29)
 		void Report() throws InterruptedException, IOException
 		{
@@ -458,7 +462,7 @@ public class ReviewerTest extends BasePage {
 			extent.endTest(test);
 			extent.flush();
 		}
-		*/
+		
 		
 		@Test(priority = 33)
 		void MyDocumnent() throws InterruptedException, IOException, AWTException

@@ -20,6 +20,13 @@ public class ReviwerLocator extends BasePage
 		labour = getDriver().findElement(By.xpath("//img[@title='Dashboard']"));
 		return labour;
 	}
+	public static WebElement clickStaturyDocumentArrow()		//Method for searching Username input
+	{
+		labour = getDriver().findElement(By.xpath("(//img[@title='Statutory Document'])[1]"));
+		return labour;
+	}
+	
+	
 	public static WebElement clickStatutoryDoc()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("//span[normalize-space()='Statutory Documents']"));
@@ -35,6 +42,11 @@ public class ReviwerLocator extends BasePage
 	public static WebElement selectComplianceType()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("//*[@class='k-list-ul']/li"));
+		return labour;
+	}
+	public static WebElement selectYear2024()		//Method for searching Username input
+	{
+		labour = getDriver().findElement(By.xpath("//span[normalize-space()='2024']"));
 		return labour;
 	}
 	public static WebElement selectComplianceType1()		//Method for searching Username input

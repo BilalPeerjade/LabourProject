@@ -34,6 +34,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import login.BasePage;
+import rcp.OneCommonMethod;
 
 
 
@@ -203,6 +204,26 @@ public class Methods extends BasePage {
 		  	
 	}
 	
+	public static void CorporateToEntity ( ExtentTest test) throws InterruptedException, IOException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+		Locators.Corporate().click();
+		Thread.sleep(3000);
+		Locators.CorporateSearch().click();
+		Thread.sleep(3000);
+		Locators.CorporateSearch().sendKeys("AVAREGTRAC");
+		Thread.sleep(5000);
+		getDriver().findElement(By.xpath("//span[normalize-space()='AVAREGTRAC (Regtrack Labour Test)']")).click();
+		Thread.sleep(3000);
+		Locators.Apply().click();
+		Thread.sleep(3000);
+		Locators.proceedEntity().click();
+		Thread.sleep(3000);
+		  	
+	}
+	
 	public static void UserEditInvalid ( ExtentTest test) throws InterruptedException, IOException
 	{		
 		Actions action = new Actions(getDriver());
@@ -283,7 +304,11 @@ public class Methods extends BasePage {
 				Locators.SearchUser().click();
 				 	row0 = sheet.getRow(5);
 				c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
-				Locators.SearchUser().sendKeys(c1.getStringCellValue()); // Writing Task title
+//				Locators.SearchUser().sendKeys(c1.getStringCellValue()); // Writing Task title
+				
+				Locators.SearchUser().sendKeys("mahesh.darandale@tlregtech.in");
+				
+				
 				Thread.sleep(3000);
 				Locators.SearchUser1().click();
 				Thread.sleep(3000);
@@ -333,7 +358,11 @@ public class Methods extends BasePage {
 				Locators.SearchUser().click();
 				 	row0 = sheet.getRow(5);
 				c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
-				Locators.SearchUser().sendKeys(c1.getStringCellValue()); // Writing Task title
+//				Locators.SearchUser().sendKeys(c1.getStringCellValue()); // Writing Task title
+				
+				Locators.SearchUser().sendKeys("mahesh.darandale@tlregtech.in"); //Me
+				
+				
 				Thread.sleep(3000);
 				Locators.SearchUser1().click();
 				Thread.sleep(3000);
@@ -854,8 +883,9 @@ public class Methods extends BasePage {
 				row0 = sheet.getRow(14);
 				c11 = row00.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
 				Locators.Pan().sendKeys(c11.getStringCellValue()); // Writing Task title
-				Thread.sleep(2000);
+				Thread.sleep(7000);
 				
+				OneCommonMethod.zoomOutScreen(2); //ZoomOut
 				
 				Locators.Save().click();
 				Thread.sleep(4000);
@@ -959,7 +989,7 @@ public class Methods extends BasePage {
 				Thread.sleep(3000);
 				row0 = sheet.getRow(16);
 				c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
-				Locators.SearchUser().sendKeys(c1.getStringCellValue()); // Writing Task title
+//				Locators.SearchUser().sendKeys(c1.getStringCellValue()); // Writing Task title
 				Thread.sleep(3000);
 				Locators.SearchUser1().click();
 				Thread.sleep(3000);
@@ -974,7 +1004,8 @@ public class Methods extends BasePage {
 				 if(Locators.Clear().isEnabled()) {
 					 
 						test.log(LogStatus.PASS,  " Clear button working successfully."); 
-						Locators.Users().click();
+					//	Locators.Users().click();
+						Locators.Clear().click();
 				 }
 				 else
 				 {
@@ -1114,9 +1145,9 @@ public class Methods extends BasePage {
 		Thread.sleep(3000);
 				
 		
-		 if(Locators.view().isEnabled()) {
+		 if(Locators.proceedEntity().isEnabled()) {
 		{
-			Locators.view().click();
+			Locators.proceedEntity().click();
 		}
 			test.log(LogStatus.PASS, "View Entity button Working Successfully.");
 					
@@ -1190,13 +1221,13 @@ public class Methods extends BasePage {
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Corporate().click();
 		
-		
-		
-		 FileInputStream fis = new FileInputStream(filePath);
-	        Workbook workbook = WorkbookFactory.create(fis);
-	        Sheet sheet = workbook.getSheetAt(1);
+	  	
+/*	  	Locators.Corporate().click();
+
+		FileInputStream fis = new FileInputStream(filePath);
+	    Workbook workbook = WorkbookFactory.create(fis);
+	    Sheet sheet = workbook.getSheetAt(1);
 
 	  	Thread.sleep(3000);
 	
@@ -1223,17 +1254,15 @@ public class Methods extends BasePage {
 	//	List<WebElement> options = getDriver().findElements(By.xpath("//ul[@id='ddlUser_listbox']/child::li"));
 	//	selectOptionFromDropDown_bs(options, "Vaibhav (mahesh.darandale@tlregtech.in)");
 		Thread.sleep(3000);
-
-			 Locators.Apply().click();
-				Thread.sleep(3000);
+	    Locators.Apply().click();
+	    
+	    */
+				
+	  	
+	  	CorporateToEntity(test); //Filter it will direct go to Corporate search
+	  	
 		
-		
-		
-		
-		
-		Locators.view().click();
-		
-		
+//		Locators.proceedEntity().click();
 		Thread.sleep(3000);
 				
 		
@@ -1309,12 +1338,12 @@ public class Methods extends BasePage {
 				
 				
 				Thread.sleep(3000);
-                 Locators.view().click();
+                 Locators.proceedEntity().click();
 				Thread.sleep(3000);
 				Locators.addNewBtn().click();
 				
 				
-				DistributerLocators.selectComplianceType().click();
+//Me				DistributerLocators.selectComplianceType().click();
 				
 				Robot robot = new Robot();
 				robot.keyPress(KeyEvent.VK_CONTROL);
@@ -1394,11 +1423,24 @@ public class Methods extends BasePage {
 				Locators.StatusE1().click();
 				Thread.sleep(2000);
 				
-				Locators.CommencementDate().click();
+//				Locators.CommencementDate().click();
 				Thread.sleep(2000);
 				Actions action1 = new Actions(getDriver());
 
-				action1.moveToElement(Locators.CommencementDate1()).click().perform();
+//				action1.moveToElement(Locators.CommencementDate1()).click().perform();
+				
+				
+				WebElement dateInput = getDriver().findElement(By.xpath("//input[@id='datepicker-1']"));
+				((JavascriptExecutor) getDriver()).executeScript("arguments[0].value='01-Jan-2020';", dateInput);
+
+
+//				WebElement dateInput = getDriver().findElement(Locators.CommencementDate());
+//				((JavascriptExecutor) getDriver()).executeScript("arguments[0].value='03-03-1999';", dateInput);
+
+				
+
+				
+				
 			//	Locators.CommencementDate1().click();
 				Thread.sleep(2000);
 				
@@ -1414,7 +1456,7 @@ public class Methods extends BasePage {
 				
 				Locators.PaymentDay().click();
 				Thread.sleep(2000);
-			//Locators.PaymentDay1().click();
+		//	    Locators.PaymentDay1().click();
 				Thread.sleep(2000);
 				action1.moveToElement(Locators.PaymentDay1()).click().perform();
 				
@@ -1609,11 +1651,14 @@ public class Methods extends BasePage {
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-				Locators.Corporate().click();
+
+	  	
+	        	CorporateToEntity(test); //Filter it will direct go to Corporate search
 				
+	        	OneCommonMethod.zoomOutScreen(2);
+	        	
 				Thread.sleep(3000);
-                 Locators.view().click();
-				Thread.sleep(3000);
+
 				
 				 FileInputStream fis = new FileInputStream(filePath);
 			        Workbook workbook = WorkbookFactory.create(fis);
@@ -1940,10 +1985,11 @@ public class Methods extends BasePage {
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Corporate().click();
+//		Locators.Corporate().click();
 		
+		CorporateToEntity(test);
 		
-		 Locators.view().click();
+//		 Locators.view().click();
 			Thread.sleep(3000);
 		
 		Locators.BulkUpload().click();
@@ -2008,16 +2054,18 @@ Locators.DownloadTemplate().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Corporate().click();
+//		Locators.Corporate().click();
 		
 		
-		 Locators.view().click();
+//		 Locators.view().click();
+	  	CorporateToEntity(test);
+	  	
 			Thread.sleep(3000);
 		
 		Locators.BulkUpload().click();
 		
 		Thread.sleep(3000);
-Locators.DownloadTemplate().click();
+Locators.DownloadTemplate2().click();
 		Thread.sleep(3000);
 		
 		File dir = new File("C:\\Users\\bilali\\Downloads");
@@ -2026,7 +2074,7 @@ Locators.DownloadTemplate().click();
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\EntityUpload__20250123T100758293ZInvalid.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\Corporate-Entity\\EntityUpload__Invalid.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -2093,10 +2141,13 @@ Locators.DownloadTemplate().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Corporate().click();
+//		Locators.Corporate().click();
 		
 		
-		 Locators.view().click();
+//		 Locators.view().click();
+	  	
+	  	CorporateToEntity(test);
+	  	
 			Thread.sleep(3000);
 		
 		Locators.BulkUpload().click();
@@ -2104,12 +2155,12 @@ Locators.DownloadTemplate().click();
 		Thread.sleep(3000);
 Locators.CheckBox().click();
 		Thread.sleep(3000);
-		Locators.DownloadTemplate().click();
+		Locators.DownloadTemplate2().click();
 		Thread.sleep(3000);
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\EntityUpload__20250123T073713110Z.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\Other Upload No need to change\\EntityUpload__SelectedCBvalid.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -2143,7 +2194,7 @@ Locators.CheckBox().click();
 				
 					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
 					
-					if(text1.equalsIgnoreCase("File uploaded successfully!")) {
+					if(text1.equalsIgnoreCase("Updated Successfully")) {
 						test.log(LogStatus.PASS,"Message Displayed : "+text1);
 				
 					}else {
@@ -2162,10 +2213,12 @@ Locators.CheckBox().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Corporate().click();
+//		Locators.Corporate().click();
 		
 		
-		 Locators.view().click();
+//		 Locators.view().click();
+	  	CorporateToEntity(test);
+	  	
 			Thread.sleep(3000);
 		
 		Locators.BulkUpload().click();
@@ -2173,14 +2226,14 @@ Locators.CheckBox().click();
 		Thread.sleep(3000);
 		Locators.CheckBox().click();
 		Thread.sleep(3000);
-Locators.DownloadTemplate().click();
+Locators.DownloadTemplate2().click();
 		Thread.sleep(3000);
 		
 	
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\EntityUpload_AVACORED5_Invalid.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\Corporate-Entity\\EntitySelectCD Invalid.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -2218,7 +2271,7 @@ Locators.DownloadTemplate().click();
 				
 			String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
 			
-			if(text1.equalsIgnoreCase("Invalid Template")) {
+			if(text1.equalsIgnoreCase("Error uploading file")) {
 				test.log(LogStatus.PASS,"Message Displayed : "+text1);
 		
 			}else {
@@ -2307,16 +2360,19 @@ Locators.CheckBox().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Corporate().click();
+//		Locators.Corporate().click();
 		
 		
-		 Locators.view().click();
-			Thread.sleep(3000);
+//		 Locators.proceedEntity().click();
+	  	
+	  	CorporateToEntity(test);
+	  	
+		Thread.sleep(3000);
 		
 		Locators.BulkUpload().click();
 		
 		Thread.sleep(3000);
-Locators.CheckBox().click();
+        Locators.CheckBox().click();
 		Thread.sleep(3000);
 		
 		if(Locators.Reset().isEnabled()) {
@@ -2344,10 +2400,13 @@ Locators.CheckBox().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Corporate().click();
+//		Locators.Corporate().click();
 		
 		
-		 Locators.view().click();
+//		 Locators.view().click();
+	  	
+	  	CorporateToEntity(test); //Method
+	  	
 			Thread.sleep(3000);
 		
 		Locators.BulkUpload().click();
@@ -2379,10 +2438,7 @@ Locators.CheckBox().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Corporate().click();
-		
-		
-		 Locators.view().click();
+	  	CorporateToEntity(test);
 			Thread.sleep(3000);
 				
 				
@@ -2512,7 +2568,7 @@ Locators.CheckBox().click();
 		
 				
 				Thread.sleep(3000);
-                 Locators.Dashboard().click();
+                Locators.clickPremisesArrow().click();
 				Thread.sleep(3000);
 				Locators.OnboardEntity().click();
 				Thread.sleep(8000);
@@ -2702,7 +2758,7 @@ Locators.CheckBox().click();
 		
 				
 				Thread.sleep(3000);
-                 Locators.Dashboard().click();
+                 Locators.clickPremisesArrow().click();
 				Thread.sleep(3000);
 				Locators.OnboardEntity().click();
 				Thread.sleep(8000);
@@ -2843,7 +2899,8 @@ Locators.CheckBox().click();
 		
 		
 		Thread.sleep(3000);
-Locators.UpoadBranchSam().click();
+//        Locators.UpoadBranchSam().click();
+		getDriver().findElement(By.xpath("//img[@title='Bulk Upload']")).click();
 		Thread.sleep(3000);
 		File dir = new File("C:\\Users\\bilali\\Downloads");
 		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
@@ -2853,7 +2910,7 @@ Locators.UpoadBranchSam().click();
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\LocationSampleUpdate_AVACORED5_InvalidB.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\Other Upload No need to change\\PremisesInvalidDetails.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -3107,7 +3164,7 @@ Locators.UpoadBranchSam().click();
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\LocationSampleUpdate_AVACORED5_CheckboxEmpty.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\Other Upload No need to change\\PremisesSelectedCheckBoxEmpty.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -3185,7 +3242,7 @@ Locators.UpoadBranchSam().click();
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\LocationSampleUpdate_AVACORED5_Empty.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\Other Upload No need to change\\PremisesEmptyFile.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -3263,33 +3320,33 @@ Locators.UpoadBranchSam().click();
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Charge.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Upload Automation Files\\Other Upload No need to change\\PaycodeUpload.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
-		
+		 Thread.sleep(3000);
 		 //Now press CRTL
 		
 		 robot.keyPress(KeyEvent.VK_CONTROL);
-		 Thread.sleep(1000);
+		 Thread.sleep(2000);
 		
 		 //PRESS V
 		 robot.keyPress(KeyEvent.VK_V);
-		 Thread.sleep(1000);
+		 Thread.sleep(2000);
 		
 		 //Release V
 		 robot.keyRelease(KeyEvent.VK_V);
-		
+		 Thread.sleep(2000);
 		
 		 //Release CRTL
 		 robot.keyRelease(KeyEvent.VK_CONTROL);
-		
+		 Thread.sleep(2000);
 		 //PRESS Enter
 		 robot.keyPress(KeyEvent.VK_ENTER);
 		
 		 //Release CRTL
 		 robot.keyRelease(KeyEvent.VK_ENTER);
 		
-		 Thread.sleep(1000);
+		 Thread.sleep(2000);
 				 
 		 Locators.Upload1().click();
 					

@@ -1,5 +1,8 @@
 package distributor;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -125,11 +128,35 @@ public class DistributerLocators extends BasePage
 		labour = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-principle-employer/div[4]/kendo-loader/div/span[1]"));
 		return labour;
 	}
-	public static WebElement readTotalItem()		//Method for searching Username input
+/*	public static WebElement readTotalItem()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-location-master/div[3]/kendo-grid/kendo-pager/kendo-pager-info"));
 		return labour;
+	}*/
+	public static WebElement readTotalItem() {
+	    List<By> locators = Arrays.asList(
+	        By.xpath("//kendo-pager-info[@class='k-pager-info k-label']"),
+	        By.cssSelector(""),
+	        By.xpath(""),
+	        By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-location-master/div[3]/kendo-grid/kendo-pager/kendo-pager-info")//Not working this    
+	        );
+
+	    for (By locator : locators) {
+	        try {
+	            WebElement element = getDriver().findElement(locator);
+	            if (element != null && element.isDisplayed()) {
+	                return element; // 🎯 Element found, return it immediately
+	            }
+	        } catch (Exception e) {
+	            // Locator not found, try next one
+	        }
+	    }
+	    System.out.println("❌ Element not found using any locator.");
+	    return null; // All locators failed
 	}
+	
+	
+	
 	public static WebElement readTotalItemDesignation()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-designation-master/kendo-grid/kendo-pager/kendo-pager-info"));

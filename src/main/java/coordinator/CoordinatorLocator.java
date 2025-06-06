@@ -72,6 +72,11 @@ public class CoordinatorLocator extends BasePage
 		labour = getDriver().findElement(By.xpath("(//*[@class='k-svg-i-caret-alt-down k-button-icon k-svg-icon k-icon ng-star-inserted'])"));
 		return labour;
 	}
+	public static WebElement clickEntityRehistrationDropdown()
+	{
+		labour = getDriver().findElement(By.xpath("//span[contains(text(),'Select Entity')]"));
+		return labour;
+	}
 	public static WebElement selectEntity()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("//ul[@class='k-list-ul']/li"));
@@ -81,6 +86,11 @@ public class CoordinatorLocator extends BasePage
 	public static WebElement clickState()		//Method for searching Username input
 	{
 		labour = getDriver().findElement(By.xpath("(//*[@class='k-svg-i-caret-alt-down k-button-icon k-svg-icon k-icon ng-star-inserted'])[2]"));
+		return labour;
+	}
+	public static WebElement clickStateRegistrationDropdown()		//Method for searching Username input
+	{
+		labour = getDriver().findElement(By.xpath("(//button[@aria-label='Select'])[2]"));
 		return labour;
 	}
 	public static WebElement selectState()		//Method for searching Username input
